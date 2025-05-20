@@ -36,6 +36,19 @@ perfish <- read_csv("data-processed/perfish_data.csv")
 
 
 
+
+neon_fish <- readRDS('2025 Raw Release Data/neonFish.Robj')
+
+
+perfish <- neon_fish$fsh_perFish %>% 
+  clean_names()
+
+perpass <- neon_fish$fsh_perPass %>% 
+  clean_names()
+
+
+
+
 ### CRAM,PRIN,  
 
 

@@ -138,6 +138,8 @@ Centrarchidae,Lepomis megalotis,Central Oklahoma US,35.659999999999997,-97.47,Fr
 Centrarchidae,Lepomis megalotis,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,21,NA,dynamic,OS,1,NA,102,NA,NA,34.7047,3.2466711949999998,16.25,yes,Freshwater,Schaefer et al. 1999,172
 Centrarchidae,Lepomis megalotis,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,21,NA,dynamic,LOE,1,NA,102,NA,NA,29.9262,1.785386978,16.25,yes,Freshwater,Schaefer et al. 1999,172
 Centrarchidae,Lepomis megalotis,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,21,NA,dynamic,OS,1,NA,102,NA,NA,33.3356,1.9478414719999999,16.25,yes,Freshwater,Schaefer et al. 1999,172
+Centrarchidae,Lepomis microlophus,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,OS,1,NA,NA,NA,NA,34.1,0.86602540400000005,3,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Centrarchidae,Lepomis microlophus,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,LOE,1,NA,NA,NA,NA,30.8,2.109502311,3,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
 Centrarchidae,Micropterus dolomieu,New River drainage US,36.94,-81.05,Freshwater,experimental,33,7,NA,static,death,NA,10080,50-100,NA,sub-adults,35,NA,10,yes,Freshwater,Cherry et al. 1977,39
 Centrarchidae,Micropterus dolomieu,NA,NA,NA,Freshwater,experimental,26,NA,NA,dynamic,LOE,1.7000000000000001E-2,NA,NA,NA,NA,36.9,0.31,8,yes,Freshwater,Beitinger et al. 2000,12
 Centrarchidae,Micropterus dolomieu,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,OS,1,NA,NA,NA,NA,34.8,NA,1,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
@@ -348,6 +350,26 @@ Cyprinidae,Pimephales notatus,Maryland US,39.53,-76.77,Freshwater,experimental,1
 Cyprinidae,Pimephales notatus,Maryland US,39.53,-76.77,Freshwater,experimental,18,NA,NA,dynamic,death,NA,NA,NA,NA,adults,33.1,NA,NA,yes,Freshwater,Yoder et al. 2012,213
 Cyprinidae,Pimephales notatus,Maryland US,39.53,-76.77,Freshwater,experimental,24,NA,NA,dynamic,death,NA,NA,NA,NA,adults,33.1,NA,NA,yes,Freshwater,Yoder et al. 2012,213
 Cyprinidae,Pimephales notatus,Maryland US,39.53,-76.77,Freshwater,experimental,30,NA,NA,dynamic,death,NA,NA,NA,NA,adults,32,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Cyprinidae,Pimephales promelas,NA,NA,NA,Freshwater,experimental,25,14,NA,dynamic,LOE,0.3,NA,30-70,NA,NA,36.1,2.1208785400000001,12,yes,Freshwater,Carveth et al. 2006,35
+Cyprinidae,Pimephales promelas,NA,NA,NA,Freshwater,experimental,25,14,NA,dynamic,flaring operculum,0.3,NA,30-70,NA,NA,36.5,2.1208785400000001,12,yes,Freshwater,Carveth et al. 2006,35
+Cyprinidae,Pimephales promelas,NA,NA,NA,Freshwater,experimental,25,14,NA,dynamic,death,0.3,NA,30-70,NA,NA,36.9,1.9441386620000001,12,yes,Freshwater,Carveth et al. 2006,35
+Cyprinidae,Pimephales promelas,NA,NA,NA,Freshwater,experimental,14.5,NA,NA,dynamic,LOE,0.22,NA,NA,NA,NA,32.4,1.72,33,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Pimephales promelas,NA,NA,NA,Freshwater,experimental,14.5,NA,NA,dynamic,LOE,0.22,NA,NA,NA,NA,34,1.1299999999999999,32,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Pimephales promelas,NA,NA,NA,Freshwater,experimental,21,NA,NA,dynamic,LOE,0.3,NA,NA,NA,NA,35.1,1.1499999999999999,20,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Pimephales promelas,NA,NA,NA,Freshwater,experimental,20,NA,NA,dynamic,LOE,0.3,NA,NA,NA,NA,33.1,0.63,10,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Pimephales promelas,North Texas US,33.22,-97.15,Freshwater,experimental,24,NA,NA,dynamic,LOE,0.3,NA,NA,NA,adults,36.9,0.86,18,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Pimephales promelas,North Texas US,33.22,-97.15,Freshwater,experimental,24,NA,NA,dynamic,LOE,0.3,NA,NA,NA,adults,36.8,1.4,13,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Pimephales promelas,North Texas US,33.22,-97.15,Freshwater,experimental,24,NA,NA,dynamic,LOE,0.3,NA,NA,NA,adults,36.2,1.22,12,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Pimephales promelas,North Texas US,33.22,-97.15,Freshwater,experimental,24,NA,NA,dynamic,LOE,0.3,NA,NA,NA,adults,36.7,1.38,13,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Pimephales promelas,NA,NA,NA,Freshwater,experimental,22.5,NA,NA,dynamic,LOE,0.3,NA,NA,NA,NA,34.4,NA,30,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Pimephales promelas,Arizona US,34.18,-111.71,Freshwater,experimental,5,NA,NA,dynamic,LOE,0.3,NA,NA,NA,NA,28.6,0.8,10,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Pimephales promelas,Arizona US,34.18,-111.71,Freshwater,experimental,12,NA,NA,dynamic,LOE,0.3,NA,NA,NA,NA,30.7,1,10,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Pimephales promelas,Arizona US,34.18,-111.71,Freshwater,experimental,22,NA,NA,dynamic,LOE,0.3,NA,NA,NA,NA,36.4,0.75,10,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Pimephales promelas,Arizona US,34.18,-111.71,Freshwater,experimental,32,NA,NA,dynamic,LOE,0.3,NA,NA,NA,NA,40.4,0.25,10,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Pimephales promelas,Arizona US,34.18,-111.71,Freshwater,experimental,26,NA,NA,dynamic,LOE,1.7000000000000001E-2,NA,NA,NA,NA,36.5,0.5,8,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Pimephales promelas,Tennessee US,35.75,-86.43,Freshwater,experimental,6,NA,NA,static,death,NA,720,NA,NA,adults,26.7,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Cyprinidae,Pimephales promelas,North Texas State University US,33.21,-97.15,Freshwater,experimental,20,7,NA,dynamic,LOE,0.3,NA,NA,NA,adults,34.8455,0.77210000000000001,12,yes,Freshwater,Carrier & Beitinger 1988,34
+Cyprinidae,Pimephales promelas,University of Oklahoma Fisheries Lab US,35.21,-97.45,Freshwater,experimental,15,7,NA,dynamic,OS,1,NA,NA,NA,NA,33.2268,0.57684381799999995,79,yes,Freshwater,Manness & Hutchison 1980,123
 Cyprinidae,Pimephales vigilax,Denton Creek Denton County Texas US,33.17,-97.32,Freshwater,experimental,30,14,NA,dynamic,LOE,0.33,NA,NA,NA,NA,39.32,0.25,10,yes,Freshwater,Rutledge & Beitinger 1989,168
 Cyprinidae,Semotilus atromaculatus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,25,NA,NA,static,death,NA,5760,NA,NA,NA,30.3,NA,NA,yes,Freshwater,Hart 1952,84
 Cyprinidae,Semotilus atromaculatus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,25,NA,NA,static,death,NA,5760,NA,NA,NA,31.5,NA,NA,yes,Freshwater,Hart 1952,84
