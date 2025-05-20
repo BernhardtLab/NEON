@@ -25,7 +25,6 @@ library(lubridate)
 fishes <- loadByProduct(dpID="DP1.20107.001", 
                            site=c("all"),
                            startdate= NA, 
-                           enddate=NA)
 
 
 
@@ -34,6 +33,7 @@ perfish <- fishes$fsh_perFish %>%
 
 write_csv(perfish, "data-processed/perfish_data.csv")
 perfish <- read_csv("data-processed/perfish_data.csv")
+
 
 
 ### CRAM,PRIN,  
@@ -50,6 +50,11 @@ perfish %>%
   filter(fish_total_length == 0) %>% View
 
 
+
+
+
+# p2 <- perfish %>% 
+#   mutate(day = dmy(pass_start_time))
 
 
 
@@ -93,7 +98,6 @@ p4 %>%
   ylab("Mean fish total length") + xlab("Date") + facet_wrap( ~ scientific_name, scales = "free_y") +
   geom_smooth(method = "lm")
 ggsave("figures/length_time-site-time-average-scales-free-more-than2years.png", width = 30, height = 22)
-
 
 p5 <- perfish %>% 
   # filter(scientific_name == "Rhinichthys atratulus") %>% 
@@ -146,7 +150,6 @@ p5 %>%
   ylab("Mean body condition") + xlab("Date") + facet_wrap( ~ scientific_name, scales = "free_y") +
   geom_smooth(method = "lm")
 ggsave("figures/body_condition_time-site-time-average-scales-free-more-than2years.png", width = 30, height = 22)
-
 
 
 p3 %>% 
