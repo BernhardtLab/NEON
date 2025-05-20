@@ -25,7 +25,6 @@ library(lubridate)
 fishes <- loadByProduct(dpID="DP1.20107.001", 
                            site=c("all"),
                            startdate= NA, 
-                           enddate=NA)
 
 
 
@@ -34,6 +33,7 @@ perfish <- fishes$fsh_perFish %>%
 
 write_csv(perfish, "data-processed/perfish_data.csv")
 perfish <- read_csv("data-processed/perfish_data.csv")
+
 
 
 ### CRAM,PRIN,  
@@ -50,6 +50,11 @@ perfish %>%
   filter(fish_total_length == 0) %>% View
 
 
+
+
+
+# p2 <- perfish %>% 
+#   mutate(day = dmy(pass_start_time))
 
 
 
@@ -93,7 +98,6 @@ p4 %>%
   ylab("Mean fish total length") + xlab("Date") + facet_wrap( ~ scientific_name, scales = "free_y") +
   geom_smooth(method = "lm")
 ggsave("figures/length_time-site-time-average-scales-free-more-than2years.png", width = 30, height = 22)
-
 
 p5 <- perfish %>% 
   # filter(scientific_name == "Rhinichthys atratulus") %>% 
@@ -146,7 +150,6 @@ p5 %>%
   ylab("Mean body condition") + xlab("Date") + facet_wrap( ~ scientific_name, scales = "free_y") +
   geom_smooth(method = "lm")
 ggsave("figures/body_condition_time-site-time-average-scales-free-more-than2years.png", width = 30, height = 22)
-
 
 
 p3 %>% 
@@ -208,7 +211,86 @@ ggsave("figures/water-temperatures-barc-took.png", width = 12, height = 6)
 write_csv(tsd_30, "data-processed/water-temps-30mins.csv")
 
 
-#### try precipitation data
+
+# select sites ------------------------------------------------------------
+
+
+
+p7 <- perfish %>% 
+  # filter(scientific_name == "Rhinichthys atratulus") %>% 
+  filter(fish_life_stage == "adult") %>%
+  mutate(body_condition = 100*(fish_weight/fish_total_length^3))
+# 
+# %>%
+#   mutate(unique_points = n_distinct(fish_weight)) %>% 
+#   mutate(year = year(pass_start_time)) %>% 
+#   group_by(scientific_name, site_id) %>% 
+#   mutate(unique_years = n_distinct(year)) %>% 
+#   filter(unique_points > 4, unique_years > 2)
+
+select_sites <- p7 %>% 
+  filter(site_id %in% c("MCDI", "PRIN", "LIRO", "CRAM"))
+
+
+
+select_sites %>% 
+  ggplot(aes(x = fish_total_length, y = fish_weight, color = scientific_name)) + geom_point() +
+  facet_wrap( ~ scientific_name, scales = "free") + theme(legend.position = "none")
+ggsave("figures/length-weight.pdf", width = 12, height = 10)
+
+
+
+select_sites %>% 
+  mutate(outlier = case_when(site_id == "CRAM" & body_condition > 0.005 ~ "yes",
+                             site_id == "LIRO" & body_condition > 0.005 ~ "yes",
+                             site_id == "MCDI" & body_condition > 0.004 ~ "yes",
+                             site_id == "PRIN" & body_condition > 0.05 ~ "yes",
+                             .default = "no")) %>%
+  filter(outlier == "no") %>% 
+  ggplot(aes(x = pass_start_time, y = body_condition, color = scientific_name)) + geom_point() +
+  ylab("Fish body condition") + xlab("Date") + facet_wrap( ~ site_id, scales = "free_y") +
+  geom_smooth(method = "lm") + theme(legend.position = "none")
+ggsave("figures/condition-select-sites-fish-time.png", width = 12, height = 10)
+
+select_sites %>% 
+  mutate(outlier = case_when(site_id == "CRAM" & body_condition > 0.005 ~ "yes",
+                             site_id == "LIRO" & body_condition > 0.005 ~ "yes",
+                             site_id == "MCDI" & body_condition > 0.004 ~ "yes",
+                             site_id == "PRIN" & body_condition > 0.05 ~ "yes",
+                             .default = "no")) %>%
+  filter(outlier == "no") %>% 
+  ggplot(aes(x = pass_start_time, y = fish_total_length, color = scientific_name)) + geom_point() +
+  ylab("Fish length") + xlab("Date") + facet_wrap( ~ site_id, scales = "free_y") +
+  geom_smooth(method = "lm") + theme(legend.position = "none")
+ggsave("figures/length-select-sites-fish-time.png", width = 12, height = 10)
+
+
+select_sites %>% 
+  mutate(outlier = case_when(site_id == "CRAM" & body_condition > 0.005 ~ "yes",
+                             site_id == "LIRO" & body_condition > 0.005 ~ "yes",
+                             site_id == "MCDI" & body_condition > 0.004 ~ "yes",
+                             site_id == "PRIN" & body_condition > 0.05 ~ "yes",
+                             site_id == "MCDI" & fish_weight > 200 ~ "yes",
+                             site_id == "PRIN" & fish_weight > 200 ~ "yes",
+                             .default = "no")) %>%
+  filter(outlier == "no") %>% 
+  ggplot(aes(x = pass_start_time, y = fish_weight, color = scientific_name)) + geom_point() +
+  ylab("Fish weight") + xlab("Date") + facet_wrap( ~ site_id, scales = "free_y") +
+  geom_smooth(method = "lm") + theme(legend.position = "none")
+ggsave("figures/weight-select-sites-fish-time.png", width = 12, height = 10)
+
+
+
+sites_subset <- select_sites %>% 
+  mutate(outlier = case_when(site_id == "CRAM" & body_condition > 0.005 ~ "yes",
+                             site_id == "LIRO" & body_condition > 0.005 ~ "yes",
+                             site_id == "MCDI" & body_condition > 0.004 ~ "yes",
+                             site_id == "PRIN" & body_condition > 0.05 ~ "yes",
+                             site_id == "MCDI" & fish_weight > 200 ~ "yes",
+                             site_id == "PRIN" & fish_weight > 200 ~ "yes",
+                             .default = "no")) %>%
+  filter(outlier == "no") 
+
 
 
 

@@ -11,16 +11,16 @@ perfish <- read_csv("data-processed/perfish_data.csv")
 perfish_select <- perfish %>% 
   filter(site_id %in% c("LIRO", "MCDI", "PRIN", "CRAM"))
 
-neon_fish <- unique(perfish_select$scientific_name)
+neon_fish_sp <- unique(perfish_select$scientific_name)
 
 
-comte <- read_excel("/Volumes/Extreme SSD/NEON-data/Comte_Olden_CTmax_Data.xlsx", sheet = 2) %>% 
+comte <- read_excel("data-raw/Comte_Olden_Data.xlsx", sheet = 2) %>% 
   clean_names()
 
 
 
 comte_neon <- comte %>% 
-  filter(species %in% c(neon_fish))
+  filter(species %in% c(neon_fish_sp))
 
 write_csv(comte_neon, "data-processed/comte-neon-select.csv")
 
@@ -39,7 +39,7 @@ all_fish_select <- full_join(perfish_select, comte_neon, by = c("scientific_name
 
 
 load("/Volumes/Extreme SSD/NEON-data/Organismal-data/MicroAlgae_Collection_NeonData.Robj", verbose = TRUE)
-phytoplankton<-NeonData
+phytoplankton <- NeonData
 load("/Volumes/Extreme SSD/NEON-data/Organismal-data/Zooplankton_NeonData.Robj", verbose = TRUE)
 zooplankton <- NeonData
 

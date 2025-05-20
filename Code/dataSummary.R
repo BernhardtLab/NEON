@@ -9,6 +9,10 @@ library(tidyr)
 datapath<-'/Users/kelsey/Github/RCN-KY/2025 Raw Release Data/'
 resultspath<-'/Users/kelsey/Github/RCN-KY/Clean Data/'
 
+datapath<-'2025 Raw Release Data/'
+resultspath<-'Clean Data/'
+
+
 
 # load data
 neonFish <- readRDS(paste0(datapath, 'neonFish.Robj'))

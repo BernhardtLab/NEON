@@ -125,6 +125,9 @@ zoo %>% group_by(eventID) %>% summarise(samps=length(unique(sampleID)))
 
 write.csv(zoo,paste0(resultspath,"zooplankton.csv"),row.names=F)
 
+
+zoo <- read_csv("Clean Data/zooplankton.csv")
+
 sumry <- zoo %>% group_by(siteID,collectDate) %>% summarise(count=mean(countPerL,na.rm=T))
 
 sumry %>%
