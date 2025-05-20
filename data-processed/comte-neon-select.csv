@@ -1,0 +1,460 @@
+family,species,location,latitude,longitude,sampling_habitat,acclimation,temperature_of_acclimation_c,length_acclimation_period_days,rate_acclimation_c_day,methodology,endpoint,heating_rate_c_min,length_experiment_min,body_length_mm,weight_g,life_stage,thermal_limit_c,sd_thermal_limit,nindividuals,phylogeny,realm_affinity,source,reference
+Catostomidae,Catostomus commersonii,NA,NA,NA,Freshwater,experimental,26,NA,NA,dynamic,LOE,1.7000000000000001E-2,NA,NA,NA,NA,34.9,0.25,5,yes,Freshwater,Beitinger et al. 2000,12
+Catostomidae,Catostomus commersonii,Greenwood Lake Michigan Michigan US,43.22,-86.35,Freshwater,experimental,8.9,NA,NA,static,death,NA,1440,NA,NA,larvae,29,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Catostomidae,Catostomus commersonii,Greenwood Lake Michigan Michigan US,43.22,-86.35,Freshwater,experimental,8.9,NA,NA,static,death,NA,2880,NA,NA,larvae,29,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Catostomidae,Catostomus commersonii,Greenwood Lake Michigan Michigan US,43.22,-86.35,Freshwater,experimental,8.9,NA,NA,static,death,NA,5760,NA,NA,larvae,28.6,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Catostomidae,Catostomus commersonii,Greenwood Lake Michigan Michigan US,43.22,-86.35,Freshwater,experimental,15.2,NA,NA,static,death,NA,1440,NA,NA,larvae,31.1,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Catostomidae,Catostomus commersonii,Greenwood Lake Michigan Michigan US,43.22,-86.35,Freshwater,experimental,15.2,NA,NA,static,death,NA,2880,NA,NA,larvae,31,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Catostomidae,Catostomus commersonii,Greenwood Lake Michigan Michigan US,43.22,-86.35,Freshwater,experimental,15.2,NA,NA,static,death,NA,5760,NA,NA,larvae,30,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Catostomidae,Catostomus commersonii,Greenwood Lake Michigan Michigan US,43.22,-86.35,Freshwater,experimental,21.1,NA,NA,static,death,NA,1440,NA,NA,larvae,31.5,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Catostomidae,Catostomus commersonii,Greenwood Lake Michigan Michigan US,43.22,-86.35,Freshwater,experimental,21.1,NA,NA,static,death,NA,5760,NA,NA,larvae,28.2,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Catostomidae,Catostomus commersonii,Greenwood Lake Michigan Michigan US,43.22,-86.35,Freshwater,experimental,10,NA,NA,static,death,NA,1440,NA,NA,larvae,28.5,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Catostomidae,Catostomus commersonii,Greenwood Lake Michigan Michigan US,43.22,-86.35,Freshwater,experimental,10,NA,NA,static,death,NA,2880,NA,NA,larvae,28.5,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Catostomidae,Catostomus commersonii,Greenwood Lake Michigan Michigan US,43.22,-86.35,Freshwater,experimental,10,NA,NA,static,death,NA,5760,NA,NA,larvae,28.1,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Catostomidae,Catostomus commersonii,Greenwood Lake Michigan Michigan US,43.22,-86.35,Freshwater,experimental,15.8,NA,NA,static,death,NA,1440,NA,NA,larvae,30.7,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Catostomidae,Catostomus commersonii,Greenwood Lake Michigan Michigan US,43.22,-86.35,Freshwater,experimental,15.8,NA,NA,static,death,NA,2880,NA,NA,larvae,30.7,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Catostomidae,Catostomus commersonii,Greenwood Lake Michigan Michigan US,43.22,-86.35,Freshwater,experimental,15.8,NA,NA,static,death,NA,5760,NA,NA,larvae,30.7,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Catostomidae,Catostomus commersonii,Greenwood Lake Michigan Michigan US,43.22,-86.35,Freshwater,experimental,21.1,NA,NA,static,death,NA,1440,NA,NA,larvae,32,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Catostomidae,Catostomus commersonii,Greenwood Lake Michigan Michigan US,43.22,-86.35,Freshwater,experimental,21.1,NA,NA,static,death,NA,2880,NA,NA,larvae,32,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Catostomidae,Catostomus commersonii,Greenwood Lake Michigan Michigan US,43.22,-86.35,Freshwater,experimental,21.1,NA,NA,static,death,NA,5760,NA,NA,larvae,30.5,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Catostomidae,Catostomus commersonii,Minessota US,46.78,-94.7,Freshwater,experimental,26,NA,NA,static,death,NA,5760,NA,NA,larvae,30.5,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Catostomidae,Catostomus commersonii,Minessota US,46.78,-94.7,Freshwater,experimental,26,NA,NA,static,death,NA,5760,NA,NA,juveniles,32.5,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Catostomidae,Catostomus commersonii,British Columbia Canada,54.61,-124.91,Freshwater,experimental,23,NA,NA,dynamic,NA,NA,NA,NA,NA,larvae,37,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Catostomidae,Catostomus commersonii,British Columbia Canada,54.61,-124.91,Freshwater,experimental,28,NA,NA,dynamic,death,NA,NA,NA,NA,juveniles,40.6,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Catostomidae,Catostomus commersonii,Lake Erie,42.08,-81.34,Freshwater,experimental,5,NA,NA,static,death,NA,NA,NA,NA,NA,26.3,NA,NA,yes,Freshwater,Spotila et al. 1979,186
+Catostomidae,Catostomus commersonii,Lake Erie,42.08,-81.34,Freshwater,experimental,10,NA,NA,static,death,NA,NA,NA,NA,NA,27.7,NA,NA,yes,Freshwater,Spotila et al. 1979,186
+Catostomidae,Catostomus commersonii,Lake Erie,42.08,-81.34,Freshwater,experimental,15,NA,NA,static,death,NA,NA,NA,NA,NA,29.3,NA,NA,yes,Freshwater,Spotila et al. 1979,186
+Catostomidae,Catostomus commersonii,Lake Erie,42.08,-81.34,Freshwater,experimental,20,NA,NA,static,death,NA,NA,NA,NA,NA,29.3,NA,NA,yes,Freshwater,Spotila et al. 1979,186
+Catostomidae,Catostomus commersonii,Lake Erie,42.08,-81.34,Freshwater,experimental,25,NA,NA,static,death,NA,NA,NA,NA,NA,29.3,NA,NA,yes,Freshwater,Spotila et al. 1979,186
+Catostomidae,Catostomus commersonii,Lake Erie,42.08,-81.34,Freshwater,collection,19,NA,NA,dynamic,LOE,NA,NA,NA,NA,NA,31.6,NA,NA,yes,Freshwater,Spotila et al. 1979,186
+Centrarchidae,Ambloplites rupestris,New River drainage US,36.94,-81.05,Freshwater,experimental,33,7,NA,static,death,NA,10080,50-100,NA,sub-adults,36,NA,10,yes,Freshwater,Cherry et al. 1977,39
+Centrarchidae,Ambloplites rupestris,Lake Erie,42.08,-81.34,Freshwater,collection,14.6,NA,NA,dynamic,LOE,NA,NA,NA,NA,adults,31.2,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Ambloplites rupestris,Lake Erie,42.08,-81.34,Freshwater,collection,23.5,NA,NA,dynamic,LOE,NA,NA,NA,NA,adults,36,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Lepomis cyanellus,NA,NA,NA,Freshwater,experimental,25,14,NA,dynamic,LOE,0.3,NA,30-70,NA,NA,37.4,0.88369939200000003,12,yes,Freshwater,Carveth et al. 2006,35
+Centrarchidae,Lepomis cyanellus,NA,NA,NA,Freshwater,experimental,30,14,NA,dynamic,LOE,0.3,NA,30-70,NA,NA,40.7,0.35347975700000001,12,yes,Freshwater,Carveth et al. 2006,35
+Centrarchidae,Lepomis cyanellus,NA,NA,NA,Freshwater,experimental,25,14,NA,dynamic,flaring operculum,0.3,NA,30-70,NA,NA,38.4,0.53021963500000002,12,yes,Freshwater,Carveth et al. 2006,35
+Centrarchidae,Lepomis cyanellus,NA,NA,NA,Freshwater,experimental,30,14,NA,dynamic,flaring operculum,0.3,NA,30-70,NA,NA,41.1,0.35347975700000001,12,yes,Freshwater,Carveth et al. 2006,35
+Centrarchidae,Lepomis cyanellus,NA,NA,NA,Freshwater,experimental,25,14,NA,dynamic,death,0.3,NA,30-70,NA,NA,39.3,0.35347975700000001,12,yes,Freshwater,Carveth et al. 2006,35
+Centrarchidae,Lepomis cyanellus,NA,NA,NA,Freshwater,experimental,30,14,NA,dynamic,death,0.3,NA,30-70,NA,NA,41.5,0.35347975700000001,12,yes,Freshwater,Carveth et al. 2006,35
+Centrarchidae,Lepomis cyanellus,NA,NA,NA,Freshwater,experimental,20,NA,NA,dynamic,LOE,0.3,NA,NA,NA,NA,35.8,0.69,9,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Lepomis cyanellus,New River drainage US,38.159999999999997,-81.2,Freshwater,experimental,26,NA,NA,dynamic,LOE,1.7000000000000001E-2,NA,NA,NA,NA,37.9,0.75,8,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Lepomis cyanellus,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,OS,1,NA,NA,NA,NA,34.18,2.05669638,15,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Centrarchidae,Lepomis cyanellus,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,LOE,1,NA,NA,NA,NA,31.09,1.4487926010000001,15,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Centrarchidae,Lepomis cyanellus,Brier Creek Oklahoma US,35.57,-97.63,Freshwater,experimental,15,NA,NA,dynamic,NA,NA,NA,NA,NA,adults,36.5,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Lepomis cyanellus,New River drainage US,38.159999999999997,-81.2,Freshwater,experimental,30,NA,NA,dynamic,NA,NA,NA,NA,NA,adults,35.4,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Lepomis gibbosus,Lake Erie,42.08,-81.34,Freshwater,collection,23.1,NA,NA,dynamic,LOE,NA,NA,NA,NA,juveniles,37.5,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Lepomis gibbosus,Washington state US,47.37,-120.26,Freshwater,experimental,10,14,1,dynamic,LOE,0.02,NA,NA,NA,NA,31.55,NA,24,yes,Freshwater,Becker & Genoway 1979,10
+Centrarchidae,Lepomis gibbosus,Washington state US,47.37,-120.26,Freshwater,experimental,20,14,1,dynamic,LOE,0.02,NA,NA,NA,NA,35.3,NA,24,yes,Freshwater,Becker & Genoway 1979,10
+Centrarchidae,Lepomis gibbosus,Washington state US,47.37,-120.26,Freshwater,experimental,10,14,1,dynamic,LOE,0.1,NA,NA,NA,NA,29.53,NA,24,yes,Freshwater,Becker & Genoway 1979,10
+Centrarchidae,Lepomis gibbosus,Washington state US,47.37,-120.26,Freshwater,experimental,20,14,1,dynamic,LOE,0.1,NA,NA,NA,NA,35.06,NA,24,yes,Freshwater,Becker & Genoway 1979,10
+Centrarchidae,Lepomis gibbosus,Washington state US,47.37,-120.26,Freshwater,experimental,10,14,1,dynamic,LOE,0.3,NA,NA,NA,NA,30.07,0.77,24,yes,Freshwater,Becker & Genoway 1979,10
+Centrarchidae,Lepomis gibbosus,Washington state US,47.37,-120.26,Freshwater,experimental,20,14,1,dynamic,LOE,0.3,NA,NA,NA,NA,35.06,0.95,24,yes,Freshwater,Becker & Genoway 1979,10
+Centrarchidae,Lepomis gibbosus,Washington state US,47.37,-120.26,Freshwater,experimental,10,14,1,dynamic,LOE,0.5,NA,NA,NA,NA,30.37,NA,24,yes,Freshwater,Becker & Genoway 1979,10
+Centrarchidae,Lepomis gibbosus,Washington state US,47.37,-120.26,Freshwater,experimental,20,14,1,dynamic,LOE,0.5,NA,NA,NA,NA,35.16,NA,24,yes,Freshwater,Becker & Genoway 1979,10
+Centrarchidae,Lepomis gibbosus,Washington state US,47.37,-120.26,Freshwater,experimental,10,14,1,dynamic,LOE,1,NA,NA,NA,NA,31.43,NA,32,yes,Freshwater,Becker & Genoway 1979,10
+Centrarchidae,Lepomis gibbosus,Washington state US,47.37,-120.26,Freshwater,experimental,20,14,1,dynamic,LOE,1,NA,NA,NA,NA,36.56,NA,32,yes,Freshwater,Becker & Genoway 1979,10
+Centrarchidae,Lepomis gibbosus,Washington state US,47.37,-120.26,Freshwater,experimental,10,14,1,dynamic,death,0.02,NA,NA,NA,NA,31.61,NA,24,yes,Freshwater,Becker & Genoway 1979,10
+Centrarchidae,Lepomis gibbosus,Washington state US,47.37,-120.26,Freshwater,experimental,20,14,1,dynamic,death,0.02,NA,NA,NA,NA,36.81,NA,24,yes,Freshwater,Becker & Genoway 1979,10
+Centrarchidae,Lepomis gibbosus,Washington state US,47.37,-120.26,Freshwater,experimental,10,14,1,dynamic,death,0.1,NA,NA,NA,NA,30.51,NA,24,yes,Freshwater,Becker & Genoway 1979,10
+Centrarchidae,Lepomis gibbosus,Washington state US,47.37,-120.26,Freshwater,experimental,20,14,1,dynamic,death,0.1,NA,NA,NA,NA,36.03,NA,24,yes,Freshwater,Becker & Genoway 1979,10
+Centrarchidae,Lepomis gibbosus,Washington state US,47.37,-120.26,Freshwater,experimental,10,14,1,dynamic,death,0.3,NA,NA,NA,NA,31.86,NA,24,yes,Freshwater,Becker & Genoway 1979,10
+Centrarchidae,Lepomis gibbosus,Washington state US,47.37,-120.26,Freshwater,experimental,20,14,1,dynamic,death,0.3,NA,NA,NA,NA,35.64,NA,24,yes,Freshwater,Becker & Genoway 1979,10
+Centrarchidae,Lepomis gibbosus,Washington state US,47.37,-120.26,Freshwater,experimental,10,14,1,dynamic,death,0.5,NA,NA,NA,NA,32.63,NA,24,yes,Freshwater,Becker & Genoway 1979,10
+Centrarchidae,Lepomis gibbosus,Washington state US,47.37,-120.26,Freshwater,experimental,20,14,1,dynamic,death,0.5,NA,NA,NA,NA,36.88,NA,24,yes,Freshwater,Becker & Genoway 1979,10
+Centrarchidae,Lepomis gibbosus,Washington state US,47.37,-120.26,Freshwater,experimental,10,14,1,dynamic,death,1,NA,NA,NA,NA,32.87,NA,32,yes,Freshwater,Becker & Genoway 1979,10
+Centrarchidae,Lepomis gibbosus,Washington state US,47.37,-120.26,Freshwater,experimental,20,14,1,dynamic,death,1,NA,NA,NA,NA,38.12,NA,32,yes,Freshwater,Becker & Genoway 1979,10
+Centrarchidae,Lepomis macrochirus,NA,NA,NA,Freshwater,experimental,25,14,NA,dynamic,LOE,0.3,NA,30-70,NA,NA,35.8,0.70695951300000004,12,yes,Freshwater,Carveth et al. 2006,35
+Centrarchidae,Lepomis macrochirus,NA,NA,NA,Freshwater,experimental,30,14,NA,dynamic,LOE,0.3,NA,30-70,NA,NA,39.1,0.70695951300000004,12,yes,Freshwater,Carveth et al. 2006,35
+Centrarchidae,Lepomis macrochirus,NA,NA,NA,Freshwater,experimental,25,14,NA,dynamic,flaring operculum,0.3,NA,30-70,NA,NA,37.2,0.70695951300000004,12,yes,Freshwater,Carveth et al. 2006,35
+Centrarchidae,Lepomis macrochirus,NA,NA,NA,Freshwater,experimental,30,14,NA,dynamic,flaring operculum,0.3,NA,30-70,NA,NA,39.4,0.35347975700000001,12,yes,Freshwater,Carveth et al. 2006,35
+Centrarchidae,Lepomis macrochirus,NA,NA,NA,Freshwater,experimental,25,14,NA,dynamic,death,0.3,NA,30-70,NA,NA,37.3,0.53021963500000002,12,yes,Freshwater,Carveth et al. 2006,35
+Centrarchidae,Lepomis macrochirus,NA,NA,NA,Freshwater,experimental,30,14,NA,dynamic,death,0.3,NA,30-70,NA,NA,39.6,0.35347975700000001,12,yes,Freshwater,Carveth et al. 2006,35
+Centrarchidae,Lepomis macrochirus,New River drainage US,36.94,-81.05,Freshwater,experimental,33,7,NA,static,death,NA,10080,50-100,NA,sub-adults,36,NA,10,yes,Freshwater,Cherry et al. 1977,39
+Centrarchidae,Lepomis macrochirus,NA,NA,NA,Freshwater,experimental,26,NA,NA,dynamic,LOE,0.1,NA,NA,NA,NA,36.6,NA,30,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Lepomis macrochirus,NA,NA,NA,Freshwater,experimental,26,NA,NA,dynamic,LOE,0.5,NA,NA,NA,NA,37.5,NA,30,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Lepomis macrochirus,NA,NA,NA,Freshwater,experimental,26,NA,NA,dynamic,LOE,1,NA,NA,NA,NA,37.9,NA,30,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Lepomis macrochirus,Pond C Arizona US,34.18,-111.71,Freshwater,experimental,16,NA,NA,dynamic,LOE,1,NA,NA,NA,NA,31.5,NA,9,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Lepomis macrochirus,Pond C Arizona US,34.18,-111.71,Freshwater,experimental,24,NA,NA,dynamic,LOE,1,NA,NA,NA,NA,37.5,NA,10,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Lepomis macrochirus,Pond C Arizona US,34.18,-111.71,Freshwater,experimental,32,NA,NA,dynamic,LOE,1,NA,NA,NA,NA,41.4,NA,10,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Lepomis macrochirus,Par pond Arizona US,34.18,-111.71,Freshwater,experimental,16,NA,NA,dynamic,LOE,1,NA,NA,NA,NA,31.4,NA,8,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Lepomis macrochirus,Par pond Arizona US,34.18,-111.71,Freshwater,experimental,24,NA,NA,dynamic,LOE,1,NA,NA,NA,NA,35.6,NA,10,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Lepomis macrochirus,Par pond Arizona US,34.18,-111.71,Freshwater,experimental,32,NA,NA,dynamic,LOE,1,NA,NA,NA,NA,38.5,NA,10,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Lepomis macrochirus,NA,NA,NA,Freshwater,experimental,26,NA,NA,dynamic,LOE,1.7000000000000001E-2,NA,NA,NA,NA,37.9,0.68,8,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Lepomis macrochirus,Welaka Florida US,29.48,-81.680000000000007,Freshwater,experimental,15,NA,NA,static,death,NA,5760,NA,NA,NA,30.7,NA,NA,yes,Freshwater,Hart 1952,84
+Centrarchidae,Lepomis macrochirus,Welaka Florida US,29.48,-81.680000000000007,Freshwater,experimental,20,NA,NA,static,death,NA,5760,NA,NA,NA,31.5,NA,NA,yes,Freshwater,Hart 1952,84
+Centrarchidae,Lepomis macrochirus,Welaka Florida US,29.48,-81.680000000000007,Freshwater,experimental,30,NA,NA,static,death,NA,5760,NA,NA,NA,33.8,NA,NA,yes,Freshwater,Hart 1952,84
+Centrarchidae,Lepomis macrochirus,Mississippi River US,38.340000000000003,-90.37,Freshwater,collection,31,NA,NA,static,death,7.0000000000000007E-2,2880,44.8,1,juveniles,28.5,NA,20,yes,Freshwater,Cvancara et al. 1977,49
+Centrarchidae,Lepomis macrochirus,Private pond Arizona,34.18,-111.71,Freshwater,experimental,25,14,1,dynamic,death,1,NA,40,NA,juveniles,37.3,NA,13,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Private pond Arizona,34.18,-111.71,Freshwater,experimental,30,14,1,dynamic,death,1,NA,40,NA,juveniles,39.4,NA,16,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Private pond Arizona,34.18,-111.71,Freshwater,experimental,35,14,1,dynamic,death,1,NA,40,NA,juveniles,41.9,NA,11,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Private pond Arizona,34.18,-111.71,Freshwater,experimental,25,14,1,dynamic,LOE,1,NA,40,NA,juveniles,36.8,NA,13,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Private pond Arizona,34.18,-111.71,Freshwater,experimental,30,14,1,dynamic,LOE,1,NA,40,NA,juveniles,38.8,NA,16,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Private pond Arizona,34.18,-111.71,Freshwater,experimental,35,14,1,dynamic,LOE,1,NA,40,NA,juveniles,40.4,NA,11,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Par Pond Hot end Arizona US,34.18,-111.71,Freshwater,experimental,25,14,1,dynamic,death,1,NA,40,NA,juveniles,37.6,NA,25,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Par Pond Hot end Arizona US,34.18,-111.71,Freshwater,experimental,30,14,1,dynamic,death,1,NA,40,NA,juveniles,39.1,NA,18,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Par Pond Hot end Arizona US,34.18,-111.71,Freshwater,experimental,35,14,1,dynamic,death,1,NA,40,NA,juveniles,42.4,NA,6,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Par Pond Hot end Arizona US,34.18,-111.71,Freshwater,experimental,25,14,1,dynamic,LOE,1,NA,40,NA,juveniles,36.7,NA,25,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Par Pond Hot end Arizona US,34.18,-111.71,Freshwater,experimental,30,14,1,dynamic,LOE,1,NA,40,NA,juveniles,38,NA,18,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Par Pond Hot end Arizona US,34.18,-111.71,Freshwater,experimental,35,14,1,dynamic,LOE,1,NA,40,NA,juveniles,40.9,NA,6,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Par Pond Cold end Arizona US,34.18,-111.71,Freshwater,experimental,25,14,1,dynamic,death,1,NA,40,NA,juveniles,37,NA,15,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Par Pond Cold end Arizona US,34.18,-111.71,Freshwater,experimental,30,14,1,dynamic,death,1,NA,40,NA,juveniles,39,NA,26,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Par Pond Cold end Arizona US,34.18,-111.71,Freshwater,experimental,35,14,1,dynamic,death,1,NA,40,NA,juveniles,42.4,NA,6,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Par Pond Cold end Arizona US,34.18,-111.71,Freshwater,experimental,25,14,1,dynamic,LOE,1,NA,40,NA,juveniles,36.3,NA,15,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Par Pond Cold end Arizona US,34.18,-111.71,Freshwater,experimental,30,14,1,dynamic,LOE,1,NA,40,NA,juveniles,37.4,NA,26,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Par Pond Cold end Arizona US,34.18,-111.71,Freshwater,experimental,35,14,1,dynamic,LOE,1,NA,40,NA,juveniles,40.9,NA,6,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Pond C Arizona US,34.18,-111.71,Freshwater,experimental,25,14,1,dynamic,death,1,NA,40,NA,juveniles,39.1,NA,36,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Pond C Arizona US,34.18,-111.71,Freshwater,experimental,30,14,1,dynamic,death,1,NA,40,NA,juveniles,40.9,NA,36,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Pond C Arizona US,34.18,-111.71,Freshwater,experimental,35,14,1,dynamic,death,1,NA,40,NA,juveniles,42.8,NA,31,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Pond C Arizona US,34.18,-111.71,Freshwater,experimental,25,14,1,dynamic,LOE,1,NA,40,NA,juveniles,37,NA,36,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Pond C Arizona US,34.18,-111.71,Freshwater,experimental,30,14,1,dynamic,LOE,1,NA,40,NA,juveniles,39.6,NA,36,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Pond C Arizona US,34.18,-111.71,Freshwater,experimental,35,14,1,dynamic,LOE,1,NA,40,NA,juveniles,41.4,NA,31,yes,Freshwater,Holland et al. 1974,93
+Centrarchidae,Lepomis macrochirus,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,OS,1,NA,NA,NA,NA,33.59,1.2041594579999999,84,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Centrarchidae,Lepomis macrochirus,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,LOE,1,NA,NA,NA,NA,30.38,1.6577092630000001,84,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Centrarchidae,Lepomis macrochirus,Brier Creek Oklahoma US,35.57,-97.63,Freshwater,experimental,15,NA,NA,dynamic,NA,NA,NA,NA,NA,adults,36.8,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Lepomis macrochirus,Lake Aplopka Florida US,28.62,-81.63,Freshwater,experimental,26,NA,NA,static,death,NA,5760,NA,NA,embryos,33.8,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Lepomis macrochirus,Lake Aplopka Florida US,28.62,-81.63,Freshwater,experimental,12.1,NA,NA,static,death,NA,5760,NA,NA,juveniles,27.5,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Lepomis macrochirus,Lake Aplopka Florida US,28.62,-81.63,Freshwater,experimental,19,NA,NA,static,death,NA,5760,NA,NA,juveniles,33,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Lepomis macrochirus,Lake Aplopka Florida US,28.62,-81.63,Freshwater,experimental,26,NA,NA,static,death,NA,5760,NA,NA,juveniles,36.1,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Lepomis macrochirus,Lake Aplopka Florida US,28.62,-81.63,Freshwater,experimental,32,NA,NA,static,death,NA,5760,NA,NA,juveniles,37.3,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Lepomis macrochirus,Muddy run Pond Pennsylvania,41.03,-75.47,Freshwater,experimental,27.2,NA,NA,static,death,NA,2880,NA,NA,adults,35.6,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Lepomis macrochirus,Conowingo Pond Georgia US,40.79,-80.47,Freshwater,experimental,1,NA,NA,static,death,NA,5760,NA,NA,adults,23.3,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Lepomis macrochirus,Conowingo Pond Georgia US,40.79,-80.47,Freshwater,experimental,13,NA,NA,static,death,NA,5760,NA,NA,adults,29.3,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Lepomis macrochirus,Conowingo Pond Georgia US,40.79,-80.47,Freshwater,experimental,27,NA,NA,static,death,NA,5760,NA,NA,adults,35.8,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Lepomis macrochirus,Conowingo Pond Georgia US,40.79,-80.47,Freshwater,experimental,1,NA,NA,dynamic,death,NA,NA,NA,NA,adults,23.5,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Lepomis macrochirus,Conowingo Pond Georgia US,40.79,-80.47,Freshwater,experimental,13,NA,NA,dynamic,death,NA,NA,NA,NA,adults,30,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Lepomis macrochirus,Conowingo Pond Georgia US,40.79,-80.47,Freshwater,experimental,27,NA,NA,dynamic,death,NA,NA,NA,NA,adults,36,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Lepomis macrochirus,Lake Erie,42.08,-81.34,Freshwater,collection,22.8,NA,NA,dynamic,LOE,NA,NA,NA,NA,adults,38.3,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Lepomis macrochirus,Texas US,31.45,-98.95,Freshwater,experimental,10,NA,NA,dynamic,NA,NA,NA,NA,NA,NA,34.8,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Lepomis macrochirus,Texas US,31.45,-98.95,Freshwater,experimental,20,NA,NA,dynamic,NA,NA,NA,NA,NA,NA,37.3,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Lepomis macrochirus,Texas US,31.45,-98.95,Freshwater,experimental,30,NA,NA,dynamic,NA,NA,NA,NA,NA,NA,41.2,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Lepomis macrochirus,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,21,NA,dynamic,LOE,1,NA,96,NA,NA,32.6242,1.8491888489999999,19.75,yes,Freshwater,Schaefer et al. 1999,172
+Centrarchidae,Lepomis macrochirus,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,21,NA,dynamic,OS,1,NA,96,NA,NA,36.1409,3.1019798519999999,19.75,yes,Freshwater,Schaefer et al. 1999,172
+Centrarchidae,Lepomis macrochirus,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,21,NA,dynamic,LOE,1,NA,96,NA,NA,30.1141,1.6700917310000001,19.75,yes,Freshwater,Schaefer et al. 1999,172
+Centrarchidae,Lepomis macrochirus,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,21,NA,dynamic,OS,1,NA,96,NA,NA,33.2685,0.83504586599999997,19.75,yes,Freshwater,Schaefer et al. 1999,172
+Centrarchidae,Lepomis megalotis,NA,NA,NA,Freshwater,experimental,26,NA,NA,dynamic,LOE,1.7000000000000001E-2,NA,NA,NA,NA,37.8,0.84,12,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Lepomis megalotis,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,OS,1,NA,NA,NA,NA,34.1,1.9872090979999999,59,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Centrarchidae,Lepomis megalotis,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,LOE,1,NA,NA,NA,NA,30.87,1.6192590899999999,59,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Centrarchidae,Lepomis megalotis,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,21,NA,dynamic,LOE,1,NA,102,NA,NA,31.604,2.2187333319999998,16.25,yes,Freshwater,Schaefer et al. 1999,172
+Centrarchidae,Lepomis megalotis,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,21,NA,dynamic,OS,1,NA,102,NA,NA,34.7047,3.2466711949999998,16.25,yes,Freshwater,Schaefer et al. 1999,172
+Centrarchidae,Lepomis megalotis,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,21,NA,dynamic,LOE,1,NA,102,NA,NA,29.9262,1.785386978,16.25,yes,Freshwater,Schaefer et al. 1999,172
+Centrarchidae,Lepomis megalotis,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,21,NA,dynamic,OS,1,NA,102,NA,NA,33.3356,1.9478414719999999,16.25,yes,Freshwater,Schaefer et al. 1999,172
+Centrarchidae,Micropterus dolomieu,New River drainage US,36.94,-81.05,Freshwater,experimental,33,7,NA,static,death,NA,10080,50-100,NA,sub-adults,35,NA,10,yes,Freshwater,Cherry et al. 1977,39
+Centrarchidae,Micropterus dolomieu,NA,NA,NA,Freshwater,experimental,26,NA,NA,dynamic,LOE,1.7000000000000001E-2,NA,NA,NA,NA,36.9,0.31,8,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Micropterus dolomieu,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,OS,1,NA,NA,NA,NA,34.8,NA,1,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Centrarchidae,Micropterus dolomieu,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,LOE,1,NA,NA,NA,NA,28.3,NA,1,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Centrarchidae,Micropterus dolomieu,Lake Erie,42.08,-81.34,Freshwater,collection,23.3,NA,NA,dynamic,LOE,NA,NA,NA,NA,adults,36.3,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Micropterus dolomieu,Lake Erie,42.08,-81.34,Freshwater,collection,23.3,NA,NA,dynamic,LOE,NA,NA,NA,NA,NA,36.3,NA,NA,yes,Freshwater,Spotila et al. 1979,186
+Centrarchidae,Micropterus punctulatus,New River drainage US,36.94,-81.05,Freshwater,experimental,33,7,NA,static,death,NA,10080,50-100,NA,sub-adults,36,NA,10,yes,Freshwater,Cherry et al. 1977,39
+Centrarchidae,Micropterus punctulatus,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,OS,1,NA,NA,NA,NA,34.22,0.57183913799999997,5,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Centrarchidae,Micropterus punctulatus,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,LOE,1,NA,NA,NA,NA,30.76,0.41593268700000002,5,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Centrarchidae,Micropterus salmoides,NA,NA,NA,Freshwater,experimental,25,14,NA,dynamic,LOE,0.3,NA,30-70,NA,NA,37.8,0.53021963500000002,12,yes,Freshwater,Carveth et al. 2006,35
+Centrarchidae,Micropterus salmoides,NA,NA,NA,Freshwater,experimental,25,14,NA,dynamic,flaring operculum,0.3,NA,30-70,NA,NA,38.8,0.70695951300000004,12,yes,Freshwater,Carveth et al. 2006,35
+Centrarchidae,Micropterus salmoides,NA,NA,NA,Freshwater,experimental,25,14,NA,dynamic,death,0.3,NA,30-70,NA,NA,39.1,0.70695951300000004,12,yes,Freshwater,Carveth et al. 2006,35
+Centrarchidae,Micropterus salmoides,Arizona US,34.18,-111.71,Freshwater,experimental,20,NA,NA,dynamic,LOE,1,NA,NA,NA,NA,36.7,0.76,40,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Micropterus salmoides,Arizona US,34.18,-111.71,Freshwater,experimental,28,NA,NA,dynamic,LOE,1,NA,NA,NA,NA,40.1,1.33,40,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Micropterus salmoides,NA,NA,NA,Freshwater,experimental,26,NA,NA,dynamic,LOE,1.7000000000000001E-2,NA,NA,NA,NA,36.3,0.6,10,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Micropterus salmoides,Bone Lake Wisconsin US,45.55,-92.39,Freshwater,experimental,8,NA,NA,dynamic,death,0.2,NA,NA,NA,juveniles,29.2,1.36,10,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Micropterus salmoides,Bone Lake Wisconsin US,45.55,-92.39,Freshwater,experimental,16,NA,NA,dynamic,death,0.2,NA,NA,NA,juveniles,33.6,0.87,10,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Micropterus salmoides,Bone Lake Wisconsin US,45.55,-92.39,Freshwater,experimental,24,NA,NA,dynamic,death,0.2,NA,NA,NA,juveniles,36.5,0.51,10,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Micropterus salmoides,Bone Lake Wisconsin US,45.55,-92.39,Freshwater,experimental,32,NA,NA,dynamic,death,0.2,NA,NA,NA,juveniles,40.9,0.4,10,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Micropterus salmoides,Connerville Johnston County Oklahoma US,34.450000000000003,-96.64,Freshwater,experimental,20,20,NA,dynamic,LOE,0.3,NA,100,15,juveniles,35.4,0.47,10,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Micropterus salmoides,Connerville Johnston County Oklahoma US,34.450000000000003,-96.64,Freshwater,experimental,25,20,NA,dynamic,LOE,0.3,NA,100,15,juveniles,36.7,0.59,10,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Micropterus salmoides,Connerville Johnston County Oklahoma US,34.450000000000003,-96.64,Freshwater,experimental,30,20,NA,dynamic,LOE,0.3,NA,100,15,juveniles,38.5,0.34,10,yes,Freshwater,Beitinger et al. 2000,12
+Centrarchidae,Micropterus salmoides,Put-in Bay Ohio US,41.65,-82.83,Freshwater,experimental,20,NA,NA,static,death,NA,5760,NA,NA,NA,32.5,NA,NA,yes,Freshwater,Hart 1952,84
+Centrarchidae,Micropterus salmoides,Put-in Bay Ohio US,41.65,-82.83,Freshwater,experimental,25,NA,NA,static,death,NA,5760,NA,NA,NA,34.5,NA,NA,yes,Freshwater,Hart 1952,84
+Centrarchidae,Micropterus salmoides,Put-in Bay Ohio US,41.65,-82.83,Freshwater,experimental,30,NA,NA,static,death,NA,5760,NA,NA,NA,36.4,NA,NA,yes,Freshwater,Hart 1952,84
+Centrarchidae,Micropterus salmoides,Knoxville Tenesee US,35.96,-83.92,Freshwater,experimental,30,NA,NA,static,death,NA,5760,NA,NA,NA,36.4,NA,NA,yes,Freshwater,Hart 1952,84
+Centrarchidae,Micropterus salmoides,Welaka Florida US,29.48,-81.680000000000007,Freshwater,experimental,20,NA,NA,static,death,NA,5760,NA,NA,NA,31.8,NA,NA,yes,Freshwater,Hart 1952,84
+Centrarchidae,Micropterus salmoides,Welaka Florida US,29.48,-81.680000000000007,Freshwater,experimental,25,NA,NA,static,death,NA,5760,NA,NA,NA,32.7,NA,NA,yes,Freshwater,Hart 1952,84
+Centrarchidae,Micropterus salmoides,Welaka Florida US,29.48,-81.680000000000007,Freshwater,experimental,30,NA,NA,static,death,NA,5760,NA,NA,NA,33.7,NA,NA,yes,Freshwater,Hart 1952,84
+Centrarchidae,Micropterus salmoides,NA,NA,NA,Freshwater,experimental,20,NA,NA,static,death,NA,5760,NA,NA,NA,32.5,NA,NA,yes,Freshwater,Hart 1952,84
+Centrarchidae,Micropterus salmoides,Mississippi River US,38.340000000000003,-90.37,Freshwater,collection,31,NA,NA,static,death,7.0000000000000007E-2,2880,54.6,2.2999999999999998,juveniles,35.6,NA,20,yes,Freshwater,Cvancara et al. 1977,49
+Centrarchidae,Micropterus salmoides,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,OS,1,NA,NA,NA,NA,33.35,1.8971030550000001,17,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Centrarchidae,Micropterus salmoides,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,LOE,1,NA,NA,NA,NA,30.69,1.7711578130000001,17,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Centrarchidae,Micropterus salmoides,Lake Erie,42.08,-81.34,Freshwater,collection,0.7,NA,NA,dynamic,LOE,NA,NA,NA,NA,adults,12,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Micropterus salmoides,Minessota US,46.78,-94.7,Freshwater,experimental,20,NA,NA,static,death,NA,1440,NA,NA,fry,31.2,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Micropterus salmoides,Minessota US,46.78,-94.7,Freshwater,experimental,24,NA,NA,static,death,NA,1440,NA,NA,fry,32.4,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Micropterus salmoides,Minessota US,46.78,-94.7,Freshwater,experimental,27,NA,NA,static,death,NA,1440,NA,NA,fry,33,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Micropterus salmoides,Minessota US,46.78,-94.7,Freshwater,experimental,30,NA,NA,static,death,NA,1440,NA,NA,fry,31.7,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Micropterus salmoides,Minessota US,46.78,-94.7,Freshwater,experimental,20,NA,NA,static,death,NA,5760,NA,NA,fry,33.7,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Pomoxis nigromaculatus,Lake Erie,42.08,-81.34,Freshwater,collection,23.8,NA,NA,dynamic,LOE,NA,NA,NA,NA,adults,34.9,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Pomoxis nigromaculatus,Illinois US,40.200000000000003,-89.47,Freshwater,experimental,24,NA,NA,dynamic,NA,NA,NA,NA,NA,juveniles,35,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Pomoxis nigromaculatus,Illinois US,40.200000000000003,-89.47,Freshwater,experimental,30,NA,NA,dynamic,NA,NA,NA,NA,NA,juveniles,38,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Pomoxis nigromaculatus,Illinois US,40.200000000000003,-89.47,Freshwater,experimental,32,NA,NA,dynamic,NA,NA,NA,NA,NA,juveniles,40.39,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Centrarchidae,Pomoxis nigromaculatus,Minessota US,46.78,-94.7,Freshwater,experimental,7.2,NA,NA,dynamic,NA,NA,NA,NA,NA,NA,28.9,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Cyprinidae,Campostoma anomalum,New River drainage US,36.94,-81.05,Freshwater,experimental,30,7,NA,static,death,NA,10080,50-100,NA,sub-adults,31,NA,10,yes,Freshwater,Cherry et al. 1977,39
+Cyprinidae,Campostoma anomalum,NA,NA,NA,Freshwater,experimental,7.5,NA,NA,dynamic,LOE,1,NA,NA,NA,NA,28.8,0.74,10,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Campostoma anomalum,NA,NA,NA,Freshwater,experimental,23,NA,NA,dynamic,LOE,1,NA,NA,NA,NA,35.8,NA,8,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Campostoma anomalum,NA,NA,NA,Freshwater,experimental,26,NA,NA,dynamic,LOE,1.7000000000000001E-2,NA,NA,NA,NA,37.2,0.33,13,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Campostoma anomalum,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,OS,1,NA,NA,NA,NA,31.75,0.61725197399999998,18,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Cyprinidae,Campostoma anomalum,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,LOE,1,NA,NA,NA,NA,29.82,0.374165739,18,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Cyprinidae,Campostoma anomalum,Indian Creek Ohio US,39.97,-82.81,Freshwater,collection,24,NA,NA,dynamic,LOE,0.8,NA,65,NA,NA,37.7,0.8,6,yes,Freshwater,Mundahl 1990,140
+Cyprinidae,Chrosomus erythrogaster,NA,NA,NA,Freshwater,experimental,26,NA,NA,dynamic,LOE,1.7000000000000001E-2,NA,NA,NA,NA,35.9,0.42,12,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Chrosomus erythrogaster,Little Coyote Creek Colfax New Mexico US,36.159999999999997,-105.2,Freshwater,collection,21.5,NA,NA,dynamic,LOE,0.5,NA,NA,NA,NA,32.33,NA,70,yes,Freshwater,Scott 1987,174
+Cyprinidae,Chrosomus erythrogaster,Little Coyote Creek Colfax New Mexico US,36.159999999999997,-105.2,Freshwater,collection,10,NA,NA,dynamic,LOE,0.5,NA,NA,NA,NA,29.27,NA,70,yes,Freshwater,Scott 1987,174
+Cyprinidae,Chrosomus erythrogaster,Little Coyote Creek Colfax New Mexico US,36.159999999999997,-105.2,Freshwater,collection,0,NA,NA,dynamic,LOE,0.5,NA,NA,NA,NA,19.71,NA,70,yes,Freshwater,Scott 1987,174
+Cyprinidae,Chrosomus erythrogaster,Little Coyote Creek Colfax New Mexico US,36.159999999999997,-105.2,Freshwater,collection,1,NA,NA,dynamic,LOE,0.5,NA,NA,NA,NA,18.17,NA,70,yes,Freshwater,Scott 1987,174
+Cyprinidae,Chrosomus erythrogaster,Little Coyote Creek Colfax New Mexico US,36.159999999999997,-105.2,Freshwater,collection,0,NA,NA,dynamic,LOE,0.5,NA,NA,NA,NA,17.55,NA,70,yes,Freshwater,Scott 1987,174
+Cyprinidae,Chrosomus erythrogaster,Little Coyote Creek Colfax New Mexico US,36.159999999999997,-105.2,Freshwater,collection,19,NA,NA,dynamic,LOE,0.5,NA,NA,NA,NA,25.36,NA,70,yes,Freshwater,Scott 1987,174
+Cyprinidae,Chrosomus neogaeus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,20,NA,NA,dynamic,NA,NA,NA,NA,NA,NA,28.5,NA,NA,yes,Freshwater,Wismer & Christie 1987,211
+Cyprinidae,Chrosomus neogaeus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,15,NA,NA,static,death,NA,NA,NA,NA,NA,31,NA,NA,yes,Freshwater,Wismer & Christie 1987,211
+Cyprinidae,Chrosomus neogaeus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,22,NA,NA,static,death,NA,NA,NA,NA,NA,32.2,NA,NA,yes,Freshwater,Wismer & Christie 1987,211
+Cyprinidae,Chrosomus neogaeus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,25,NA,NA,static,death,NA,NA,NA,NA,NA,32.2,NA,NA,yes,Freshwater,Wismer & Christie 1987,211
+Cyprinidae,Chrosomus neogaeus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,9,NA,NA,static,death,NA,NA,NA,NA,NA,27,NA,NA,yes,Freshwater,Wismer & Christie 1987,211
+Cyprinidae,Chrosomus neogaeus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,15,NA,NA,static,death,NA,NA,NA,NA,NA,28,NA,NA,yes,Freshwater,Wismer & Christie 1987,211
+Cyprinidae,Chrosomus neogaeus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,19,NA,NA,static,death,NA,NA,NA,NA,NA,30.3,NA,NA,yes,Freshwater,Wismer & Christie 1987,211
+Cyprinidae,Chrosomus neogaeus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,25,NA,NA,static,death,NA,NA,NA,NA,NA,31.3,NA,NA,yes,Freshwater,Wismer & Christie 1987,211
+Cyprinidae,Cyprinella lutrensis,NA,NA,NA,Freshwater,experimental,25,14,NA,dynamic,LOE,0.3,NA,30-70,NA,NA,37.6,1.06043927,12,yes,Freshwater,Carveth et al. 2006,35
+Cyprinidae,Cyprinella lutrensis,NA,NA,NA,Freshwater,experimental,30,14,NA,dynamic,LOE,0.3,NA,30-70,NA,NA,40.4,1.06043927,12,yes,Freshwater,Carveth et al. 2006,35
+Cyprinidae,Cyprinella lutrensis,NA,NA,NA,Freshwater,experimental,25,14,NA,dynamic,flaring operculum,0.3,NA,30-70,NA,NA,39.3,0.17673987799999999,12,yes,Freshwater,Carveth et al. 2006,35
+Cyprinidae,Cyprinella lutrensis,NA,NA,NA,Freshwater,experimental,30,14,NA,dynamic,flaring operculum,0.3,NA,30-70,NA,NA,40.6,0.35347975700000001,12,yes,Freshwater,Carveth et al. 2006,35
+Cyprinidae,Cyprinella lutrensis,NA,NA,NA,Freshwater,experimental,25,14,NA,dynamic,death,0.3,NA,30-70,NA,NA,39.5,0.53021963500000002,12,yes,Freshwater,Carveth et al. 2006,35
+Cyprinidae,Cyprinella lutrensis,NA,NA,NA,Freshwater,experimental,30,14,NA,dynamic,death,0.3,NA,30-70,NA,NA,40.9,0.35347975700000001,12,yes,Freshwater,Carveth et al. 2006,35
+Cyprinidae,Cyprinella lutrensis,NA,NA,NA,Freshwater,experimental,22,NA,NA,dynamic,LOE,0.3,NA,NA,NA,NA,36.2,0.49,12,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Cyprinella lutrensis,NA,NA,NA,Freshwater,experimental,26,NA,NA,dynamic,LOE,1.7000000000000001E-2,NA,NA,NA,NA,38.1,0.42,11,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Cyprinella lutrensis,Virgin River Utha US,37.200000000000003,-113.26,Freshwater,experimental,10,14,NA,dynamic,LOE,0.24,NA,61.47,2.92,NA,30.1,1.05,6,yes,Freshwater,Deacon et al. 1987,56
+Cyprinidae,Cyprinella lutrensis,Virgin River Utha US,37.200000000000003,-113.26,Freshwater,experimental,15,14,NA,dynamic,LOE,0.24,NA,61.47,2.92,NA,33.07,0.59,6,yes,Freshwater,Deacon et al. 1987,56
+Cyprinidae,Cyprinella lutrensis,Virgin River Utha US,37.200000000000003,-113.26,Freshwater,experimental,25,14,NA,dynamic,LOE,0.24,NA,61.47,2.92,NA,38.8,0.71,6,yes,Freshwater,Deacon et al. 1987,56
+Cyprinidae,Cyprinella lutrensis,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,OS,1,NA,NA,NA,NA,34.04,0.89442719100000001,20,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Cyprinidae,Cyprinella lutrensis,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,LOE,1,NA,NA,NA,NA,30.7,1.00895986,20,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Cyprinidae,Cyprinella lutrensis,South Canadian River,34.86,-96.73,Freshwater,experimental,25,14,NA,dynamic,OS,NA,NA,NA,NA,NA,38.99,0.16,10,yes,Freshwater,Matthews & Maness 1979,129
+Cyprinidae,Cyprinella lutrensis,Brazos River Texas US,33.06,-101.04,Freshwater,experimental,25,28,1,dynamic,LOE,0.3,NA,NA,NA,NA,37.99,0.4,NA,yes,Freshwater,King et al. 1985,104
+Cyprinidae,Cyprinella lutrensis,Brazos River Texas US,33.06,-101.04,Freshwater,experimental,25,28,1,dynamic,LOE,0.3,NA,NA,NA,NA,36.47,0.8,NA,yes,Freshwater,King et al. 1985,104
+Cyprinidae,Cyprinella lutrensis,Brazos River Texas US,33.06,-101.04,Freshwater,experimental,25,28,1,dynamic,LOE,0.3,NA,NA,NA,NA,37.15,0.88,NA,yes,Freshwater,King et al. 1985,104
+Cyprinidae,Cyprinella lutrensis,Brazos River Texas US,33.06,-101.04,Freshwater,experimental,25,28,1,dynamic,LOE,0.3,NA,NA,NA,NA,37.8,0.2,NA,yes,Freshwater,King et al. 1985,104
+Cyprinidae,Cyprinella lutrensis,Brazos River Texas US,33.06,-101.04,Freshwater,experimental,25,28,1,dynamic,LOE,0.3,NA,NA,NA,NA,37.81,0.17,NA,yes,Freshwater,King et al. 1985,104
+Cyprinidae,Cyprinella lutrensis,Denton Creek Denton County Texas US,33.17,-97.32,Freshwater,experimental,30,14,NA,dynamic,LOE,0.33,NA,NA,NA,NA,39.65,0.23,10,yes,Freshwater,Rutledge & Beitinger 1989,168
+Cyprinidae,Cyprinella lutrensis,North Texas State University US,33.21,-97.15,Freshwater,experimental,20,7,NA,dynamic,LOE,0.3,NA,NA,NA,adults,35.0348,1.2522,11,yes,Freshwater,Carrier & Beitinger 1988,34
+Cyprinidae,Cyprinella lutrensis,Walnut Creek McClain County Oklahoma US,37.909999999999997,-122.06,Freshwater,experimental,15,7,NA,dynamic,OS,1,NA,NA,NA,NA,31.9638,0.93587405400000001,82,yes,Freshwater,Manness & Hutchison 1980,123
+Cyprinidae,Cyprinus carpio,Central Institute of Fisheries Education Mumbai India,19.14,72.819999999999993,Freshwater,experimental,25,30,NA,dynamic,LOE,0.3,NA,NA,NA,juveniles,39.7,0.75934181999999995,6,yes,Freshwater,Chatterjee et al. 2004,36
+Cyprinidae,Cyprinus carpio,Central Institute of Fisheries Education Mumbai India,19.14,72.819999999999993,Freshwater,experimental,30,30,NA,dynamic,LOE,0.3,NA,NA,NA,juveniles,40.6,0.171464282,6,yes,Freshwater,Chatterjee et al. 2004,36
+Cyprinidae,Cyprinus carpio,Central Institute of Fisheries Education Mumbai India,19.14,72.819999999999993,Freshwater,experimental,35,30,NA,dynamic,LOE,0.3,NA,NA,NA,juveniles,42.9,0.24494897400000001,6,yes,Freshwater,Chatterjee et al. 2004,36
+Cyprinidae,Cyprinus carpio,Central Institute of Fisheries Education Mumbai India,19.14,72.819999999999993,Freshwater,experimental,25,30,NA,dynamic,death,0.3,NA,NA,NA,juveniles,39.8,0.14696938500000001,6,yes,Freshwater,Chatterjee et al. 2004,36
+Cyprinidae,Cyprinus carpio,Central Institute of Fisheries Education Mumbai India,19.14,72.819999999999993,Freshwater,experimental,30,30,NA,dynamic,death,0.3,NA,NA,NA,juveniles,40.9,0.171464282,6,yes,Freshwater,Chatterjee et al. 2004,36
+Cyprinidae,Cyprinus carpio,Central Institute of Fisheries Education Mumbai India,19.14,72.819999999999993,Freshwater,experimental,35,30,NA,dynamic,death,0.3,NA,NA,NA,juveniles,42.9,9.7979590000000005E-2,6,yes,Freshwater,Chatterjee et al. 2004,36
+Cyprinidae,Cyprinus carpio,Institute of Biology of Inland Water Russia,55.71,37.57,Freshwater,experimental,5,10,NA,dynamic,LOE,6.6000000000000003E-2,NA,83.1,15.5,fingerlings juveniles,30.4,1.039230485,12,yes,Freshwater,Golovanov & Smirnov 2007,77
+Cyprinidae,Cyprinus carpio,Institute of Biology of Inland Water Russia,55.71,37.57,Freshwater,experimental,10,10,NA,dynamic,LOE,6.6000000000000003E-2,NA,95.6,20.100000000000001,fingerlings juveniles,26.5,0.69282032299999996,12,yes,Freshwater,Golovanov & Smirnov 2007,77
+Cyprinidae,Cyprinus carpio,Institute of Biology of Inland Water Russia,55.71,37.57,Freshwater,experimental,12,10,NA,dynamic,LOE,6.6000000000000003E-2,NA,68,9.8000000000000007,fingerlings juveniles,28.5,1.469693846,6,yes,Freshwater,Golovanov & Smirnov 2007,77
+Cyprinidae,Cyprinus carpio,Institute of Biology of Inland Water Russia,55.71,37.57,Freshwater,experimental,20,10,NA,dynamic,LOE,6.6000000000000003E-2,NA,77.400000000000006,12.7,fingerlings juveniles,37.4,0.24494897400000001,6,yes,Freshwater,Golovanov & Smirnov 2007,77
+Cyprinidae,Cyprinus carpio,Institute of Biology of Inland Water Russia,55.71,37.57,Freshwater,experimental,5,10,NA,dynamic,LOE,0.16600000000000001,NA,83.1,15.5,fingerlings juveniles,29.4,1.039230485,12,yes,Freshwater,Golovanov & Smirnov 2007,77
+Cyprinidae,Cyprinus carpio,Institute of Biology of Inland Water Russia,55.71,37.57,Freshwater,experimental,10,10,NA,dynamic,LOE,0.16600000000000001,NA,95.6,20.100000000000001,fingerlings juveniles,26.9,0.73484692299999999,6,yes,Freshwater,Golovanov & Smirnov 2007,77
+Cyprinidae,Cyprinus carpio,Institute of Biology of Inland Water Russia,55.71,37.57,Freshwater,experimental,12,10,NA,dynamic,LOE,0.16600000000000001,NA,68,9.8000000000000007,fingerlings juveniles,29.6,1.224744871,6,yes,Freshwater,Golovanov & Smirnov 2007,77
+Cyprinidae,Cyprinus carpio,Institute of Biology of Inland Water Russia,55.71,37.57,Freshwater,experimental,20,10,NA,dynamic,LOE,0.16600000000000001,NA,77.400000000000006,12.7,fingerlings juveniles,35.8,0.97979589700000003,6,yes,Freshwater,Golovanov & Smirnov 2007,77
+Cyprinidae,Cyprinus carpio,Institute of Biology of Inland Water Russia,55.71,37.57,Freshwater,experimental,5,10,NA,dynamic,LOE,0.3,NA,83.1,15.5,fingerlings juveniles,30.7,0.69282032299999996,12,yes,Freshwater,Golovanov & Smirnov 2007,77
+Cyprinidae,Cyprinus carpio,Institute of Biology of Inland Water Russia,55.71,37.57,Freshwater,experimental,10,10,NA,dynamic,LOE,0.3,NA,95.6,20.100000000000001,fingerlings juveniles,25.8,1.3856406459999999,12,yes,Freshwater,Golovanov & Smirnov 2007,77
+Cyprinidae,Cyprinus carpio,Institute of Biology of Inland Water Russia,55.71,37.57,Freshwater,experimental,12,10,NA,dynamic,LOE,0.3,NA,68,9.8000000000000007,fingerlings juveniles,30.4,1.224744871,6,yes,Freshwater,Golovanov & Smirnov 2007,77
+Cyprinidae,Cyprinus carpio,Institute of Biology of Inland Water Russia,55.71,37.57,Freshwater,experimental,20,10,NA,dynamic,LOE,0.3,NA,77.400000000000006,12.7,fingerlings juveniles,34.6,0.97979589700000003,6,yes,Freshwater,Golovanov & Smirnov 2007,77
+Cyprinidae,Cyprinus carpio,Institute of Biology of Inland Water Russia,55.71,37.57,Freshwater,experimental,5,10,NA,dynamic,LOE,0.5,NA,83.1,15.5,fingerlings juveniles,31.9,1.3856406459999999,12,yes,Freshwater,Golovanov & Smirnov 2007,77
+Cyprinidae,Cyprinus carpio,Institute of Biology of Inland Water Russia,55.71,37.57,Freshwater,experimental,10,10,NA,dynamic,LOE,0.5,NA,95.6,20.100000000000001,fingerlings juveniles,27,1.3856406459999999,12,yes,Freshwater,Golovanov & Smirnov 2007,77
+Cyprinidae,Cyprinus carpio,Institute of Biology of Inland Water Russia,55.71,37.57,Freshwater,experimental,12,10,NA,dynamic,LOE,0.5,NA,68,9.8000000000000007,fingerlings juveniles,30.9,0.73484692299999999,6,yes,Freshwater,Golovanov & Smirnov 2007,77
+Cyprinidae,Cyprinus carpio,Institute of Biology of Inland Water Russia,55.71,37.57,Freshwater,experimental,20,10,NA,dynamic,LOE,0.5,NA,77.400000000000006,12.7,fingerlings juveniles,35.6,0.73484692299999999,6,yes,Freshwater,Golovanov & Smirnov 2007,77
+Cyprinidae,Cyprinus carpio,Institute of Biology of Inland Water Russia,55.71,37.57,Freshwater,experimental,5,10,NA,dynamic,LOE,0.83,NA,83.1,15.5,fingerlings juveniles,30.9,0.69282032299999996,12,yes,Freshwater,Golovanov & Smirnov 2007,77
+Cyprinidae,Cyprinus carpio,Institute of Biology of Inland Water Russia,55.71,37.57,Freshwater,experimental,10,10,NA,dynamic,LOE,0.83,NA,95.6,20.100000000000001,fingerlings juveniles,27.9,0.69282032299999996,12,yes,Freshwater,Golovanov & Smirnov 2007,77
+Cyprinidae,Cyprinus carpio,Institute of Biology of Inland Water Russia,55.71,37.57,Freshwater,experimental,12,10,NA,dynamic,LOE,0.83,NA,68,9.8000000000000007,fingerlings juveniles,30.4,1.224744871,6,yes,Freshwater,Golovanov & Smirnov 2007,77
+Cyprinidae,Cyprinus carpio,Institute of Biology of Inland Water Russia,55.71,37.57,Freshwater,experimental,20,10,NA,dynamic,LOE,0.83,NA,77.400000000000006,12.7,fingerlings juveniles,36,0.97979589700000003,6,yes,Freshwater,Golovanov & Smirnov 2007,77
+Cyprinidae,Cyprinus carpio,Rybinsk Water Reservoir Russia,58.44,38.42,Freshwater,experimental,15,14,NA,dynamic,LOE,NA,NA,NA,NA,juveniles,35.6,0.1,NA,yes,Freshwater,Golovanov 2013,78
+Cyprinidae,Cyprinus carpio,Rybinsk Water Reservoir Russia,58.44,38.42,Freshwater,experimental,15,14,NA,dynamic,death,NA,NA,NA,NA,juveniles,36.5,0.2,NA,yes,Freshwater,Golovanov 2013,78
+Cyprinidae,Cyprinus carpio,Lake Erie,42.08,-81.34,Freshwater,collection,23.3,NA,NA,dynamic,LOE,NA,NA,NA,NA,adults,39,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Cyprinidae,Cyprinus carpio,Dahuofang reservoir Yingpan China,26.47,99.15,Freshwater,experimental,10,NA,NA,dynamic,LOE,0.3,NA,NA,NA,NA,31.48,0.11700000000000001,NA,yes,Freshwater,Sheng & Xu 2008,177
+Cyprinidae,Cyprinus carpio,Dahuofang reservoir Yingpan China,26.47,99.15,Freshwater,experimental,15,NA,NA,dynamic,LOE,0.3,NA,NA,NA,NA,33.86,0.14000000000000001,NA,yes,Freshwater,Sheng & Xu 2008,177
+Cyprinidae,Cyprinus carpio,Dahuofang reservoir Yingpan China,26.47,99.15,Freshwater,experimental,20,NA,NA,dynamic,LOE,0.3,NA,NA,NA,NA,34.18,0.154,NA,yes,Freshwater,Sheng & Xu 2008,177
+Cyprinidae,Cyprinus carpio,Dahuofang reservoir Yingpan China,26.47,99.15,Freshwater,experimental,25,NA,NA,dynamic,LOE,0.3,NA,NA,NA,NA,35,0.151,NA,yes,Freshwater,Sheng & Xu 2008,177
+Cyprinidae,Cyprinus carpio,Dahuofang reservoir Yingpan China,26.47,99.15,Freshwater,experimental,30,NA,NA,dynamic,LOE,0.3,NA,NA,NA,NA,35.62,0.151,NA,yes,Freshwater,Sheng & Xu 2008,177
+Cyprinidae,Cyprinus carpio,Dahuofang reservoir Yingpan China,26.47,99.15,Freshwater,experimental,35,NA,NA,dynamic,LOE,0.3,NA,NA,NA,NA,40.92,0.151,NA,yes,Freshwater,Sheng & Xu 2008,177
+Cyprinidae,Cyprinus carpio,Dahuofang reservoir Yingpan China,26.47,99.15,Freshwater,experimental,15,NA,NA,dynamic,OS,0.3,NA,NA,NA,NA,35.15,0.14199999999999999,NA,yes,Freshwater,Sheng & Xu 2008,177
+Cyprinidae,Cyprinus carpio,Dahuofang reservoir Yingpan China,26.47,99.15,Freshwater,experimental,20,NA,NA,dynamic,OS,0.3,NA,NA,NA,NA,37.82,0.156,NA,yes,Freshwater,Sheng & Xu 2008,177
+Cyprinidae,Cyprinus carpio,Dahuofang reservoir Yingpan China,26.47,99.15,Freshwater,experimental,25,NA,NA,dynamic,OS,0.3,NA,NA,NA,NA,39.33,0.151,NA,yes,Freshwater,Sheng & Xu 2008,177
+Cyprinidae,Cyprinus carpio,Dahuofang reservoir Yingpan China,26.47,99.15,Freshwater,experimental,30,NA,NA,dynamic,OS,0.3,NA,NA,NA,NA,41.65,0.151,NA,yes,Freshwater,Sheng & Xu 2008,177
+Cyprinidae,Cyprinus carpio,Dahuofang reservoir Yingpan China,26.47,99.15,Freshwater,experimental,35,NA,NA,dynamic,OS,0.3,NA,NA,NA,NA,42.69,0.151,NA,yes,Freshwater,Sheng & Xu 2008,177
+Cyprinidae,Cyprinus carpio,Dahuofang reservoir Yingpan China,26.47,99.15,Freshwater,experimental,10,NA,NA,static,death,0.3,NA,NA,NA,NA,28.3,NA,NA,yes,Freshwater,Sheng & Xu 2008,177
+Cyprinidae,Cyprinus carpio,Dahuofang reservoir Yingpan China,26.47,99.15,Freshwater,experimental,15,NA,NA,static,death,0.3,NA,NA,NA,NA,29.2,NA,NA,yes,Freshwater,Sheng & Xu 2008,177
+Cyprinidae,Cyprinus carpio,Dahuofang reservoir Yingpan China,26.47,99.15,Freshwater,experimental,20,NA,NA,static,death,0.3,NA,NA,NA,NA,33.5,NA,NA,yes,Freshwater,Sheng & Xu 2008,177
+Cyprinidae,Cyprinus carpio,Dahuofang reservoir Yingpan China,26.47,99.15,Freshwater,experimental,25,NA,NA,static,death,0.3,NA,NA,NA,NA,35.2,NA,NA,yes,Freshwater,Sheng & Xu 2008,177
+Cyprinidae,Cyprinus carpio,Dahuofang reservoir Yingpan China,26.47,99.15,Freshwater,experimental,30,NA,NA,static,death,0.3,NA,NA,NA,NA,37.2,NA,NA,yes,Freshwater,Sheng & Xu 2008,177
+Cyprinidae,Cyprinus carpio,Dahuofang reservoir Yingpan China,26.47,99.15,Freshwater,experimental,35,NA,NA,static,death,0.3,NA,NA,NA,NA,37.3,NA,NA,yes,Freshwater,Sheng & Xu 2008,177
+Cyprinidae,Cyprinus carpio,Lichenskie Lake Poland,52.34,18.350000000000001,Freshwater,collection,27.3,NA,NA,dynamic,death,0.03,NA,NA,NA,juveniles,40.6,0.55000000000000004,8,yes,Freshwater,Horoszewicz 1973,95
+Cyprinidae,Cyprinus carpio,Pohofelice Czech Republic,48.96,16.55,Freshwater,collection,26.7,NA,NA,dynamic,death,0.09,NA,NA,NA,juveniles,40.2,0.28000000000000003,10,yes,Freshwater,Horoszewicz 1973,95
+Cyprinidae,Cyprinus carpio,Pohofelice Czech Republic,48.96,16.55,Freshwater,collection,24.5,NA,NA,dynamic,death,0.09,NA,NA,NA,juveniles,39.7,0.15,10,yes,Freshwater,Horoszewicz 1973,95
+Cyprinidae,Cyprinus carpio,Pohofelice Czech Republic,48.96,16.55,Freshwater,collection,24.5,NA,NA,dynamic,death,0.1,NA,NA,NA,juveniles,40.9,0.41,10,yes,Freshwater,Horoszewicz 1973,95
+Cyprinidae,Luxilus cornutus,Missouri US,38.32,-92.54,Freshwater,experimental,26,NA,NA,dynamic,LOE,1.7000000000000001E-2,NA,NA,NA,NA,35.7,0.39,18,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Luxilus cornutus,NA,NA,NA,Freshwater,experimental,15,NA,NA,dynamic,OS,1,NA,NA,NA,NA,31.9,0.48,8,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Luxilus cornutus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,5,NA,NA,static,death,NA,5760,NA,NA,NA,26.7,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Luxilus cornutus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,10,NA,NA,static,death,NA,5760,NA,NA,NA,28.6,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Luxilus cornutus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,15,NA,NA,static,death,NA,5760,NA,NA,NA,30.3,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Luxilus cornutus,Knoxville Tenesee US,35.96,-83.92,Freshwater,experimental,25,NA,NA,static,death,NA,5760,NA,NA,NA,32.3,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Luxilus cornutus,NA,NA,NA,Freshwater,experimental,20,NA,NA,static,death,NA,5760,NA,NA,NA,31,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Luxilus cornutus,Buffalo creek Erie County New York US,42.6,-78.47,Freshwater,experimental,15,28,NA,dynamic,OS,1,NA,NA,NA,NA,31.9469,0.393387341,10,yes,Freshwater,Kowaski et al. 1978,108
+Cyprinidae,Luxilus cornutus,Buffalo creek Erie County New York US,42.6,-78.47,Freshwater,experimental,15,28,NA,dynamic,OS,1,NA,NA,NA,NA,30.6297,1.2432000000000001,16,yes,Freshwater,Kowaski et al. 1978,108
+Cyprinidae,Luxilus cornutus,Lake Opeongo Ontario Canada,45.73,-78.400000000000006,Freshwater,experimental,26,NA,NA,static,death,NA,720,NA,NA,juveniles,32,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Cyprinidae,Luxilus cornutus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,5,NA,NA,static,death,NA,1440,NA,NA,adults,26.7,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Cyprinidae,Luxilus cornutus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,10,NA,NA,static,death,NA,1440,NA,NA,adults,28.6,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Cyprinidae,Luxilus cornutus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,15,NA,NA,static,death,NA,1440,NA,NA,adults,30.3,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Cyprinidae,Luxilus cornutus,New York US,40.79,-73.91,Freshwater,collection,3.022659917,NA,NA,dynamic,NA,NA,NA,NA,NA,adults,30.6,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Cyprinidae,Luxilus cornutus,New York US,40.79,-73.91,Freshwater,collection,17.4273883,NA,NA,dynamic,NA,NA,NA,NA,NA,adults,31.9,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Cyprinidae,Luxilus cornutus,NA,NA,NA,Freshwater,NA,5,NA,NA,static,death,NA,NA,NA,NA,NA,26.7,NA,NA,yes,Freshwater,Brett 1956,26
+Cyprinidae,Luxilus cornutus,NA,NA,NA,Freshwater,NA,10,NA,NA,static,death,NA,NA,NA,NA,NA,28.6,NA,NA,yes,Freshwater,Brett 1956,26
+Cyprinidae,Luxilus cornutus,NA,NA,NA,Freshwater,NA,15,NA,NA,static,death,NA,NA,NA,NA,NA,30.3,NA,NA,yes,Freshwater,Brett 1956,26
+Cyprinidae,Luxilus cornutus,NA,NA,NA,Freshwater,NA,25,NA,NA,static,death,NA,NA,NA,NA,NA,31,NA,NA,yes,Freshwater,Brett 1956,26
+Cyprinidae,Luxilus cornutus,NA,NA,NA,Freshwater,NA,30,NA,NA,static,death,NA,NA,NA,NA,NA,31,NA,NA,yes,Freshwater,Brett 1956,26
+Cyprinidae,Notemigonus crysoleucas,NA,NA,NA,Freshwater,experimental,26,NA,NA,dynamic,LOE,1.7000000000000001E-2,NA,NA,NA,NA,36.8,0.37,8,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Notemigonus crysoleucas,Algonquin Park Ontario Canada,45.83,-78.42,Freshwater,experimental,10,NA,NA,static,death,NA,5760,NA,NA,NA,29.3,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Notemigonus crysoleucas,Algonquin Park Ontario Canada,45.83,-78.42,Freshwater,experimental,20,NA,NA,static,death,NA,5760,NA,NA,NA,31.8,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Notemigonus crysoleucas,Put-in Bay Ohio US,41.65,-82.83,Freshwater,experimental,20,NA,NA,static,death,NA,5760,NA,NA,NA,32.1,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Notemigonus crysoleucas,Put-in Bay Ohio US,41.65,-82.83,Freshwater,experimental,25,NA,NA,static,death,NA,5760,NA,NA,NA,33.7,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Notemigonus crysoleucas,Welaka Florida US,29.48,-81.680000000000007,Freshwater,experimental,15,NA,NA,static,death,NA,5760,NA,NA,NA,30.5,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Notemigonus crysoleucas,Welaka Florida US,29.48,-81.680000000000007,Freshwater,experimental,20,NA,NA,static,death,NA,5760,NA,NA,NA,31.9,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Notemigonus crysoleucas,Welaka Florida US,29.48,-81.680000000000007,Freshwater,experimental,25,NA,NA,static,death,NA,5760,NA,NA,NA,33.2,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Notemigonus crysoleucas,Welaka Florida US,29.48,-81.680000000000007,Freshwater,experimental,30,NA,NA,static,death,NA,5760,NA,NA,NA,34.7,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Notemigonus crysoleucas,NA,NA,NA,Freshwater,experimental,20,NA,NA,static,death,NA,5760,NA,NA,NA,32,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Notemigonus crysoleucas,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,OS,1,NA,NA,NA,NA,33.36,0.73484692299999999,28,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Cyprinidae,Notemigonus crysoleucas,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,LOE,1,NA,NA,NA,NA,29.13,1.6090369790000001,28,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Cyprinidae,Notropis atherinoides,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,25,NA,NA,static,death,NA,5760,NA,NA,NA,30.7,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Notropis atherinoides,Put-in Bay Ohio US,41.65,-82.83,Freshwater,experimental,25,NA,NA,static,death,NA,5760,NA,NA,NA,30.7,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Notropis atherinoides,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,OS,1,NA,NA,NA,NA,34.1,0.65498091599999997,8,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Cyprinidae,Notropis atherinoides,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,LOE,1,NA,NA,NA,NA,30.1,0.90388052299999999,8,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Cyprinidae,Notropis atherinoides,South Canadian River,34.86,-96.73,Freshwater,experimental,25,14,NA,dynamic,OS,NA,NA,NA,NA,NA,37.65,0.40100000000000002,10,yes,Freshwater,Matthews & Maness 1979,129
+Cyprinidae,Notropis atherinoides,Lake superior Minessota US,47.29,-89.98,Freshwater,experimental,20,NA,NA,static,death,NA,5760,NA,NA,juveniles,35.2,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Cyprinidae,Notropis atherinoides,Lake Erie,42.08,-81.34,Freshwater,experimental,25,NA,NA,static,death,NA,5760,NA,NA,adults,32.6,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Cyprinidae,Notropis atherinoides,Lake Erie,42.08,-81.34,Freshwater,collection,10.5,NA,NA,dynamic,LOE,NA,NA,NA,NA,adults,27.1,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Cyprinidae,Notropis atherinoides,Lake Erie,42.08,-81.34,Freshwater,collection,7.8,NA,NA,dynamic,LOE,NA,NA,NA,NA,adults,28.6,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Cyprinidae,Notropis atherinoides,Arkansas US,34.950000000000003,-92.49,Freshwater,experimental,15,NA,NA,dynamic,NA,NA,NA,NA,NA,adults,34.5,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Cyprinidae,Notropis atherinoides,Lake Erie,42.08,-81.34,Freshwater,experimental,5,NA,NA,static,death,NA,NA,NA,NA,NA,23.2,NA,NA,yes,Freshwater,Spotila et al. 1979,186
+Cyprinidae,Notropis atherinoides,Lake Erie,42.08,-81.34,Freshwater,experimental,10,NA,NA,static,death,NA,NA,NA,NA,NA,26.7,NA,NA,yes,Freshwater,Spotila et al. 1979,186
+Cyprinidae,Notropis atherinoides,Lake Erie,42.08,-81.34,Freshwater,experimental,15,NA,NA,static,death,NA,NA,NA,NA,NA,28.9,NA,NA,yes,Freshwater,Spotila et al. 1979,186
+Cyprinidae,Notropis atherinoides,Lake Erie,42.08,-81.34,Freshwater,experimental,20,NA,NA,static,death,NA,NA,NA,NA,NA,30.7,NA,NA,yes,Freshwater,Spotila et al. 1979,186
+Cyprinidae,Notropis atherinoides,Lake Erie,42.08,-81.34,Freshwater,experimental,25,NA,NA,static,death,NA,NA,NA,NA,NA,30.7,NA,NA,yes,Freshwater,Spotila et al. 1979,186
+Cyprinidae,Notropis stramineus,NA,NA,NA,Freshwater,experimental,26,NA,NA,dynamic,LOE,1.7000000000000001E-2,NA,NA,NA,NA,37,0.27,6,no,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Notropis stramineus,Buffalo creek Erie County New York US,42.6,-78.47,Freshwater,experimental,15,28,NA,dynamic,OS,1,NA,NA,NA,NA,33.0433,0.33425274900000002,10,no,Freshwater,Kowaski et al. 1978,108
+Cyprinidae,Notropis stramineus,Buffalo creek Erie County New York US,42.6,-78.47,Freshwater,experimental,15,28,NA,dynamic,OS,1,NA,NA,NA,NA,33.0002,0.73192690900000001,13,no,Freshwater,Kowaski et al. 1978,108
+Cyprinidae,Notropis stramineus,Buffalo creek Erie County New York US,42.6,-78.47,Freshwater,experimental,15,28,NA,dynamic,OS,1,NA,NA,NA,NA,32.2983,0.38548164699999998,10,no,Freshwater,Kowaski et al. 1978,108
+Cyprinidae,Notropis stramineus,Buffalo creek Erie County New York US,42.6,-78.47,Freshwater,experimental,15,28,NA,dynamic,OS,1,NA,NA,NA,NA,32.3281,0.58633294300000005,18,no,Freshwater,Kowaski et al. 1978,108
+Cyprinidae,Phenacobius mirabilis,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,OS,1,NA,NA,NA,NA,33.35,0.48579831200000001,2,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Cyprinidae,Phenacobius mirabilis,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,LOE,1,NA,NA,NA,NA,30.45,0.77781745899999999,2,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Cyprinidae,Pimephales notatus,New River drainage US,36.94,-81.05,Freshwater,experimental,30,7,NA,static,death,NA,10080,50-100,NA,sub-adults,32,NA,10,yes,Freshwater,Cherry et al. 1977,39
+Cyprinidae,Pimephales notatus,Dicks Creek Ohio US,38.549999999999997,-82.48,Freshwater,collection,11,NA,NA,dynamic,LOE,1,NA,NA,NA,adults,31.3,1.1000000000000001,9,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Pimephales notatus,NA,NA,NA,Freshwater,experimental,26,NA,NA,dynamic,LOE,1.7000000000000001E-2,NA,NA,NA,NA,36.6,0.48,16,yes,Freshwater,Beitinger et al. 2000,12
+Cyprinidae,Pimephales notatus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,20,NA,NA,static,death,NA,5760,NA,NA,NA,31.7,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Pimephales notatus,Put-in Bay Ohio US,41.65,-82.83,Freshwater,experimental,20,NA,NA,static,death,NA,5760,NA,NA,NA,32.7,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Pimephales notatus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,25,NA,NA,static,death,NA,5760,NA,NA,NA,33.3,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Pimephales notatus,Put-in Bay Ohio US,41.65,-82.83,Freshwater,experimental,25,NA,NA,static,death,NA,5760,NA,NA,NA,34,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Pimephales notatus,NA,NA,NA,Freshwater,experimental,20,NA,NA,static,death,NA,5760,NA,NA,NA,32.7,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Pimephales notatus,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,OS,1,NA,NA,NA,NA,33.7,0.48579831200000001,29,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Cyprinidae,Pimephales notatus,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,LOE,1,NA,NA,NA,NA,29.32,0.97570487299999997,29,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Cyprinidae,Pimephales notatus,Indian Creek Ohio US,39.97,-82.81,Freshwater,collection,24,NA,NA,dynamic,LOE,0.8,NA,60,NA,NA,37.9,0.5,10,yes,Freshwater,Mundahl 1990,140
+Cyprinidae,Pimephales notatus,Buffalo creek Erie County New York US,42.6,-78.47,Freshwater,experimental,15,28,NA,dynamic,OS,1,NA,NA,NA,NA,31.9,0.57885138000000003,12,yes,Freshwater,Kowaski et al. 1978,108
+Cyprinidae,Pimephales notatus,Lake Erie,42.08,-81.34,Freshwater,collection,6,NA,NA,dynamic,LOE,NA,NA,NA,NA,adults,27.8,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Cyprinidae,Pimephales notatus,Maryland US,39.53,-76.77,Freshwater,experimental,6,NA,NA,dynamic,death,NA,NA,NA,NA,adults,31.9,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Cyprinidae,Pimephales notatus,Maryland US,39.53,-76.77,Freshwater,experimental,12,NA,NA,dynamic,death,NA,NA,NA,NA,adults,27,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Cyprinidae,Pimephales notatus,Maryland US,39.53,-76.77,Freshwater,experimental,18,NA,NA,dynamic,death,NA,NA,NA,NA,adults,33.1,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Cyprinidae,Pimephales notatus,Maryland US,39.53,-76.77,Freshwater,experimental,24,NA,NA,dynamic,death,NA,NA,NA,NA,adults,33.1,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Cyprinidae,Pimephales notatus,Maryland US,39.53,-76.77,Freshwater,experimental,30,NA,NA,dynamic,death,NA,NA,NA,NA,adults,32,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Cyprinidae,Pimephales vigilax,Denton Creek Denton County Texas US,33.17,-97.32,Freshwater,experimental,30,14,NA,dynamic,LOE,0.33,NA,NA,NA,NA,39.32,0.25,10,yes,Freshwater,Rutledge & Beitinger 1989,168
+Cyprinidae,Semotilus atromaculatus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,25,NA,NA,static,death,NA,5760,NA,NA,NA,30.3,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Semotilus atromaculatus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,25,NA,NA,static,death,NA,5760,NA,NA,NA,31.5,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Semotilus atromaculatus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,10,NA,NA,static,death,NA,5760,NA,NA,NA,27.3,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Semotilus atromaculatus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,15,NA,NA,static,death,NA,5760,NA,NA,NA,29.3,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Semotilus atromaculatus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,20,NA,NA,static,death,NA,5760,NA,NA,NA,30.3,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Semotilus atromaculatus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,25,NA,NA,static,death,NA,5760,NA,NA,NA,31.5,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Semotilus atromaculatus,Knoxville Tenesee US,35.96,-83.92,Freshwater,experimental,25,NA,NA,static,death,NA,5760,NA,NA,NA,31.6,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Semotilus atromaculatus,NA,NA,NA,Freshwater,experimental,20,NA,NA,static,death,NA,5760,NA,NA,NA,30.3,NA,NA,yes,Freshwater,Hart 1952,84
+Cyprinidae,Semotilus atromaculatus,Missouri US,38.32,-92.54,Freshwater,experimental,26,NA,NA,dynamic,LOE,1.7000000000000001E-2,NA,NA,NA,adults,35.7,0.44,9,yes,Freshwater,Yoder et al. 2012,213
+Cyprinidae,Semotilus atromaculatus,Thornhill Ontario US,43.83,-79.48,Freshwater,experimental,5,NA,NA,dynamic,NA,NA,NA,NA,NA,NA,30.3,NA,NA,yes,Freshwater,Wismer & Christie 1987,211
+Cyprinidae,Semotilus atromaculatus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,10,NA,NA,dynamic,NA,NA,NA,NA,NA,NA,31.5,NA,NA,yes,Freshwater,Wismer & Christie 1987,211
+Cyprinidae,Semotilus atromaculatus,Thornhill Ontario US,43.83,-79.48,Freshwater,experimental,5,NA,NA,static,death,NA,NA,NA,NA,adults,24.7,NA,NA,yes,Freshwater,Wismer & Christie 1987,211
+Cyprinidae,Semotilus atromaculatus,Thornhill Ontario US,43.83,-79.48,Freshwater,experimental,10,NA,NA,static,death,NA,NA,NA,NA,adults,27.3,NA,NA,yes,Freshwater,Wismer & Christie 1987,211
+Cyprinidae,Semotilus atromaculatus,Thornhill Ontario US,43.83,-79.48,Freshwater,experimental,15,NA,NA,static,death,NA,NA,NA,NA,adults,29.3,NA,NA,yes,Freshwater,Wismer & Christie 1987,211
+Cyprinidae,Semotilus atromaculatus,Thornhill Ontario US,43.83,-79.48,Freshwater,experimental,20,NA,NA,static,death,NA,NA,NA,NA,adults,29.3,NA,NA,yes,Freshwater,Wismer & Christie 1987,211
+Cyprinidae,Semotilus atromaculatus,Thornhill Ontario US,43.83,-79.48,Freshwater,experimental,25,NA,NA,static,death,NA,NA,NA,NA,adults,30.3,NA,NA,yes,Freshwater,Wismer & Christie 1987,211
+Cyprinidae,Semotilus atromaculatus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,10,NA,NA,static,death,NA,NA,NA,NA,adults,27.5,NA,NA,yes,Freshwater,Wismer & Christie 1987,211
+Cyprinidae,Semotilus atromaculatus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,15,NA,NA,static,death,NA,NA,NA,NA,adults,29,NA,NA,yes,Freshwater,Wismer & Christie 1987,211
+Cyprinidae,Semotilus atromaculatus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,20,NA,NA,static,death,NA,NA,NA,NA,adults,30.5,NA,NA,yes,Freshwater,Wismer & Christie 1987,211
+Cyprinidae,Semotilus atromaculatus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,25,NA,NA,static,death,NA,NA,NA,NA,adults,31.5,NA,NA,yes,Freshwater,Wismer & Christie 1987,211
+Cyprinidae,Semotilus atromaculatus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,30,NA,NA,static,death,NA,NA,NA,NA,adults,31.5,NA,NA,yes,Freshwater,Wismer & Christie 1987,211
+Cyprinidae,Semotilus atromaculatus,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,7.2,NA,NA,dynamic,NA,NA,NA,NA,NA,NA,32.3,NA,NA,yes,Freshwater,Wismer & Christie 1987,211
+Fundulidae,Fundulus notatus,NA,NA,NA,Freshwater,experimental,26,NA,NA,dynamic,LOE,1.7000000000000001E-2,NA,NA,NA,NA,38.3,0.67,7,yes,Freshwater,Beitinger et al. 2000,12
+Fundulidae,Fundulus notatus,Denton Creek Denton County Texas US,33.17,-97.32,Freshwater,experimental,30,14,NA,dynamic,LOE,0.33,NA,NA,NA,NA,41.56,0.21,10,yes,Freshwater,Rutledge & Beitinger 1989,168
+Ictaluridae,Ameiurus melas,NA,NA,NA,Freshwater,experimental,26,NA,NA,dynamic,LOE,1.7000000000000001E-2,NA,NA,NA,NA,38.1,0.39,7,yes,Freshwater,Beitinger et al. 2000,12
+Ictaluridae,Ameiurus melas,Mississippi River US,38.340000000000003,-90.37,Freshwater,collection,31,NA,NA,static,death,7.0000000000000007E-2,2880,29.2,0.5,juveniles,35.7,NA,20,yes,Freshwater,Cvancara et al. 1977,49
+Ictaluridae,Ameiurus melas,Lake Erie,42.08,-81.34,Freshwater,experimental,23,NA,NA,static,death,NA,NA,NA,NA,NA,35,NA,NA,yes,Freshwater,Spotila et al. 1979,186
+Ictaluridae,Ameiurus natalis,NA,NA,NA,Freshwater,experimental,25,14,NA,dynamic,LOE,0.3,NA,30-70,NA,NA,38,0.70695951300000004,12,yes,Freshwater,Carveth et al. 2006,35
+Ictaluridae,Ameiurus natalis,NA,NA,NA,Freshwater,experimental,25,14,NA,dynamic,flaring operculum,0.3,NA,30-70,NA,NA,39.2,2.2976184179999999,12,yes,Freshwater,Carveth et al. 2006,35
+Ictaluridae,Ameiurus natalis,NA,NA,NA,Freshwater,experimental,25,14,NA,dynamic,death,0.3,NA,30-70,NA,NA,39.8,1.590658905,12,yes,Freshwater,Carveth et al. 2006,35
+Ictaluridae,Ameiurus natalis,NA,NA,NA,Freshwater,experimental,26,NA,NA,dynamic,LOE,1.7000000000000001E-2,NA,NA,NA,NA,37.9,0.44,7,yes,Freshwater,Beitinger et al. 2000,12
+Ictaluridae,Ameiurus natalis,Lake Erie,42.08,-81.34,Freshwater,collection,19.7,NA,NA,dynamic,LOE,NA,NA,NA,NA,adults,35,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Ictaluridae,Ameiurus natalis,Lake Erie,42.08,-81.34,Freshwater,collection,22.2,NA,NA,dynamic,LOE,NA,NA,NA,NA,adults,36.4,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Ictaluridae,Ameiurus natalis,Lake Erie,42.08,-81.34,Freshwater,collection,22.2,NA,NA,dynamic,LOE,NA,NA,NA,NA,NA,36.4,NA,NA,yes,Freshwater,Spotila et al. 1979,186
+Ictaluridae,Noturus exilis,NA,38.32,-91.51,Freshwater,experimental,26,NA,NA,dynamic,LOE,1.7000000000000001E-2,NA,NA,NA,NA,36.5,0.24,8,yes,Freshwater,Beitinger et al. 2000,12
+Percidae,Etheostoma nigrum,Colorado streams US,39.299999999999997,-105.47,Freshwater,experimental,20,NA,NA,dynamic,LOE,1,NA,NA,NA,NA,33,NA,5,yes,Freshwater,Beitinger et al. 2000,12
+Percidae,Etheostoma nigrum,Buffalo creek Erie County New York US,42.6,-78.47,Freshwater,experimental,15,28,NA,dynamic,OS,1,NA,NA,NA,NA,31.1069,0.29039999999999999,4,yes,Freshwater,Kowaski et al. 1978,108
+Percidae,Etheostoma nigrum,Buffalo creek Erie County New York US,42.6,-78.47,Freshwater,experimental,15,28,NA,dynamic,OS,1,NA,NA,NA,NA,31.3163,0.271189509,7,yes,Freshwater,Kowaski et al. 1978,108
+Percidae,Etheostoma nigrum,Buffalo creek Erie County New York US,42.6,-78.47,Freshwater,experimental,15,28,NA,dynamic,OS,1,NA,NA,NA,NA,30.6197,0.22647631200000001,7,yes,Freshwater,Kowaski et al. 1978,108
+Percidae,Etheostoma nigrum,Missouri streams US,38.32,-92.54,Freshwater,experimental,26,NA,NA,dynamic,NA,NA,NA,NA,NA,NA,36.4,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Percidae,Etheostoma nigrum,Cache la Poudre River Colorado US,40.42,-104.6,Freshwater,experimental,20,14,3,dynamic,LOE,0.5,NA,39,NA,NA,34,NA,15,yes,Freshwater,Smith & Fausch 1997,181
+Percidae,Etheostoma nigrum,Cache la Poudre River Colorado US,40.42,-104.6,Freshwater,experimental,30,14,3,dynamic,LOE,0.5,NA,39,NA,NA,37.4,NA,14,yes,Freshwater,Smith & Fausch 1997,181
+Percidae,Etheostoma nigrum,Four Mile Creek in Butler County Ohio US,39.51,-84.65,Freshwater,experimental,15,14,NA,dynamic,OS,1,NA,NA,NA,NA,30.9025,2.5791923809999999,10,yes,Freshwater,Ingersoll & Claussen 1984,96
+Percidae,Etheostoma nigrum,Four Mile Creek in Butler County Ohio US,39.51,-84.65,Freshwater,experimental,15,14,NA,dynamic,OS,1,NA,NA,NA,NA,30.483,1.2278280349999999,11,yes,Freshwater,Ingersoll & Claussen 1984,96
+Percidae,Etheostoma spectabile,NA,NA,NA,Freshwater,collection,29,NA,NA,dynamic,LOE,1,NA,NA,NA,NA,37.9,0.74,15,yes,Freshwater,Beitinger et al. 2000,12
+Percidae,Etheostoma spectabile,Cummings Spring,NA,NA,Freshwater,experimental,20,NA,NA,dynamic,LOE,1,NA,NA,NA,NA,32.2,1,25,yes,Freshwater,Beitinger et al. 2000,12
+Percidae,Etheostoma spectabile,Pennington Creek Oklahoma US,34.28,-96.7,Freshwater,experimental,20,NA,NA,dynamic,LOE,1,NA,NA,NA,NA,32.8,0.8,25,yes,Freshwater,Beitinger et al. 2000,12
+Percidae,Etheostoma spectabile,Byrd's Mill Creek Oklahoma US,34.61,-96.63,Freshwater,experimental,20,NA,NA,dynamic,LOE,1,NA,NA,NA,NA,34,1.1000000000000001,20,yes,Freshwater,Beitinger et al. 2000,12
+Percidae,Etheostoma spectabile,Brier Creek Oklahoma US,35.909999999999997,-78.78,Freshwater,experimental,20,NA,NA,dynamic,LOE,1,NA,NA,NA,NA,34.4,1.1100000000000001,25,yes,Freshwater,Beitinger et al. 2000,12
+Percidae,Etheostoma spectabile,NA,NA,NA,Freshwater,experimental,26,NA,NA,dynamic,LOE,1.7000000000000001E-2,NA,NA,NA,NA,36.5,0.15,8,yes,Freshwater,Beitinger et al. 2000,12
+Percidae,Etheostoma spectabile,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,OS,1,NA,NA,NA,NA,31.54,0.64187226100000006,19,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Percidae,Etheostoma spectabile,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,LOE,1,NA,NA,NA,NA,29.8,0.850881895,19,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Percidae,Perca flavescens,New River drainage US,36.94,-81.05,Freshwater,experimental,23,7,NA,static,death,NA,10080,30-50,NA,sub-adults,26,NA,10,yes,Freshwater,Cherry et al. 1977,39
+Percidae,Perca flavescens,Toronto Ontario Canada,43.64,-79.489999999999995,Freshwater,experimental,25,NA,NA,static,death,NA,5760,NA,NA,NA,29.7,NA,NA,yes,Freshwater,Hart 1952,84
+Percidae,Perca flavescens,Put-in Bay Ohio US,41.65,-82.83,Freshwater,experimental,25,NA,NA,static,death,NA,5760,NA,NA,NA,32.3,NA,NA,yes,Freshwater,Hart 1952,84
+Percidae,Perca flavescens,Park Lake Minnesota US,46.62,-92.65,Freshwater,experimental,28,NA,NA,static,death,NA,NA,NA,NA,juveniles,34,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Percidae,Perca flavescens,Lake Erie,42.08,-81.34,Freshwater,collection,23,NA,NA,dynamic,LOE,NA,NA,NA,NA,adults,33.5,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Percidae,Perca flavescens,Lake Erie,42.08,-81.34,Freshwater,collection,22,NA,NA,dynamic,LOE,NA,NA,NA,NA,adults,35,NA,NA,yes,Freshwater,Yoder et al. 2012,213
+Percidae,Perca flavescens,NA,NA,NA,Freshwater,NA,5,NA,NA,static,death,NA,NA,NA,NA,NA,21.3,NA,NA,yes,Freshwater,Brett 1956,26
+Percidae,Perca flavescens,NA,NA,NA,Freshwater,NA,10,NA,NA,static,death,NA,NA,NA,NA,NA,25,NA,NA,yes,Freshwater,Brett 1956,26
+Percidae,Perca flavescens,NA,NA,NA,Freshwater,NA,15,NA,NA,static,death,NA,NA,NA,NA,NA,27.7,NA,NA,yes,Freshwater,Brett 1956,26
+Percidae,Perca flavescens,NA,NA,NA,Freshwater,NA,25,NA,NA,static,death,NA,NA,NA,NA,NA,29.7,NA,NA,yes,Freshwater,Brett 1956,26
+Poeciliidae,Gambusia affinis,NA,NA,NA,Freshwater,experimental,25,14,NA,dynamic,LOE,0.3,NA,30-70,NA,NA,39.5,0.53021963500000002,12,yes,Freshwater,Carveth et al. 2006,35
+Poeciliidae,Gambusia affinis,NA,NA,NA,Freshwater,experimental,30,14,NA,dynamic,LOE,0.3,NA,30-70,NA,NA,41.7,0.53021963500000002,12,yes,Freshwater,Carveth et al. 2006,35
+Poeciliidae,Gambusia affinis,NA,NA,NA,Freshwater,experimental,25,14,NA,dynamic,flaring operculum,0.3,NA,30-70,NA,NA,40.5,0.35347975700000001,12,yes,Freshwater,Carveth et al. 2006,35
+Poeciliidae,Gambusia affinis,NA,NA,NA,Freshwater,experimental,30,14,NA,dynamic,flaring operculum,0.3,NA,30-70,NA,NA,42.1,0.70695951300000004,12,yes,Freshwater,Carveth et al. 2006,35
+Poeciliidae,Gambusia affinis,NA,NA,NA,Freshwater,experimental,25,14,NA,dynamic,death,0.3,NA,30-70,NA,NA,40.7,0.35347975700000001,12,yes,Freshwater,Carveth et al. 2006,35
+Poeciliidae,Gambusia affinis,NA,NA,NA,Freshwater,experimental,30,14,NA,dynamic,death,0.3,NA,30-70,NA,NA,42.1,0.70695951300000004,12,yes,Freshwater,Carveth et al. 2006,35
+Poeciliidae,Gambusia affinis,NA,NA,NA,Freshwater,experimental,25,NA,NA,dynamic,LOE,0.3,NA,NA,NA,NA,38,0.4,10,yes,Freshwater,Beitinger et al. 2000,12
+Poeciliidae,Gambusia affinis,NA,NA,NA,Freshwater,experimental,30,NA,NA,dynamic,LOE,0.3,NA,NA,NA,NA,41,0.3,10,yes,Freshwater,Beitinger et al. 2000,12
+Poeciliidae,Gambusia affinis,NA,NA,NA,Freshwater,experimental,35,NA,NA,dynamic,LOE,0.3,NA,NA,NA,NA,42.3,0.4,10,yes,Freshwater,Beitinger et al. 2000,12
+Poeciliidae,Gambusia affinis,Knoxville Tenesee US,35.96,-83.92,Freshwater,experimental,30,NA,NA,static,death,NA,5760,NA,NA,NA,37.3,NA,NA,yes,Freshwater,Hart 1952,84
+Poeciliidae,Gambusia affinis,Welaka Florida US,29.48,-81.680000000000007,Freshwater,experimental,15,NA,NA,static,death,NA,5760,NA,NA,NA,35.4,NA,NA,yes,Freshwater,Hart 1952,84
+Poeciliidae,Gambusia affinis,Welaka Florida US,29.48,-81.680000000000007,Freshwater,experimental,20,NA,NA,static,death,NA,5760,NA,NA,NA,37.3,NA,NA,yes,Freshwater,Hart 1952,84
+Poeciliidae,Gambusia affinis,Welaka Florida US,29.48,-81.680000000000007,Freshwater,experimental,35,NA,NA,static,death,NA,5760,NA,NA,NA,37.3,NA,NA,yes,Freshwater,Hart 1952,84
+Poeciliidae,Gambusia affinis,NA,NA,NA,Freshwater,experimental,20,NA,NA,static,death,NA,5760,NA,NA,NA,37.3,NA,NA,yes,Freshwater,Hart 1952,84
+Poeciliidae,Gambusia affinis,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,OS,1,NA,NA,NA,NA,38.47,0.73959448299999997,20,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Poeciliidae,Gambusia affinis,Central Oklahoma US,35.659999999999997,-97.47,Freshwater,experimental,10,14,NA,dynamic,LOE,1,NA,NA,NA,NA,36.88,0.71693793299999997,20,yes,Freshwater,Lutterschmidt & Hutchinson 1997,118
+Poeciliidae,Gambusia affinis,Lower Waikato River New Zealand,-37.270000000000003,174.87,Freshwater,experimental,12,7,2,dynamic,LOE,0.5,NA,16-23,NA,NA,34.2,1.532970972,6,yes,Freshwater,Simons 1984,180
+Poeciliidae,Gambusia affinis,Lower Waikato River New Zealand,-37.270000000000003,174.87,Freshwater,experimental,20,7,2,dynamic,LOE,0.5,NA,16-27,NA,NA,38.5,1.532970972,15,yes,Freshwater,Simons 1984,180
+Poeciliidae,Gambusia affinis,Salt Lake City Utah US,40.76,-111.92,Freshwater,experimental,5,30,NA,dynamic,LOE,0.3,NA,NA,NA,NA,32.4902,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Salt Lake City Utah US,40.76,-111.92,Freshwater,experimental,10,30,NA,dynamic,LOE,0.3,NA,NA,NA,NA,33.5517,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Salt Lake City Utah US,40.76,-111.92,Freshwater,experimental,15,30,NA,dynamic,LOE,0.3,NA,NA,NA,NA,34.6429,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Salt Lake City Utah US,40.76,-111.92,Freshwater,experimental,20,30,NA,dynamic,LOE,0.3,NA,NA,NA,NA,37.2521,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Salt Lake City Utah US,40.76,-111.92,Freshwater,experimental,25,30,NA,dynamic,LOE,0.3,NA,NA,NA,NA,38.6112,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Salt Lake City Utah US,40.76,-111.92,Freshwater,experimental,30,30,NA,dynamic,LOE,0.3,NA,NA,NA,NA,41.5476,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Salt Lake City Utah US,40.76,-111.92,Freshwater,experimental,35,30,NA,dynamic,LOE,0.3,NA,NA,NA,NA,42.0734,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Indian Hot Springs Arizona US,33,-109.9,Freshwater,experimental,5,30,NA,dynamic,LOE,0.3,NA,NA,NA,NA,33.7996,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Indian Hot Springs Arizona US,33,-109.9,Freshwater,experimental,10,30,NA,dynamic,LOE,0.3,NA,NA,NA,NA,35.0399,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Indian Hot Springs Arizona US,33,-109.9,Freshwater,experimental,15,30,NA,dynamic,LOE,0.3,NA,NA,NA,NA,35.5358,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Indian Hot Springs Arizona US,33,-109.9,Freshwater,experimental,20,30,NA,dynamic,LOE,0.3,NA,NA,NA,NA,37.0735,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Indian Hot Springs Arizona US,33,-109.9,Freshwater,experimental,25,30,NA,dynamic,LOE,0.3,NA,NA,NA,NA,39.7421,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Indian Hot Springs Arizona US,33,-109.9,Freshwater,experimental,30,30,NA,dynamic,LOE,0.3,NA,NA,NA,NA,42.0831,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Indian Hot Springs Arizona US,33,-109.9,Freshwater,experimental,35,30,NA,dynamic,LOE,0.3,NA,NA,NA,NA,43.1745,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Salt Lake City Utah US,40.76,-111.92,Freshwater,experimental,5,30,NA,static,death,NA,10080,NA,NA,NA,29.4845,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Salt Lake City Utah US,40.76,-111.92,Freshwater,experimental,10,30,NA,static,death,NA,10080,NA,NA,NA,30.5164,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Salt Lake City Utah US,40.76,-111.92,Freshwater,experimental,15,30,NA,static,death,NA,10080,NA,NA,NA,34.5752,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Salt Lake City Utah US,40.76,-111.92,Freshwater,experimental,20,30,NA,static,death,NA,10080,NA,NA,NA,35.5087,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Salt Lake City Utah US,40.76,-111.92,Freshwater,experimental,25,30,NA,static,death,NA,10080,NA,NA,NA,35.499,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Salt Lake City Utah US,40.76,-111.92,Freshwater,experimental,30,30,NA,static,death,NA,10080,NA,NA,NA,37.042,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Salt Lake City Utah US,40.76,-111.92,Freshwater,experimental,35,30,NA,static,death,NA,10080,NA,NA,NA,36.4817,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Indian Hot Springs Arizona US,33,-109.9,Freshwater,experimental,5,30,NA,static,death,NA,10080,NA,NA,NA,32.0398,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Indian Hot Springs Arizona US,33,-109.9,Freshwater,experimental,10,30,NA,static,death,NA,10080,NA,NA,NA,32.5607,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Indian Hot Springs Arizona US,33,-109.9,Freshwater,experimental,15,30,NA,static,death,NA,10080,NA,NA,NA,33.0223,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Indian Hot Springs Arizona US,33,-109.9,Freshwater,experimental,20,30,NA,static,death,NA,10080,NA,NA,NA,36.5505,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Indian Hot Springs Arizona US,33,-109.9,Freshwater,experimental,25,30,NA,static,death,NA,10080,NA,NA,NA,37.5236,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Indian Hot Springs Arizona US,33,-109.9,Freshwater,experimental,30,30,NA,static,death,NA,10080,NA,NA,NA,37.5136,NA,10,yes,Freshwater,Otto 1973,150
+Poeciliidae,Gambusia affinis,Indian Hot Springs Arizona US,33,-109.9,Freshwater,experimental,35,30,NA,static,death,NA,10080,NA,NA,NA,37.9952,NA,10,yes,Freshwater,Otto 1973,150
+Umbridae,Umbra limi,Michigan US,43.84,-84.88,Freshwater,collection,22.6642561,NA,NA,static,death,NA,NA,NA,NA,NA,38,NA,NA,yes,Freshwater,Wismer & Christie 1987,211

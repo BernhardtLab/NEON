@@ -1,0 +1,82 @@
+UpperTaxon,Taxon,b,a,reference
+Turbellaria,Turbellaria,2.168,0.0082,Benke 1999
+Crustacea,Amphipoda,3.015,0.0058,Benke 1999
+Crustacea,Decapoda,3.626,0.0147,Benke 1999
+Crustacea,Isopoda,2.948,0.0054,Benke 1999
+Ephemeroptera,Ameletidae,2.588,0.0077,Benke 1999
+Ephemeroptera,Baetidae,2.875,0.0053,Benke 1999
+Ephemeroptera,Baetiscidae,2.905,0.0116,Benke 1999
+Ephemeroptera,Caenidae,2.772,0.0054,Benke 1999
+Ephemeroptera,Ephemerellidae,2.676,0.0103,Benke 1999
+Ephemeroptera,Ephemeridae,2.764,0.0034,Benke 1999
+Ephemeroptera,Heptageniidae,2.754,0.0108,Benke 1999
+Ephemeroptera,Isonychiidae,3.043,0.0031,Benke 1999
+Ephemeroptera,Leptophlebiidae,2.686,0.0047,Benke 1999
+Ephemeroptera,Polymitarcyidae,3.05,0.002,Benke 1999
+Ephemeroptera,Siphlonuridae,3.446,0.0027,Benke 1999
+Ephemeroptera,Tricorythidae,3.194,0.0061,Benke 1999
+Odonata,Aeshnidae,2.813,0.0082,Benke 1999
+Odonata,Calopterygidae,2.742,0.005,Benke 1999
+Odonata,Coenagrionidae,2.785,0.0051,Benke 1999
+Odonata,Cordulegastridae,2.782,0.0067,Benke 1999
+Odonata,Corduliidae,2.787,0.0096,Benke 1999
+Odonata,Gomphidae,2.787,0.0088,Benke 1999
+Odonata,Libellulidae,2.809,0.0076,Benke 1999
+Plecoptera,Capniidae,2.562,0.0049,Benke 1999
+Plecoptera,Chloroperlidae,2.724,0.0065,Benke 1999
+Plecoptera,Leuctridae,2.719,0.0028,Benke 1999
+Plecoptera,Nemouridae,2.762,0.0056,Benke 1999
+Plecoptera,Peltoperlidae,2.737,0.017,Benke 1999
+Plecoptera,Perlidae,2.879,0.0099,Benke 1999
+Plecoptera,Perlodidae,2.742,0.0196,Benke 1999
+Plecoptera,Pteronarcyidae,2.573,0.0324,Benke 1999
+Plecoptera,Taeniopterygidae,2.655,0.0072,Benke 1999
+Hemiptera,Corixidae,2.904,0.0031,Benke 1999
+Hemiptera,Gerridae,2.596,0.015,Benke 1999
+Hemiptera,Veliidae,2.719,0.0126,Benke 1999
+Megaloptera,Corydalidae,2.873,0.0037,Benke 1999
+Megaloptera,Sialidae,2.753,0.0037,Benke 1999
+Trichoptera,Brachycentridae,2.818,0.0083,Benke 1999
+Trichoptera,Glossosomatidae,2.958,0.0082,Benke 1999
+Trichoptera,Helicopsychidae (case width),3.096,0.0125,Benke 1999
+Trichoptera,Hydropsychidae,2.926,0.0046,Benke 1999
+Trichoptera,Lepidostomatidae,2.649,0.0079,Benke 1999
+Trichoptera,Leptoceridae,3.212,0.0034,Benke 1999
+Trichoptera,Limnephilidae,2.933,0.004,Benke 1999
+Trichoptera,Odontoceridae,2.988,0.0077,Benke 1999
+Trichoptera,Philopotamidae,2.511,0.005,Benke 1999
+Trichoptera,Phryganeidae,2.811,0.0054,Benke 1999
+Trichoptera,Polycentropodidae,2.705,0.0047,Benke 1999
+Trichoptera,Psychomyiidae,2.873,0.0039,Benke 1999
+Trichoptera,Rhyacophilidae,2.48,0.0099,Benke 1999
+Trichoptera,Sericostomatidae,2.741,0.0074,Benke 1999
+Lepidoptera,Pyralidae,2.918,0.0033,Benke 1999
+Coleoptera,Chrysomelidae,3.111,0.039,Benke 1999
+Coleoptera,Elmidae,2.879,0.0074,Benke 1999
+Coleoptera,Psephenidae,2.906,0.0123,Benke 1999
+Coleoptera,Ptilodactylidae,3.1,0.0012,Benke 1999
+Diptera,Athericidae,2.586,0.004,Benke 1999
+Diptera,Blephariceridae,3.292,0.0067,Benke 1999
+Diptera,Ceratopogonidae,2.469,0.0025,Benke 1999
+Diptera,Chironomidae,2.617,0.0018,Benke 1999
+Diptera,Empididae,2.546,0.0054,Benke 1999
+Diptera,Sciaridae,2.091,0.0042,Benke 1999
+Diptera,Simuliidae,3.011,0.002,Benke 1999
+Diptera,Tabanidae,2.591,0.005,Benke 1999
+Diptera,Tipulidae,2.681,0.0029,Benke 1999
+Oligochaeta,Oligochaeta,1.54,0.005888437,Methot
+Mollusca,Mollusca,2.901666667,0.133779291,Methot
+Gastropoda,Gastropoda,2.88,0.134379597,Methot
+Ancylidae,Ancylidae,3.13,0.097723722,Methot
+Bithyniidae,Bithyniidae,2.5,0.26915348,Methot
+Hydrobiidae,Hydrobiidae,2.82,0.181970086,Methot
+Physidae,Physidae,3.05,0.045708819,Methot
+Planorbidae,Planorbidae,2.9,0.075857758,Methot
+Valvatidae,Valvatidae,3.18,0.117489755,Methot
+Viviparidae,Viviparidae,2.6,0.229086765,Methot
+Insecta,Insecta,2.788,0.0064,Benke 1999
+Annelida,Annelida,1.54,0.005888437,Methot et al 
+Acari,Hydracarina,1.66,0.1325,Klemmer and Richardson 2013
+Acariformes,Hydracarina,1.66,0.1325,Klemmer and Richardson 2013
+Collembola,Collembola,2.3002,0.0132,Ganihar 1997
+Tardigrada,Tardigrada,2.4,0.005,Petersen and Cummings 1974 approx
