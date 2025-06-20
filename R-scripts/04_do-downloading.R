@@ -212,3 +212,109 @@ waq_daily_max_sat <- waq_clean %>%
 
 waq_daily_max_sat %>% 
   ggplot(aes(x = date, y = max_DO_sat)) + geom_line() +ggtitle("Toolik Lake")
+
+
+
+
+# let's try another site --------------------------------------------------
+
+# Step 1: Load full-resolution data (includes 1‑min)
+waq <- loadByProduct(
+  dpID = "DP1.20288.001",
+  site = "BARC",
+  startdate = "2016-06",
+  enddate   = "2024-06",
+  package   = "expanded",
+  check.size= FALSE
+)
+
+waq_data <- waq$waq_instantaneous
+
+
+
+waq_clean <- waq_data %>%
+  filter(!is.na(localDissolvedOxygenSat), localDOSatFinalQF == 0 ) %>%
+  mutate(date = as_date(startDateTime)) %>% 
+  select(date, localDissolvedOxygenSat, contains("xygen"), everything())
+
+
+waq_clean %>% 
+  ggplot(aes(x = date, y = localDissolvedOxygenSat)) + geom_point() +ggtitle("BARC")
+
+
+waq_daily_max_sat <- waq_clean %>%
+  group_by(siteID, horizontalPosition, verticalPosition, date) %>%
+  summarize(
+    max_DO_sat = max(localDissolvedOxygenSat, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+
+
+waq_daily_max_sat %>% 
+  ggplot(aes(x = date, y = max_DO_sat)) + geom_line() +ggtitle("Barco Lake")
+ggsave("figures/do-barc.png", width = 8, height = 6)
+
+
+
+
+# iterate over multiple sites ----------------------------------------------
+
+
+site_list <- zoo_sites  # sites
+
+# Function to download and clean DO saturation data for one site
+get_DO_saturation <- function(site_code) {
+  message("Processing site: ", site_code)
+  
+  waq <- tryCatch(
+    loadByProduct(
+      dpID = "DP1.20288.001",
+      site = site_code,
+      startdate='2010-01-01',
+      enddate='2025-04-01',
+      package   = "expanded",
+      release='RELEASE-2025',
+      include.provisional=FALSE,
+      check.size= FALSE
+    ),
+    error = function(e) {
+      warning("Failed for site: ", site_code)
+      return(NULL)
+    }
+  )
+  
+  if (is.null(waq)) return(NULL)
+  
+  waq_data <- waq$waq_instantaneous
+  
+  waq_clean <- waq_data %>%
+    filter(!is.na(localDissolvedOxygenSat), localDOSatFinalQF == 0) %>%
+    mutate(date = as_date(startDateTime)) %>%
+    select(date, localDissolvedOxygenSat, contains("xygen"), everything())
+  
+  return(waq_clean)
+}
+
+# Run over all sites and store results in a named list
+all_sites_DO <- purrr::map(site_list, get_DO_saturation)
+names(all_sites_DO) <- site_list
+
+combined_DO <- bind_rows(all_sites_DO, .id = "siteID")
+
+unique(combined_DO$siteID)
+
+waq_daily_max_sat <- combined_DO %>% 
+  group_by(siteID, horizontalPosition, verticalPosition, date) %>%
+  summarize(
+    max_DO_sat = max(localDissolvedOxygenSat, na.rm = TRUE),
+    mean_DO_sat = mean(localDissolvedOxygenSat, na.rm = TRUE),
+    min_DO_sat = min(localDissolvedOxygenSat, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+write_csv(waq_daily_max_sat, "data-processed/oxygen-summarized.csv")
+
+waq_daily_max_sat %>% 
+  ggplot(aes(x = date, y = min_DO_sat, color = siteID)) + geom_point() +ggtitle("")
+ggsave("figures/do-barc.png", width = 8, height = 6)
