@@ -1,6 +1,11 @@
 
 
 
+
+
+
+library(neonUtilities)
+
 for (i in 1:length(aquaticsitesNEON)){
   baz<- loadByProduct(dpID="DP1.20053.001",
                       site=c(aquaticsitesNEON[i]),
@@ -41,6 +46,33 @@ for (i in 1:length(aquaticsitesNEON)){
   
   write_csv(temps_streams, "/Volumes/Extreme SSD/NEON-data/stream-temps.csv")
 
+  
+  
+  
+  
+
+# download dissolved oxygen -----------------------------------------------
+
+  download_do_function <- function(site){
+    output <- loadByProduct(dpID="DP1.20288.001",
+                            site= site$aquaticsitesNEON[1],
+                            startdate= NA,
+                            enddate=NA,
+                            tabl = "TSW_30min",
+                            check.size = F,
+                            token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJhdWQiOiJodHRwczovL2RhdGEubmVvbnNjaWVuY2Uub3JnL2FwaS92MC8iLCJzdWIiOiJjaWNjaGlub2FtYW5kYUBnbWFpbC5jb20iLCJzY29wZSI6InJhdGU6cHVibGljIiwiaXNzIjoiaHR0cHM6Ly9kYXRhLm5lb25zY2llbmNlLm9yZy8iLCJleHAiOjE4NzM0OTMwMTUsImlhdCI6MTcxNTgxMzAxNSwiZW1haWwiOiJjaWNjaGlub2FtYW5kYUBnbWFpbC5jb20ifQ.ieH_YfFI2CvqBfAkeGWiEfeA24xCqin6tjxVidfqNomI_Hj9MdWCgYHi9jFXA27GjjpMNtvjvmxMBExBeyoESw")
+    
+    return(output$TSW_30min) 
+  }  
+  
+  
+  
+  cfcInfo <- getProductInfo("DP1.20288.001")
+  names(cfcInfo)
+  
+  
+  
+  
 # rivers and lakes --------------------------------------------------------
 
   download_temps_function_rivers_lakes <- function(site){
@@ -59,7 +91,7 @@ for (i in 1:length(aquaticsitesNEON)){
   
   
   sites_split <- sites %>% 
-    filter(aquaticsitesNEON %in% c("LIRO", "CRAM")) %>%
+    filter(aquaticsitesNEON %in% zdata) %>%
     split(.$aquaticsitesNEON)
   
   temps_lakes <- sites_split %>% 
@@ -69,7 +101,7 @@ for (i in 1:length(aquaticsitesNEON)){
 
   
     
-temps_lakes <- read_csv("/Volumes/Extreme SSD/NEON-data/lake-river-temps.csv")
+temps_lakes <- read_csv("~/Documents/too-big-for-github/lake-river-temps.csv")
 temps_lakes2 <- temps_lakes %>% 
   clean_names()
 
@@ -86,6 +118,7 @@ temps_lakes2 %>%
   ggplot(aes(x = start_date_time, y = tsd_water_temp_maximum, color = site_id)) + geom_path() +
   facet_wrap( ~ site_id)
 ggsave("figures/CRAM-LIRO-maximum-temps.pdf", width = 8, height = 6)
+ggsave("figures/lake-maximum-temps.pdf", width = 8, height = 6)
 
 temps_streams <- temps_streams %>% 
   clean_names()

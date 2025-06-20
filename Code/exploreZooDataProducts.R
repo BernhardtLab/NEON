@@ -5,6 +5,8 @@ library(ggplot2)
 library(tidyr)
 library(purrr)
 library(tibble)
+library(cowplot)
+theme_set(theme_cowplot())
 
 datapath<-'/Users/kelsey/Github/RCN-KY/2025 Raw Release Data/'
 resultspath<-'/Users/kelsey/Github/RCN-KY/Clean Data/'
@@ -128,7 +130,9 @@ write.csv(zoo,paste0(resultspath,"zooplankton.csv"),row.names=F)
 
 zoo <- read_csv("Clean Data/zooplankton.csv")
 
-sumry <- zoo %>% group_by(siteID,collectDate) %>% summarise(count=mean(countPerL,na.rm=T))
+sumry <- zoo %>% 
+  group_by(siteID,collectDate) %>%
+  summarise(count=mean(countPerL,na.rm=T))
 
 sumry %>%
   ggplot(aes(x = collectDate, y = count, 
@@ -140,6 +144,28 @@ sumry %>%
   ylab("count per L") + 
   xlab("collection Date") +
   facet_wrap( ~ siteID, scales = "free_y")
+ggsave("figures/zooplankton-count.png", width = 8, height = 6)
+
+zoo2 <- zoo %>% 
+  group_by(siteID,collectDate) %>%
+  mutate(avg_length = (zooMaximumLength + zooMinimumLength)/2) %>%
+  mutate(biomass_proxy = avg_length*countPerL) %>% 
+  summarise(mean_biomass =mean(biomass_proxy,na.rm=T))
+
+
+zoo2 %>%
+  ggplot(aes(x = collectDate, y = mean_biomass, 
+             color = siteID,
+             group = siteID)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  geom_blank(aes(y = 0)) +
+  ylab("Biomass proxy") + 
+  xlab("collection Date") +
+  facet_wrap( ~ siteID, scales = "free_y")
+ggsave("figures/zooplankton-biomass-proxy.png", width = 8, height = 6)
+
+
 
 
 

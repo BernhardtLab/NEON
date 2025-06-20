@@ -83,4 +83,7 @@ sumry %>%
   xlab("year") +
   facet_wrap( ~ siteID, scales = "free_y")
 
+mic_alg <- read_csv("Clean Data/micAlg_afdm.csv")
 
+mic_alg %>% 
+  select(siteID.x)

@@ -48,6 +48,26 @@ perpass <- neon_fish$fsh_perPass %>%
 
 
 
+perpass %>% 
+  ggplot(aes(x = pass_start_time, y = water_temp)) + geom_point() +
+  facet_wrap( ~ site_id, scales = "free")
+ggsave("figures/water_temp_from_fishing.png", width = 16, height = 12)
+
+perpass %>%
+  group_by(bout_end_date, site_id) %>% 
+  summarise(mean_temp = mean(water_temp, na.rm = TRUE)) %>% 
+  ggplot(aes(x = bout_end_date, y = mean_temp, color = site_id, group = site_id)) + geom_line() +
+  facet_wrap( ~ site_id)
+ggsave("figures/water_temp_from_fishing-line.png", width = 16, height = 12)
+
+perpass %>%
+  group_by(bout_end_date, site_id) %>% 
+  summarise(mean_do = mean(dissolved_oxygen, na.rm = TRUE)) %>% 
+  ggplot(aes(x = bout_end_date, y = mean_do, color = site_id, group = site_id)) + geom_line() +
+  facet_wrap( ~ site_id)
+ggsave("figures/do_from_fishing-line.png", width = 16, height = 12)
+
+
 
 ### CRAM,PRIN,  
 
