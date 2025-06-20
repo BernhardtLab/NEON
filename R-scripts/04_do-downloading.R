@@ -259,9 +259,10 @@ ggsave("figures/do-barc.png", width = 8, height = 6)
 
 
 # iterate over multiple sites ----------------------------------------------
+fish_sites <- read_csv("data-processed/fish-sites.csv") %>% 
+  rename(site_id = ".")
 
-
-site_list <- zoo_sites  # sites
+site_list <- fish_sites$site_id  # sites
 
 # Function to download and clean DO saturation data for one site
 get_DO_saturation <- function(site_code) {
@@ -318,3 +319,19 @@ write_csv(waq_daily_max_sat, "data-processed/oxygen-summarized.csv")
 waq_daily_max_sat %>% 
   ggplot(aes(x = date, y = min_DO_sat, color = siteID)) + geom_point() +ggtitle("")
 ggsave("figures/do-barc.png", width = 8, height = 6)
+
+waq_daily_max_sat %>% 
+  ggplot(aes(x = date, y = mean_DO_sat, color = siteID)) + geom_point() +ggtitle("")
+
+
+#### how can we summarize these data?
+library(cowplot)
+theme_set(theme_cowplot())
+
+
+waq_daily_max_sat %>% 
+  ggplot(aes(x = date, y = mean_DO_sat, color = siteID)) + geom_point() +ggtitle("") +
+  ylab("Daily average DO, percent saturation")
+ggsave("figures/do-all-zoop-sites.png", width = 8, height = 6)
+
+
