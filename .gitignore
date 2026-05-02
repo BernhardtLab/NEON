@@ -36,3 +36,4 @@ rsconnect/
 .DS_Store
 
 /data-processed/microalgal-counts.csv
+.positai
