@@ -31,8 +31,10 @@ This repository contains a reproducible analysis pipeline investigating how zoop
 - **Dissolved Oxygen:** Daily water column dissolved oxygen (productivity proxy)
   - Location: `data-raw/NEON_daily_summaries/NEON_daily_oxygen_stats.csv`
 
-- **Phytoplankton Biomass:** Ash-free dry mass (AFDM) from algal collections
-  - Direct measure of primary consumer food resource
+- **Algae Ash-Free Dry Mass (AFDM):** Organic matter content of algal cells
+  - ALGAE ONLY (does not include other phytoplankton or organisms)
+  - Direct measure of primary algal food resource for zooplankton
+  - Units: Micrograms per liter (μg/L)
   - Location: `data-raw/MicroAlgae_Collection_NeonData.Robj`
 
 ---
@@ -44,7 +46,7 @@ NEON-old2/
 ├── README.md                          # This file
 ├── CLAUDE.md                          # Project instructions and guidelines
 │
-├── R-scripts/                         # Main analysis pipeline (14+ scripts)
+├── R-scripts/                         # Main analysis pipeline (18+ scripts)
 │   ├── 05-zooplankton-body-size.R                    # Filter adults, summarize body size
 │   ├── 06-zooplankton-body-size-visualization.R     # Mean body size plots
 │   ├── 06b-zooplankton-body-size-visualization-max.R # Max body size plots
@@ -54,13 +56,15 @@ NEON-old2/
 │   ├── 10-zooplankton-mixed-vs-adults-comparison.R  # Life stage impact analysis
 │   ├── 11-explore-missing-nauplii-records.R         # Data quality checks
 │   ├── 12-prepare-temperature-data.R                # Temperature exploration
-│   ├── 13-merge-temperature-with-body-size.R        # Main temp+body size merge
+│   ├── 13-merge-temperature-with-body-size.R        # Main temp+body size merge (exact match)
 │   ├── 14-temperature-trends-over-time.R            # Linear trend analysis
 │   ├── 15-prepare-food-supply-data.R                # Nutrients & DO prep
 │   ├── 15b-prepare-chlorophyll-data.R               # Phytoplankton biomass prep
-│   ├── 16-merge-all-data-for-analysis.R             # **FINAL ANALYSIS DATASET**
+│   ├── 16-merge-all-data-for-analysis.R             # Merge all data (exact matching)
+│   ├── 16b-merge-all-data-hierarchical.R            # **RECOMMENDED** (hierarchical temp+DO)
 │   ├── 17-summer-temperature-comparison.R           # Growing season analysis
-│   └── 18-body-size-vs-summer-temperature.R         # **MAIN HYPOTHESIS TEST**
+│   ├── 18-body-size-vs-summer-temperature.R         # Body size vs temp (exact matching)
+│   └── 18b-body-size-vs-temperature-hierarchical.R  # **RECOMMENDED** (hierarchical temp)
 │
 ├── data-raw/                          # Raw NEON downloads (not in repo)
 │   └── NEON_zooplankton/              # zoo_*.csv files
@@ -68,15 +72,17 @@ NEON-old2/
 │   └── MicroAlgae_Collection_NeonData.Robj
 │
 ├── data-processed/                    # Intermediate & analysis-ready datasets
-│   ├── zooplankton_2014_2026.csv                      # Cleaned raw data (all life stages)
-│   ├── zooplankton_body_size_summary_adults_2014_2026.csv # Main body size dataset
-│   ├── zooplankton_taxon_reference.csv                # Taxon lookup
-│   ├── body_size_temperature_analysis.csv             # Monthly merged (temp + body size)
-│   ├── zooplankton_body_size_temp_food_supply_analysis.csv # **FINAL ANALYSIS DATASET**
-│   ├── zooplankton_analysis_complete_cases.csv        # Complete cases only (for regression)
-│   ├── nutrients_monthly_summary.csv                  # Monthly nutrient aggregates
-│   ├── dissolved_oxygen_monthly_summary.csv           # Monthly DO aggregates
-│   └── phytoplankton_biomass_monthly_summary.csv     # Monthly phytoplankton biomass
+│   ├── zooplankton_2014_2026.csv                                              # Cleaned raw data (all life stages)
+│   ├── zooplankton_body_size_summary_adults_2014_2026.csv                     # Main body size dataset
+│   ├── zooplankton_taxon_reference.csv                                        # Taxon lookup
+│   ├── body_size_temperature_analysis.csv                                     # Monthly merged (temp + body size, exact)
+│   ├── zooplankton_body_size_temp_food_supply_analysis.csv                   # Merged data (exact matching)
+│   ├── zooplankton_analysis_complete_cases.csv                                # Complete cases (exact matching)
+│   ├── zooplankton_body_size_temp_food_supply_hierarchical.csv               # **RECOMMENDED** (hierarchical temp+DO)
+│   ├── zooplankton_analysis_complete_cases_hierarchical.csv                   # **RECOMMENDED** (hierarchical, complete)
+│   ├── nutrients_monthly_summary.csv                                          # Monthly nutrient aggregates
+│   ├── dissolved_oxygen_monthly_summary.csv                                   # Monthly DO aggregates
+│   └── phytoplankton_afdm_monthly_summary.csv                                # Monthly algal ash-free dry mass (AFDM - ALGAE ONLY)
 │
 ├── stats-tables/                      # Statistical results & summaries (CSV)
 │   ├── temperature_trends_by_site.csv
@@ -145,18 +151,69 @@ NEON-old2/
    - Input: Microalgae R object (ash-free dry mass)
    - Output: `phytoplankton_biomass_monthly_summary.csv`
 
-### Final Integration & Analysis (Scripts 16, 18)
+### Final Integration & Analysis (Scripts 16-18)
 10. **Script 16:** Merge all data sources into analysis dataset
     - Input: Body size + temperature + nutrients + DO + phytoplankton
     - Output: `zooplankton_body_size_temp_food_supply_analysis.csv`
-    - **This is the final analysis-ready dataset**
+    - **Approach:** Exact month-year matching (69.4% temperature retention)
     - Includes complete and subset versions
 
-11. **Script 18:** Test main hypothesis
-    - Input: Body size data + summer temperatures
+11. **Script 16b:** Merge all data with HIERARCHICAL matching ⭐ **RECOMMENDED**
+    - Input: Body size + temperature + nutrients + DO + phytoplankton
+    - Output: `zooplankton_body_size_temp_food_supply_hierarchical.csv`
+    - **Approach:** Hierarchical fallback for temperature and DO (~100% retention)
+    - Includes match_type columns for transparency
+    - **ADVANTAGE:** Retains ~30% more observations while tracking data quality
+
+12. **Script 18:** Test main hypothesis (exact matching)
+    - Input: Body size data + temperatures (exact month-year only)
     - Tests: Overall correlation and per-taxon regressions
     - Output: Statistical results and visualizations
-    - **Q: Are zooplankton larger in cooler lakes?**
+    - **Data retention:** 69.4% of observations
+
+13. **Script 18b:** Test main hypothesis with HIERARCHICAL matching ⭐ **RECOMMENDED**
+    - Input: Body size data + temperatures (hierarchical fallback)
+    - Tests: Overall correlation and per-taxon regressions
+    - Output: Statistical results and visualizations (includes matching breakdown)
+    - **Data retention:** ~100% of observations
+    - **Key advantage:** Matches all data while maintaining transparency about match quality
+
+---
+
+## Analysis Approaches: Exact vs Hierarchical Matching
+
+This project supports **two complementary analysis approaches**:
+
+### Approach 1: Exact Matching (Scripts 16, 18)
+- **Temperature matching:** Exact month-year match only
+- **Data retention:** 69.4% of zooplankton observations
+- **Pros:** Highest data quality (true monthly match)
+- **Cons:** Loses ~30% of valuable observations
+- **Use when:** Conservative analysis preferred, sample size adequate
+
+### Approach 2: Hierarchical Matching (Scripts 16b, 18b) ⭐ Recommended
+- **Temperature/DO matching:** 4-level fallback strategy
+  1. **Level 1:** Exact month-year match (if available)
+  2. **Level 2:** Same month, average across years (seasonal capture)
+  3. **Level 3:** Adjacent months (seasonal proxy)
+  4. **Level 4:** Site annual average (last resort)
+- **Data retention:** ~100% of zooplankton observations
+- **Pros:** 
+  - Maximizes data retention (30.6% more records)
+  - Fully transparent (match_type column)
+  - Same-month averaging captures seasonal patterns
+  - Independent matching for temperature AND dissolved oxygen
+- **Cons:** Uses averaged data at lower priority levels (acceptable for seasonal analysis)
+- **Use when:** Maximum statistical power needed, data quality transparency valued
+- **See:** `HIERARCHICAL_MATCHING_GUIDE.md` for detailed explanation
+
+### Choosing Your Approach
+
+| Goal | Recommended Scripts |
+|------|-------------------|
+| Maximum data retention with transparency | **16b + 18b** |
+| Conservative, exact matches only | 16 + 18 |
+| Compare both approaches (sensitivity) | All scripts (16, 16b, 18, 18b) |
 
 ---
 
@@ -177,20 +234,37 @@ NEON-old2/
 
 ## How to Use This Repository
 
-### Quick Start: Run the Full Pipeline
+### Quick Start: Run the Full Pipeline (Recommended - Hierarchical Matching)
 
 ```bash
 # Navigate to project directory
 cd NEON-old2
 
-# Run scripts in order (within R/RStudio):
+# Run core preparation scripts (within R/RStudio):
 source("R-scripts/08-extract-zooplankton-raw-data.R")
 source("R-scripts/05-zooplankton-body-size.R")
-source("R-scripts/13-merge-temperature-with-body-size.R")
 source("R-scripts/15-prepare-food-supply-data.R")
 source("R-scripts/15b-prepare-chlorophyll-data.R")
-source("R-scripts/16-merge-all-data-for-analysis.R")
-source("R-scripts/18-body-size-vs-summer-temperature.R")
+
+# Run hierarchical analysis (RECOMMENDED - maximum data retention):
+source("R-scripts/16b-merge-all-data-hierarchical.R")   # Create analysis dataset
+source("R-scripts/18b-body-size-vs-temperature-hierarchical.R")  # Main hypothesis test
+
+# Optional: Run exact-matching versions for comparison (sensitivity analysis):
+source("R-scripts/16-merge-all-data-for-analysis.R")    # Exact matches only
+source("R-scripts/18-body-size-vs-summer-temperature.R")  # Exact matches only
+```
+
+### Alternative: Conservative Analysis (Exact Matching Only)
+
+```bash
+# Same prep scripts, but use exact-matching analysis:
+source("R-scripts/08-extract-zooplankton-raw-data.R")
+source("R-scripts/05-zooplankton-body-size.R")
+source("R-scripts/15-prepare-food-supply-data.R")
+source("R-scripts/15b-prepare-chlorophyll-data.R")
+source("R-scripts/16-merge-all-data-for-analysis.R")   # Exact matches
+source("R-scripts/18-body-size-vs-summer-temperature.R")  # Exact matches
 ```
 
 ### Output Locations
@@ -215,6 +289,11 @@ source("R-scripts/14-temperature-trends-over-time.R")
 # Just hypothesis test (if analysis dataset exists)
 source("R-scripts/18-body-size-vs-summer-temperature.R")
 ```
+
+### Reference Documentation
+
+For a detailed explanation of the hierarchical matching strategy, including why it works and how to use match quality columns in your analysis, see:
+- **`HIERARCHICAL_MATCHING_GUIDE.md`** - Complete guide to hierarchical vs exact matching approaches
 
 ---
 

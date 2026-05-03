@@ -1,25 +1,28 @@
 # Merge All Data: Body Size, Temperature, and Food Supply
 # Purpose: Create final analysis-ready dataset combining all three data sources
 #   - Zooplankton body size (monthly, adults only)
-#   - Lake temperature (monthly)
-#   - Food supply: nutrients, dissolved oxygen, and phytoplankton biomass (monthly)
+#   - Lake temperature (monthly, exact matching only)
+#   - Food supply: nutrients, dissolved oxygen, and algal AFDM (monthly)
 # Date: 2026-05-02
 #
 # INPUTS:
 #   - data-processed/body_size_temperature_analysis.csv
-#     (Monthly body size + temperature merged data from script 13)
+#     (Monthly body size + temperature merged data from script 13 - exact matches)
 #   - data-processed/nutrients_monthly_summary.csv
 #     (Monthly nutrient aggregates from script 15)
 #   - data-processed/dissolved_oxygen_monthly_summary.csv
 #     (Monthly DO aggregates from script 15)
-#   - data-processed/phytoplankton_biomass_monthly_summary.csv
-#     (Monthly phytoplankton biomass from script 15b, optional)
+#   - data-processed/phytoplankton_afdm_monthly_summary.csv
+#     (Monthly algal ash-free dry mass (AFDM) from script 15b - ALGAE ONLY, optional)
 #
 # OUTPUTS:
 #   - data-processed/zooplankton_body_size_temp_food_supply_analysis.csv
 #     (Full analysis-ready dataset with all variables, all records)
 #   - data-processed/zooplankton_analysis_complete_cases.csv
 #     (Subset with only complete cases for regression analysis)
+#
+# NOTE: This script uses EXACT temperature matching (69.4% data retention).
+#       For hierarchical matching with higher data retention (~100%), use script 16b.
 
 library(tidyverse)
 library(readr)
@@ -50,17 +53,18 @@ do_monthly <- read_csv("data-processed/dissolved_oxygen_monthly_summary.csv")
 cat("Dissolved oxygen monthly summary:\n")
 cat("  Shape:", nrow(do_monthly), "site-month combinations\n\n")
 
-# Phytoplankton biomass (if available)
-if (file.exists("data-processed/phytoplankton_biomass_monthly_summary.csv")) {
-  biomass_monthly <- read_csv("data-processed/phytoplankton_biomass_monthly_summary.csv")
+# Algal ash-free dry mass (AFDM) - if available
+if (file.exists("data-processed/phytoplankton_afdm_monthly_summary.csv")) {
+  afdm_monthly <- read_csv("data-processed/phytoplankton_afdm_monthly_summary.csv")
 
-  cat("Phytoplankton biomass monthly summary:\n")
-  cat("  Shape:", nrow(biomass_monthly), "site-month combinations\n\n")
+  cat("Algal ash-free dry mass (AFDM) monthly summary:\n")
+  cat("  Shape:", nrow(afdm_monthly), "site-month combinations\n")
+  cat("  (Note: ALGAE ONLY, not total phytoplankton)\n\n")
 
-  has_biomass <- TRUE
+  has_afdm <- TRUE
 } else {
-  cat("Note: Phytoplankton biomass data not found. Skipping...\n\n")
-  has_biomass <- FALSE
+  cat("Note: Algal AFDM data not found. Skipping...\n\n")
+  has_afdm <- FALSE
 }
 
 # ============================================================================
@@ -104,19 +108,20 @@ na_do <- sum(is.na(merged_all$meanDO_avg))
 cat("  Records with DO data:", nrow(merged_all) - na_do, "out of", nrow(merged_all), "\n")
 cat("  Coverage:", round((nrow(merged_all) - na_do) / nrow(merged_all) * 100, 1), "%\n\n")
 
-# Merge phytoplankton biomass (if available)
-if (has_biomass) {
+# Merge algal ash-free dry mass (AFDM) (if available)
+if (has_afdm) {
   merged_all <- merged_all |>
     left_join(
-      biomass_monthly,
+      afdm_monthly,
       by = c("siteID", "year", "month")
     )
 
-  cat("After adding phytoplankton biomass:\n")
+  cat("After adding algal ash-free dry mass (AFDM):\n")
   cat("  Shape:", nrow(merged_all), "observations x", ncol(merged_all), "variables\n")
-  na_biomass <- sum(is.na(merged_all$biomass_mean))
-  cat("  Records with biomass data:", nrow(merged_all) - na_biomass, "out of", nrow(merged_all), "\n")
-  cat("  Coverage:", round((nrow(merged_all) - na_biomass) / nrow(merged_all) * 100, 1), "%\n\n")
+  na_afdm <- sum(is.na(merged_all$afdm_mean))
+  cat("  Records with AFDM data:", nrow(merged_all) - na_afdm, "out of", nrow(merged_all), "\n")
+  cat("  Coverage:", round((nrow(merged_all) - na_afdm) / nrow(merged_all) * 100, 1), "%\n")
+  cat("  (Note: AFDM = Algal ash-free dry mass - ALGAE ONLY)\n\n")
 }
 
 # Add date column back

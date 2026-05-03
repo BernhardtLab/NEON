@@ -1,16 +1,18 @@
-# Prepare Phytoplankton Biomass Data for Zooplankton Analysis
-# Purpose: Load algal biomass (ash-free dry mass) as direct food supply indicator
+# Prepare Phytoplankton Biomass Data (Algal Ash-Free Dry Mass) for Zooplankton Analysis
+# Purpose: Load algal ash-free dry mass (AFDM) as direct food supply indicator
+#          NOTE: This is ALGAE ONLY, not total biomass; AFDM = organic matter content
 # Date: 2026-05-02
 #
 # INPUTS:
 #   - data-raw/MicroAlgae_Collection_NeonData.Robj
 #     (R object containing microalgae data, extracted as NeonData$alg_biomass)
+#     Contains ALGAE ONLY ash-free dry mass measurements (μg/L)
 #
 # OUTPUTS:
-#   - data-processed/phytoplankton_biomass_monthly_summary.csv
-#     (Monthly phytoplankton biomass aggregates by site)
-#   - stats-tables/food_supply_phytoplankton_biomass_by_site.csv
-#     (Site-level phytoplankton biomass statistics)
+#   - data-processed/phytoplankton_afdm_monthly_summary.csv
+#     (Monthly algae ash-free dry mass (AFDM) aggregates by site)
+#   - stats-tables/food_supply_phytoplankton_afdm_by_site.csv
+#     (Site-level algae ash-free dry mass (AFDM) statistics)
 
 library(tidyverse)
 library(readr)
@@ -92,56 +94,57 @@ cat("\n")
 # Part 3: Create Monthly Phytoplankton Biomass Summary
 # ============================================================================
 
-cat("Creating monthly phytoplankton biomass summary...\n\n")
+cat("Creating monthly algal ash-free dry mass (AFDM) summary...\n\n")
 
-# Use ash-free dry mass as the primary biomass indicator
-biomass_col <- "adjAshFreeDryMass"
+# Use ash-free dry mass as the primary algal biomass indicator
+afdm_col <- "adjAshFreeDryMass"
 
 # Check if column exists
-if (biomass_col %in% colnames(chlorophyll_raw)) {
-  cat("Using '", biomass_col, "' as primary phytoplankton biomass indicator\n")
-  cat("(Ash-free dry mass in micrograms per liter)\n\n")
+if (afdm_col %in% colnames(chlorophyll_raw)) {
+  cat("Using '", afdm_col, "' as primary algal biomass indicator\n")
+  cat("(Ash-free dry mass (AFDM) = organic/live algal biomass in micrograms per liter)\n")
+  cat("(Note: This is ALGAE ONLY, not total phytoplankton or other organisms)\n\n")
 
   # Create monthly summary
-  biomass_monthly <- chlorophyll_raw |>
-    filter(!is.na(!!sym(biomass_col))) |>
+  afdm_monthly <- chlorophyll_raw |>
+    filter(!is.na(!!sym(afdm_col))) |>
     group_by(siteID, year, month) |>
     summarise(
       n_samples = n(),
-      biomass_mean = mean(!!sym(biomass_col), na.rm = TRUE),
-      biomass_sd = sd(!!sym(biomass_col), na.rm = TRUE),
-      biomass_min = min(!!sym(biomass_col), na.rm = TRUE),
-      biomass_max = max(!!sym(biomass_col), na.rm = TRUE),
+      afdm_mean = mean(!!sym(afdm_col), na.rm = TRUE),
+      afdm_sd = sd(!!sym(afdm_col), na.rm = TRUE),
+      afdm_min = min(!!sym(afdm_col), na.rm = TRUE),
+      afdm_max = max(!!sym(afdm_col), na.rm = TRUE),
       .groups = "drop"
     ) |>
     arrange(siteID, year, month)
 
-  cat("Monthly phytoplankton biomass summary:\n")
-  cat("  Shape:", nrow(biomass_monthly), "site-month combinations\n")
-  cat("  Non-empty records:", sum(!is.na(biomass_monthly$biomass_mean)), "\n\n")
+  cat("Monthly algal AFDM summary:\n")
+  cat("  Shape:", nrow(afdm_monthly), "site-month combinations\n")
+  cat("  Non-empty records:", sum(!is.na(afdm_monthly$afdm_mean)), "\n\n")
 
   # Save monthly summary
-  write_csv(biomass_monthly, "data-processed/phytoplankton_biomass_monthly_summary.csv")
-  cat("✓ Saved: data-processed/phytoplankton_biomass_monthly_summary.csv\n\n")
+  write_csv(afdm_monthly, "data-processed/phytoplankton_afdm_monthly_summary.csv")
+  cat("✓ Saved: data-processed/phytoplankton_afdm_monthly_summary.csv\n\n")
 
   # Create site-level summary
-  biomass_by_site <- chlorophyll_raw |>
-    filter(!is.na(!!sym(biomass_col))) |>
+  afdm_by_site <- chlorophyll_raw |>
+    filter(!is.na(!!sym(afdm_col))) |>
     group_by(siteID) |>
     summarise(
       n_samples = n(),
-      biomass_mean = mean(!!sym(biomass_col), na.rm = TRUE),
-      biomass_sd = sd(!!sym(biomass_col), na.rm = TRUE),
-      biomass_min = min(!!sym(biomass_col), na.rm = TRUE),
-      biomass_max = max(!!sym(biomass_col), na.rm = TRUE),
+      afdm_mean = mean(!!sym(afdm_col), na.rm = TRUE),
+      afdm_sd = sd(!!sym(afdm_col), na.rm = TRUE),
+      afdm_min = min(!!sym(afdm_col), na.rm = TRUE),
+      afdm_max = max(!!sym(afdm_col), na.rm = TRUE),
       date_min = min(collectDate, na.rm = TRUE),
       date_max = max(collectDate, na.rm = TRUE),
       .groups = "drop"
     ) |>
     arrange(siteID)
 
-  write_csv(biomass_by_site, "stats-tables/food_supply_phytoplankton_biomass_by_site.csv")
-  cat("✓ Saved: stats-tables/food_supply_phytoplankton_biomass_by_site.csv\n\n")
+  write_csv(afdm_by_site, "stats-tables/food_supply_phytoplankton_afdm_by_site.csv")
+  cat("✓ Saved: stats-tables/food_supply_phytoplankton_afdm_by_site.csv\n\n")
 
 } else {
   cat("⚠ Column '", biomass_col, "' not found\n")
@@ -161,14 +164,19 @@ if (biomass_col %in% colnames(chlorophyll_raw)) {
 # ============================================================================
 
 cat("================================\n")
-cat("PHYTOPLANKTON BIOMASS DATA PREPARED\n")
+cat("ALGAL ASH-FREE DRY MASS (AFDM) DATA PREPARED\n")
 cat("================================\n")
-cat("Monthly summary: data-processed/phytoplankton_biomass_monthly_summary.csv\n")
-cat("Summary statistics: stats-tables/food_supply_phytoplankton_biomass_by_site.csv\n\n")
-cat("DATA:\n")
-cat("  - adjAshFreeDryMass: Ash-free dry mass (μg/L)\n")
-cat("  - Direct measure of phytoplankton/algal biomass\n")
-cat("  - Primary food resource for zooplankton\n\n")
+cat("Monthly summary: data-processed/phytoplankton_afdm_monthly_summary.csv\n")
+cat("Summary statistics: stats-tables/food_supply_phytoplankton_afdm_by_site.csv\n\n")
+cat("DATA DESCRIPTION:\n")
+cat("  - ORGANISM: Algae/Phytoplankton (MICROALGAE ONLY)\n")
+cat("  - MEASUREMENT: adjAshFreeDryMass (AFDM)\n")
+cat("  - UNITS: Micrograms per liter (μg/L)\n")
+cat("  - INTERPRETATION: Organic matter content of algal cells\n")
+cat("    └─ Ash-free = inorganic minerals removed\n")
+cat("    └─ Dry mass = water removed\n")
+cat("    └─ Direct measure of algal biomass available for zooplankton\n")
+cat("  - PRIMARY USE: Direct food resource for zooplankton grazing\n\n")
 cat("NEXT STEP:\n")
-cat("  Merge biomass with existing food supply data (nutrients, DO)\n")
-cat("  Update script 16 to include biomass in final analysis dataset\n\n")
+cat("  Merge AFDM with existing food supply data (nutrients, DO)\n")
+cat("  Update script 16 to include algal AFDM in final analysis dataset\n\n")

@@ -571,3 +571,10 @@ cat("  Pattern:                            ", overall_results$pattern, "\n\n")
 
 cat("All results saved to stats-tables/ and figures/\n")
 cat(paste(rep("=", 90), collapse = ""), "\n")
+
+
+
+body_size_with_temp |> 
+  filter(taxonID %in% top_taxa) |> 
+  ggplot(aes(x = temp_mean, y = max_body_length)) + geom_point() +
+  facet_wrap( ~ taxonID, scales = "free") + geom_smooth(method = "lm")
