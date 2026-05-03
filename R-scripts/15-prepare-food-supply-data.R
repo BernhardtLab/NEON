@@ -6,6 +6,11 @@ library(tidyverse)
 library(readr)
 library(lubridate)
 
+# Create stats-tables directory if it doesn't exist
+if (!dir.exists("stats-tables")) {
+  dir.create("stats-tables", showWarnings = FALSE)
+}
+
 # ============================================================================
 # Part 1: Load Nutrients Data (Nitrogen & Phosphorus)
 # ============================================================================
@@ -24,7 +29,7 @@ zoo_sites <- c("BARC", "CRAM", "LIRO", "PRLA", "PRPO", "SUGG", "TOOK")
 
 nutrients_zoo <- nutrients_raw |>
   filter(siteID %in% zoo_sites) |>
-  select(-`Unnamed: 0`, -X) |>
+  select(-any_of(c("Unnamed: 0", "X"))) |>
   mutate(
     collectDate = as.Date(collectDate),
     year = year(collectDate),
@@ -53,7 +58,7 @@ cat("  Date range:", min(do_raw$date, na.rm = TRUE), "to", max(do_raw$date, na.r
 
 do_zoo <- do_raw |>
   filter(siteID %in% zoo_sites) |>
-  select(-`Unnamed: 0`) |>
+  select(-any_of(c("Unnamed: 0", "X"))) |>
   mutate(
     date = as.Date(date),
     year = year(date),
@@ -161,34 +166,50 @@ print(do_by_site)
 # Part 5: Save Food Supply Datasets
 # ============================================================================
 
-cat("\n\nSaving food supply datasets...\n\n")
+cat("Saving food supply datasets...\n\n")
 
+# Save monthly summaries
 write_csv(nutrients_monthly, "data-processed/nutrients_monthly_summary.csv")
 cat("✓ Saved: data-processed/nutrients_monthly_summary.csv\n")
 
 write_csv(do_monthly, "data-processed/dissolved_oxygen_monthly_summary.csv")
 cat("✓ Saved: data-processed/dissolved_oxygen_monthly_summary.csv\n")
 
-cat("\n\n" , paste(rep("=", 80), collapse = ""), "\n", sep = "")
-cat("FOOD SUPPLY DATA READY FOR MERGING!\n")
-cat(paste(rep("=", 80), collapse = ""), "\n\n")
+# Save summary statistics by site
+nutrients_by_site <- nutrients_zoo |>
+  group_by(siteID) |>
+  summarise(
+    n_samples = n(),
+    NO3_mean = mean(NO3, na.rm = TRUE),
+    NO3_sd = sd(NO3, na.rm = TRUE),
+    TN_mean = mean(TN, na.rm = TRUE),
+    TN_sd = sd(TN, na.rm = TRUE),
+    TP_mean = mean(TP, na.rm = TRUE),
+    TP_sd = sd(TP, na.rm = TRUE),
+    .groups = "drop"
+  ) |>
+  arrange(siteID)
 
-cat("You now have food supply data at monthly resolution:\n\n")
-cat("NUTRIENTS METRICS:\n")
-cat("  - NO3: Nitrate (mg/L)\n")
-cat("  - NH4: Ammonium (mg/L)\n")
-cat("  - TDN: Total Dissolved Nitrogen (mg/L)\n")
-cat("  - TN: Total Nitrogen (mg/L)\n")
-cat("  - OrthoP: Orthophosphate (mg/L)\n")
-cat("  - TDP: Total Dissolved Phosphorus (mg/L)\n")
-cat("  - TP: Total Phosphorus (mg/L)\n\n")
+write_csv(nutrients_by_site, "stats-tables/food_supply_nutrients_by_site.csv")
+cat("✓ Saved: stats-tables/food_supply_nutrients_by_site.csv\n")
 
-cat("DISSOLVED OXYGEN METRICS (productivity proxy):\n")
-cat("  - meanDO_avg: Average daily mean DO (mg/L)\n")
-cat("  - meanDO_sd: Variability in mean DO\n")
-cat("  - maxDO_avg: Average daily maximum DO\n")
-cat("  - minDO_avg: Average daily minimum DO\n\n")
+do_by_site <- do_zoo |>
+  group_by(siteID) |>
+  summarise(
+    n_days = n(),
+    meanDO_mean = mean(meanDO, na.rm = TRUE),
+    meanDO_sd = sd(meanDO, na.rm = TRUE),
+    meanDO_min = min(meanDO, na.rm = TRUE),
+    meanDO_max = max(meanDO, na.rm = TRUE),
+    .groups = "drop"
+  ) |>
+  arrange(siteID)
 
-cat("NEXT STEP:\n")
-cat("  Merge nutrients + DO + temperature + body size into analysis dataset\n")
-cat("  Then test: body size ~ temperature + food supply\n\n")
+write_csv(do_by_site, "stats-tables/food_supply_dissolved_oxygen_by_site.csv")
+cat("✓ Saved: stats-tables/food_supply_dissolved_oxygen_by_site.csv\n\n")
+
+cat("================================\n")
+cat("FOOD SUPPLY DATA READY\n")
+cat("================================\n")
+cat("Monthly summaries: data-processed/\n")
+cat("Summary statistics: stats-tables/\n\n")

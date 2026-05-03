@@ -34,6 +34,19 @@ do_monthly <- read_csv("data-processed/dissolved_oxygen_monthly_summary.csv")
 cat("Dissolved oxygen monthly summary:\n")
 cat("  Shape:", nrow(do_monthly), "site-month combinations\n\n")
 
+# Phytoplankton biomass (if available)
+if (file.exists("data-processed/phytoplankton_biomass_monthly_summary.csv")) {
+  biomass_monthly <- read_csv("data-processed/phytoplankton_biomass_monthly_summary.csv")
+
+  cat("Phytoplankton biomass monthly summary:\n")
+  cat("  Shape:", nrow(biomass_monthly), "site-month combinations\n\n")
+
+  has_biomass <- TRUE
+} else {
+  cat("Note: Phytoplankton biomass data not found. Skipping...\n\n")
+  has_biomass <- FALSE
+}
+
 # ============================================================================
 # Part 2: Merge Food Supply with Body Size + Temperature
 # ============================================================================
@@ -74,6 +87,21 @@ cat("  Shape:", nrow(merged_all), "observations x", ncol(merged_all), "variables
 na_do <- sum(is.na(merged_all$meanDO_avg))
 cat("  Records with DO data:", nrow(merged_all) - na_do, "out of", nrow(merged_all), "\n")
 cat("  Coverage:", round((nrow(merged_all) - na_do) / nrow(merged_all) * 100, 1), "%\n\n")
+
+# Merge phytoplankton biomass (if available)
+if (has_biomass) {
+  merged_all <- merged_all |>
+    left_join(
+      biomass_monthly,
+      by = c("siteID", "year", "month")
+    )
+
+  cat("After adding phytoplankton biomass:\n")
+  cat("  Shape:", nrow(merged_all), "observations x", ncol(merged_all), "variables\n")
+  na_biomass <- sum(is.na(merged_all$biomass_mean))
+  cat("  Records with biomass data:", nrow(merged_all) - na_biomass, "out of", nrow(merged_all), "\n")
+  cat("  Coverage:", round((nrow(merged_all) - na_biomass) / nrow(merged_all) * 100, 1), "%\n\n")
+}
 
 # Add date column back
 final_dataset <- merged_all |>
@@ -139,7 +167,17 @@ cat("FOOD SUPPLY VARIABLES - Productivity:\n")
 cat("  - meanDO_avg: Average dissolved oxygen (mg/L, proxy for photosynthesis)\n")
 cat("  - meanDO_sd: Variability in dissolved oxygen\n")
 cat("  - maxDO_avg: Average daily maximum DO\n")
-cat("  - minDO_avg: Average daily minimum DO\n\n")
+cat("  - minDO_avg: Average daily minimum DO\n")
+
+if (has_biomass) {
+  cat("\nFOOD SUPPLY VARIABLES - Phytoplankton Biomass (direct food resource):\n")
+  cat("  - biomass_mean: Mean ash-free dry mass (μg/L)\n")
+  cat("  - biomass_sd: Standard deviation of biomass\n")
+  cat("  - biomass_min: Minimum biomass\n")
+  cat("  - biomass_max: Maximum biomass\n")
+}
+
+cat("\n")
 
 cat("SAMPLE SIZE VARIABLES:\n")
 cat("  - n_samples: Number of zooplankton samples in month\n")
@@ -228,3 +266,4 @@ cat("2. Linear regression: body_size ~ temperature + nutrients + DO\n")
 cat("3. Site-specific regressions to test consistency\n")
 cat("4. Temporal patterns: do relationships change over time?\n")
 cat("5. Interaction terms: does food supply modify temperature effect?\n\n")
+

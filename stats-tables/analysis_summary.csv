@@ -1,0 +1,9 @@
+metric,value
+Overall slope (mm per °C),-0.009973
+Overall R-squared,0.0059
+Overall p-value,6.979759e-02
+Pattern,Larger in cool sites
+Taxon sample size,10
+Taxa larger in cool sites,7
+Taxa larger in warm sites,3
+Significant taxa (p<0.05),3

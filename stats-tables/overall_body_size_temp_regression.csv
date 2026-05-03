@@ -1,0 +1,2 @@
+model,n_observations,intercept,slope,r_squared,adj_r_squared,p_value,correlation,pattern
+Mean Body Length ~ Summer Temperature (all taxa),558,0.6915021734750469,-0.009972743949642853,0.005901099824337458,0.004113152162151024,0.0697975869176352,-0.07681861639171493,Larger in cool sites

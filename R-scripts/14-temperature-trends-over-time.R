@@ -6,6 +6,11 @@ library(tidyverse)
 library(readr)
 library(lubridate)
 
+# Create stats-tables directory if it doesn't exist
+if (!dir.exists("stats-tables")) {
+  dir.create("stats-tables", showWarnings = FALSE)
+}
+
 # ============================================================================
 # Part 1: Load and Prepare Data
 # ============================================================================
@@ -202,70 +207,65 @@ ggsave("figures/temperature_trend_slopes.png", p3_slopes, width = 10, height = 7
 cat("✓ Saved: figures/temperature_trend_slopes.png\n")
 
 # ============================================================================
-# Part 5: Summary Statistics
+# Part 5: Save Trend Results
 # ============================================================================
 
-cat("\n\n" , paste(rep("=", 80), collapse = ""), "\n", sep = "")
-cat("SUMMARY\n")
-cat(paste(rep("=", 80), collapse = ""), "\n\n")
+cat("Saving temperature trend analysis results...\n\n")
 
-cat("Significant warming trends (p < 0.05):\n")
+# Save trend summary table
+write_csv(trend_summary, "stats-tables/temperature_trends_by_site.csv")
+cat("✓ Saved: stats-tables/temperature_trends_by_site.csv\n")
+
+# Categorize by trend type
 warming <- trend_summary |>
   filter(significant & slope > 0) |>
-  arrange(desc(slope))
+  arrange(desc(slope)) |>
+  mutate(trend_type = "Warming")
 
-if (nrow(warming) > 0) {
-  for (i in 1:nrow(warming)) {
-    cat(sprintf("  %s: +%.4f °C/year\n", warming$siteID[i], warming$slope[i]))
-  }
-} else {
-  cat("  None\n")
-}
-
-cat("\nSignificant cooling trends (p < 0.05):\n")
 cooling <- trend_summary |>
   filter(significant & slope < 0) |>
-  arrange(slope)
+  arrange(slope) |>
+  mutate(trend_type = "Cooling")
 
-if (nrow(cooling) > 0) {
-  for (i in 1:nrow(cooling)) {
-    cat(sprintf("  %s: %.4f °C/year\n", cooling$siteID[i], cooling$slope[i]))
-  }
-} else {
-  cat("  None\n")
-}
-
-cat("\nNo significant trends (p ≥ 0.05):\n")
 no_trend <- trend_summary |>
   filter(!significant) |>
-  arrange(desc(abs(slope)))
+  arrange(desc(abs(slope))) |>
+  mutate(trend_type = "No significant trend")
 
-if (nrow(no_trend) > 0) {
-  for (i in 1:nrow(no_trend)) {
-    cat(sprintf("  %s: %+.4f °C/year (p = %.3f)\n",
-                no_trend$siteID[i], no_trend$slope[i], no_trend$pval[i]))
-  }
-} else {
-  cat("  None\n")
-}
+# Combine and save
+trend_categories <- bind_rows(warming, cooling, no_trend) |>
+  select(siteID, slope, pval, r_squared, n_obs, significant, trend_type) |>
+  arrange(desc(significant), slope)
 
-cat("\n\nOVERALL PATTERN:\n")
+write_csv(trend_categories, "stats-tables/temperature_trend_categories.csv")
+cat("✓ Saved: stats-tables/temperature_trend_categories.csv\n")
+
+# Summary statistics
 n_warming_sig <- nrow(warming)
 n_cooling_sig <- nrow(cooling)
 n_no_trend <- nrow(no_trend)
 
-if (n_warming_sig > 0 && n_cooling_sig > 0) {
-  cat(sprintf("Mixed results: %d site(s) warming, %d site(s) cooling, %d site(s) no significant trend\n",
-              n_warming_sig, n_cooling_sig, n_no_trend))
-} else if (n_warming_sig > 0) {
-  cat(sprintf("Dominant pattern: Warming at %d site(s), no significant trend at %d site(s)\n",
-              n_warming_sig, n_no_trend))
-} else if (n_cooling_sig > 0) {
-  cat(sprintf("Dominant pattern: Cooling at %d site(s), no significant trend at %d site(s)\n",
-              n_cooling_sig, n_no_trend))
-} else {
-  cat(sprintf("No significant trends detected at any site (all p ≥ 0.05)\n"))
-}
+summary_results <- data.frame(
+  metric = c("Sites with significant warming",
+             "Sites with significant cooling",
+             "Sites with no significant trend",
+             "Overall pattern"),
+  count = c(n_warming_sig, n_cooling_sig, n_no_trend, NA),
+  description = c(
+    paste(ifelse(n_warming_sig > 0, paste(warming$siteID, collapse=", "), "None")),
+    paste(ifelse(n_cooling_sig > 0, paste(cooling$siteID, collapse=", "), "None")),
+    paste(ifelse(n_no_trend > 0, paste(no_trend$siteID, collapse=", "), "None")),
+    if (n_warming_sig > 0 && n_cooling_sig > 0) {
+      paste("Mixed:", n_warming_sig, "warming,", n_cooling_sig, "cooling")
+    } else if (n_warming_sig > 0) {
+      paste("Warming dominant:", n_warming_sig, "sites")
+    } else if (n_cooling_sig > 0) {
+      paste("Cooling dominant:", n_cooling_sig, "sites")
+    } else {
+      "No significant trends"
+    }
+  )
+)
 
-cat("\nNote: Results are based on linear regression of daily mean temperature against year_decimal\n")
-cat("      Seasonal effects controlled in Model 2 analyses\n")
+write_csv(summary_results, "stats-tables/temperature_trend_summary.csv")
+cat("✓ Saved: stats-tables/temperature_trend_summary.csv\n\n")
