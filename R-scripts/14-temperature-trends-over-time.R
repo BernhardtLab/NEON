@@ -33,7 +33,7 @@ cat("  Date range:", min(temp_data$date), "to", max(temp_data$date), "\n\n")
 # Part 2: Test for Trends Using Linear Regression
 # ============================================================================
 
-cat("=" * 80, "\n")
+cat(paste(rep("=", 80), collapse = ""), "\n")
 cat("TEMPERATURE TRENDS OVER TIME\n")
 cat(paste(rep("=", 80), collapse = ""), "\n\n")
 
@@ -81,7 +81,7 @@ for (site in zoo_sites) {
   cat(sprintf("  R²: %.4f\n", r_squared))
   cat(sprintf("  Total change over series: %+.2f °C\n",
               coef_year * (max(site_data$year_decimal) - min(site_data$year_decimal))))
-  cat(sprintf("  N observations: %,d\n\n", n_obs))
+  cat(sprintf("  N observations: %s\n\n", format(n_obs, big.mark = ",")))
 }
 
 # ============================================================================
@@ -250,5 +250,22 @@ if (nrow(no_trend) > 0) {
 }
 
 cat("\n\nOVERALL PATTERN:\n")
-cat("Most sites show slight warming trends, but few are statistically significant.\n")
-cat("This is consistent with long-term climate warming patterns in freshwater lakes.\n")
+n_warming_sig <- nrow(warming)
+n_cooling_sig <- nrow(cooling)
+n_no_trend <- nrow(no_trend)
+
+if (n_warming_sig > 0 && n_cooling_sig > 0) {
+  cat(sprintf("Mixed results: %d site(s) warming, %d site(s) cooling, %d site(s) no significant trend\n",
+              n_warming_sig, n_cooling_sig, n_no_trend))
+} else if (n_warming_sig > 0) {
+  cat(sprintf("Dominant pattern: Warming at %d site(s), no significant trend at %d site(s)\n",
+              n_warming_sig, n_no_trend))
+} else if (n_cooling_sig > 0) {
+  cat(sprintf("Dominant pattern: Cooling at %d site(s), no significant trend at %d site(s)\n",
+              n_cooling_sig, n_no_trend))
+} else {
+  cat(sprintf("No significant trends detected at any site (all p ≥ 0.05)\n"))
+}
+
+cat("\nNote: Results are based on linear regression of daily mean temperature against year_decimal\n")
+cat("      Seasonal effects controlled in Model 2 analyses\n")
