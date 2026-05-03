@@ -1,24 +1,27 @@
-# Zooplankton Body Size vs Summer Temperature by Site
-# Purpose: Test hypothesis - are zooplankton larger in cooler lakes?
-# Analysis: Body size across sites compared to site-specific summer temperatures (June-August)
+# Zooplankton Body Size vs Matched Temperature
+# Purpose: Test hypothesis - are zooplankton larger in cooler conditions?
+# Analysis: Body size correlated with temperature during the SAME MONTH samples were collected
 # Date: 2026-05-02
+#
+# KEY CHANGE (May 2026): Now uses temperature matched to actual sampling dates,
+# not just summer months. Temperature is matched by site, year, and month of collection.
 #
 # INPUTS:
 #   - data-processed/zooplankton_body_size_summary_adults_2014_2026.csv
-#     (Adults-only body size summary from script 05)
+#     (Adults-only body size summary from script 05, includes collectDate)
 #   - data-raw/NEON_daily_summaries/NEON_daily_temp_stats_lake_tchain.csv
-#     (Raw daily temperature data for summer months)
+#     (Raw daily temperature data for all months)
 #
 # OUTPUTS:
-#   - stats-tables/overall_body_size_temp_regression.csv
-#     (Overall correlation: body size vs summer temperature across all taxa)
-#   - stats-tables/taxon_body_size_temp_regressions.csv
+#   - stats-tables/overall_body_size_temp_matched_regression.csv
+#     (Overall correlation: body size vs matched temperature across all taxa)
+#   - stats-tables/taxon_body_size_temp_matched_regressions.csv
 #     (Per-taxon regressions: individual responses to temperature)
-#   - stats-tables/body_size_summary_by_site.csv
-#     (Site-level summaries: mean body size and summer temperature)
-#   - stats-tables/analysis_summary.csv
+#   - stats-tables/body_size_summary_by_site_matched.csv
+#     (Site-level summaries: mean body size and mean matched temperature)
+#   - stats-tables/analysis_summary_matched.csv
 #     (Summary of results and pattern of findings)
-#   - figures/body_size_vs_summer_temp_*.png (5 visualization figures)
+#   - figures/body_size_vs_matched_temp_*.png (5 visualization figures)
 
 library(tidyverse)
 library(readr)
@@ -44,9 +47,9 @@ cat("  Records:", nrow(zoo_body_size), "\n")
 cat("  Taxa:", n_distinct(zoo_body_size$taxonID), "\n")
 cat("  Sites:", n_distinct(zoo_body_size$siteID), "\n\n")
 
-cat("Loading summer temperature data...\n")
+cat("Loading temperature data (all months)...\n")
 
-# Load raw temperature to calculate summer temps
+# Load raw temperature for ALL months (not just summer)
 temp_raw <- read_csv("data-raw/NEON_daily_summaries/NEON_daily_temp_stats_lake_tchain.csv")
 
 temp_data <- temp_raw |>
@@ -54,64 +57,93 @@ temp_data <- temp_raw |>
     date = as.Date(date),
     year = year(date),
     month = month(date)
-  ) |>
-  filter(month %in% c(6, 7, 8))  # Summer only
+  )
 
-# Calculate mean summer temperature by site (across all years)
-summer_temp_by_site <- temp_data |>
-  group_by(siteID) |>
+# Calculate MONTHLY temperature by site and month
+monthly_temp_by_site <- temp_data |>
+  group_by(siteID, year, month) |>
   summarise(
-    summer_temp_mean = mean(meanTemp, na.rm = TRUE),
-    summer_temp_sd = sd(meanTemp, na.rm = TRUE),
-    n_summer_days = n(),
+    temp_mean = mean(meanTemp, na.rm = TRUE),
+    temp_sd = sd(meanTemp, na.rm = TRUE),
+    n_days = n(),
     .groups = "drop"
   ) |>
-  arrange(siteID)
+  arrange(siteID, year, month)
 
-cat("Summer temperature summary:\n")
-print(summer_temp_by_site)
-cat("\n")
+cat("Monthly temperature data created:\n")
+cat("  Records:", nrow(monthly_temp_by_site), "site-month combinations\n\n")
+
+# ============================================================================
+# PREPARE BODY SIZE DATA FOR MATCHING
+# ============================================================================
+
+# Extract year and month from body size collection dates
+zoo_body_size_dated <- zoo_body_size |>
+  mutate(
+    collectDate = as.Date(collectDate),
+    year = year(collectDate),
+    month = month(collectDate)
+  )
 
 # Focus on zooplankton sites
 zoo_sites <- c("BARC", "CRAM", "LIRO", "PRLA", "PRPO", "SUGG", "TOOK")
 
-# Prepare body size data by site-taxon combination
-body_size_by_site_taxon <- zoo_body_size |>
+# For each body size record, match with temperature from same month/year/site
+body_size_with_temp <- zoo_body_size_dated |>
   filter(siteID %in% zoo_sites) |>
+  left_join(
+    monthly_temp_by_site,
+    by = c("siteID", "year", "month")
+  )
+
+# Check how many matches we got
+na_matches <- sum(is.na(body_size_with_temp$temp_mean))
+cat("Matched body size records with temperature:\n")
+cat("  Total records:", nrow(body_size_with_temp), "\n")
+cat("  With temperature data:", nrow(body_size_with_temp) - na_matches, "\n")
+cat("  Missing temperature:", na_matches, "\n\n")
+
+# Now aggregate by site-taxon combination WITH matched temperatures
+body_size_by_site_taxon <- body_size_with_temp |>
+  filter(!is.na(temp_mean)) |>  # Only use records with temperature data
   group_by(siteID, taxonID) |>
   summarise(
     mean_length = mean(mean_body_length, na.rm = TRUE),
     max_length = mean(max_body_length, na.rm = TRUE),
     count_per_liter = mean(count_per_liter, na.rm = TRUE),
+    matched_temp_mean = mean(temp_mean, na.rm = TRUE),  # Temperature at actual sampling time
+    matched_temp_sd = sd(temp_mean, na.rm = TRUE),
     n_samples = n(),
     .groups = "drop"
   ) |>
-  left_join(summer_temp_by_site, by = "siteID")
+  arrange(siteID, taxonID)
 
 cat("Body size by site-taxon combinations:\n")
 cat("  Records:", nrow(body_size_by_site_taxon), "\n")
 cat("  Unique taxa:", n_distinct(body_size_by_site_taxon$taxonID), "\n\n")
 
 # ============================================================================
-# Part 2: Overall Correlation - Body Size vs Summer Temperature
+# Part 2: Overall Correlation - Body Size vs Matched Temperature
 # ============================================================================
 
-cat("Testing overall relationship: Body size vs summer temperature...\n\n")
+cat("Testing overall relationship: Body size vs MATCHED temperature...\n")
+cat("(Temperature matched to the month/year of each sample collection)\n\n")
 
 # Remove NAs for correlation
 data_complete <- body_size_by_site_taxon |>
-  filter(!is.na(mean_length) & !is.na(summer_temp_mean))
+  filter(!is.na(mean_length) & !is.na(matched_temp_mean))
 
-cat("Sample size:", nrow(data_complete), "site-taxon combinations\n")
+cat("Sample size:", nrow(data_complete), "site-taxon combinations\n\n")
 
 # Overall correlation
-overall_cor <- cor(data_complete$summer_temp_mean, data_complete$mean_length, use = "complete.obs")
-overall_lm <- lm(mean_length ~ summer_temp_mean, data = data_complete)
+overall_cor <- cor(data_complete$matched_temp_mean, data_complete$mean_length, use = "complete.obs")
+overall_lm <- lm(mean_length ~ matched_temp_mean, data = data_complete)
 overall_summary <- summary(overall_lm)
 
 # Save overall results
 overall_results <- data.frame(
-  model = "Mean Body Length ~ Summer Temperature (all taxa)",
+  model = "Mean Body Length ~ Matched Temperature (all taxa)",
+  comparison_type = "Temperature matched to sampling month/year",
   n_observations = nrow(data_complete),
   intercept = overall_lm$coefficients[1],
   slope = overall_lm$coefficients[2],
@@ -119,11 +151,11 @@ overall_results <- data.frame(
   adj_r_squared = overall_summary$adj.r.squared,
   p_value = overall_summary$coefficients[2, 4],
   correlation = overall_cor,
-  pattern = if_else(overall_lm$coefficients[2] < 0, "Larger in cool sites", "Larger in warm sites")
+  pattern = if_else(overall_lm$coefficients[2] < 0, "Larger in cool conditions", "Larger in warm conditions")
 )
 
-write_csv(overall_results, "stats-tables/overall_body_size_temp_regression.csv")
-cat("✓ Saved: stats-tables/overall_body_size_temp_regression.csv\n\n")
+write_csv(overall_results, "stats-tables/overall_body_size_temp_matched_regression.csv")
+cat("✓ Saved: stats-tables/overall_body_size_temp_matched_regression.csv\n\n")
 
 # ============================================================================
 # Part 3: Correlation by Taxon
@@ -145,12 +177,12 @@ taxon_results <- list()
 
 for (taxon in top_taxa) {
   taxon_data <- body_size_by_site_taxon |>
-    filter(taxonID == taxon, !is.na(mean_length), !is.na(summer_temp_mean))
+    filter(taxonID == taxon, !is.na(mean_length), !is.na(matched_temp_mean))
 
   if (nrow(taxon_data) >= 3) {  # Need at least 3 points for meaningful correlation
-    taxon_lm <- lm(mean_length ~ summer_temp_mean, data = taxon_data)
+    taxon_lm <- lm(mean_length ~ matched_temp_mean, data = taxon_data)
     taxon_summary <- summary(taxon_lm)
-    taxon_cor <- cor(taxon_data$summer_temp_mean, taxon_data$mean_length)
+    taxon_cor <- cor(taxon_data$matched_temp_mean, taxon_data$mean_length)
 
     slope <- taxon_lm$coefficients[2]
     pval <- taxon_summary$coefficients[2, 4]
@@ -175,17 +207,17 @@ for (taxon in top_taxa) {
 taxon_summary_df <- bind_rows(taxon_results) |>
   arrange(slope)
 
-write_csv(taxon_summary_df, "stats-tables/taxon_body_size_temp_regressions.csv")
-cat("✓ Saved: stats-tables/taxon_body_size_temp_regressions.csv\n\n")
+write_csv(taxon_summary_df, "stats-tables/taxon_body_size_temp_matched_regressions.csv")
+cat("✓ Saved: stats-tables/taxon_body_size_temp_matched_regressions.csv\n\n")
 
 # ============================================================================
 # Part 4: Site-level Analysis
 # ============================================================================
 
-cat("Summarizing body size and temperature by site...\n\n")
+cat("Summarizing body size and matched temperature by site...\n\n")
 
 body_size_by_site <- body_size_by_site_taxon |>
-  filter(!is.na(mean_length)) |>
+  filter(!is.na(mean_length) & !is.na(matched_temp_mean)) |>
   group_by(siteID) |>
   summarise(
     mean_body_length = mean(mean_length, na.rm = TRUE),
@@ -193,14 +225,18 @@ body_size_by_site <- body_size_by_site_taxon |>
     min_body_length = min(mean_length, na.rm = TRUE),
     max_body_length = max(mean_length, na.rm = TRUE),
     n_taxa = n(),
-    summer_temp_mean = first(summer_temp_mean),
-    summer_temp_sd = first(summer_temp_sd),
+    matched_temp_mean = mean(matched_temp_mean, na.rm = TRUE),
+    matched_temp_sd = sd(matched_temp_mean, na.rm = TRUE),
+    matched_temp_range = paste0(
+      round(min(matched_temp_mean, na.rm = TRUE), 1), " - ",
+      round(max(matched_temp_mean, na.rm = TRUE), 1)
+    ),
     .groups = "drop"
   ) |>
-  arrange(desc(summer_temp_mean))
+  arrange(desc(matched_temp_mean))
 
-write_csv(body_size_by_site, "stats-tables/body_size_summary_by_site.csv")
-cat("✓ Saved: stats-tables/body_size_summary_by_site.csv\n\n")
+write_csv(body_size_by_site, "stats-tables/body_size_summary_by_site_matched.csv")
+cat("✓ Saved: stats-tables/body_size_summary_by_site_matched.csv\n\n")
 
 # ============================================================================
 # Part 5: Create Visualizations
@@ -218,83 +254,83 @@ theme_set(theme_cowplot() +
 
 # Plot 1: Scatter plot - all taxa combined, by site
 p1_overall <- data_complete |>
-  ggplot(aes(x = summer_temp_mean, y = mean_length, color = siteID, size = n_samples)) +
+  ggplot(aes(x = matched_temp_mean, y = mean_length, color = siteID, size = n_samples)) +
   geom_point(alpha = 0.6) +
   geom_smooth(method = "lm", se = TRUE, color = "black", alpha = 0.2, size = 0.8) +
   labs(
-    title = "Zooplankton Body Size vs Summer Temperature",
-    x = "Summer Mean Temperature (°C)",
+    title = "Zooplankton Body Size vs Matched Temperature",
+    x = "Temperature During Sampling Month (°C)",
     y = "Mean Body Length (mm)",
     color = "Site",
     size = "N Samples",
-    subtitle = "All taxa combined, regression line shows overall trend"
+    subtitle = "Temperature matched to actual collection dates, regression line shows overall trend"
   ) +
   theme(legend.position = "right")
 
-ggsave("figures/body_size_vs_summer_temp_overall.png", p1_overall, width = 11, height = 7, dpi = 300)
-cat("✓ Saved: figures/body_size_vs_summer_temp_overall.png\n")
+ggsave("figures/body_size_vs_matched_temp_overall.png", p1_overall, width = 11, height = 7, dpi = 300)
+cat("✓ Saved: figures/body_size_vs_matched_temp_overall.png\n")
 
 # Plot 2: Faceted by taxon (top 6 taxa)
 top_6_taxa <- taxon_summary_df |> slice(c(1:3, (n()-2):n())) |> pull(taxonID)
 
 p2_by_taxon <- data_complete |>
   filter(taxonID %in% top_6_taxa) |>
-  ggplot(aes(x = summer_temp_mean, y = mean_length, color = siteID)) +
+  ggplot(aes(x = matched_temp_mean, y = mean_length, color = siteID)) +
   geom_point(size = 3, alpha = 0.7) +
   geom_smooth(method = "lm", se = TRUE, color = "black", alpha = 0.15, size = 0.8) +
   facet_wrap(~taxonID, scales = "free_y", ncol = 3) +
   labs(
-    title = "Body Size vs Summer Temperature by Taxon",
-    x = "Summer Mean Temperature (°C)",
+    title = "Body Size vs Matched Temperature by Taxon",
+    x = "Temperature During Sampling Month (°C)",
     y = "Mean Body Length (mm)",
     color = "Site"
   ) +
   theme(legend.position = "bottom")
 
-ggsave("figures/body_size_vs_summer_temp_by_taxon.png", p2_by_taxon, width = 14, height = 8, dpi = 300)
-cat("✓ Saved: figures/body_size_vs_summer_temp_by_taxon.png\n")
+ggsave("figures/body_size_vs_matched_temp_by_taxon.png", p2_by_taxon, width = 14, height = 8, dpi = 300)
+cat("✓ Saved: figures/body_size_vs_matched_temp_by_taxon.png\n")
 
-# Plot 3: Body size distribution at warm vs cool sites
-cool_warm_threshold <- median(body_size_by_site_taxon$summer_temp_mean, na.rm = TRUE)
+# Plot 3: Body size distribution at warm vs cool sites (based on matched temp)
+cool_warm_threshold <- median(body_size_by_site_taxon$matched_temp_mean, na.rm = TRUE)
 
 p3_warm_cool <- body_size_by_site_taxon |>
-  filter(!is.na(mean_length), !is.na(summer_temp_mean)) |>
+  filter(!is.na(mean_length), !is.na(matched_temp_mean)) |>
   mutate(
-    site_type = if_else(summer_temp_mean < cool_warm_threshold, "Cool Sites", "Warm Sites")
+    site_type = if_else(matched_temp_mean < cool_warm_threshold, "Cool Months", "Warm Months")
   ) |>
   ggplot(aes(x = site_type, y = mean_length, fill = site_type)) +
   geom_boxplot(alpha = 0.7, outlier.alpha = 0.3) +
   geom_jitter(width = 0.2, alpha = 0.3, size = 2) +
   labs(
-    title = "Zooplankton Body Size: Warm vs Cool Sites",
+    title = "Zooplankton Body Size: Warm vs Cool Sampling Conditions",
     x = "",
     y = "Mean Body Length (mm)",
-    subtitle = sprintf("Cool: < %.2f°C | Warm: > %.2f°C", cool_warm_threshold, cool_warm_threshold)
+    subtitle = sprintf("Cool: < %.2f°C | Warm: > %.2f°C (during sampling month)", cool_warm_threshold, cool_warm_threshold)
   ) +
   theme(legend.position = "none")
 
-ggsave("figures/body_size_warm_vs_cool_sites.png", p3_warm_cool, width = 10, height = 7, dpi = 300)
-cat("✓ Saved: figures/body_size_warm_vs_cool_sites.png\n")
+ggsave("figures/body_size_warm_vs_cool_months.png", p3_warm_cool, width = 10, height = 7, dpi = 300)
+cat("✓ Saved: figures/body_size_warm_vs_cool_months.png\n")
 
-# Plot 4: Mean body size by site (ordered by temperature)
+# Plot 4: Mean body size by site (ordered by matched temperature)
 p4_by_site <- body_size_by_site |>
-  mutate(siteID = fct_reorder(siteID, summer_temp_mean)) |>
-  ggplot(aes(x = siteID, y = mean_body_length, fill = summer_temp_mean)) +
+  mutate(siteID = fct_reorder(siteID, matched_temp_mean)) |>
+  ggplot(aes(x = siteID, y = mean_body_length, fill = matched_temp_mean)) +
   geom_col(alpha = 0.7) +
   geom_errorbar(aes(ymin = mean_body_length - sd_body_length,
                     ymax = mean_body_length + sd_body_length),
                 width = 0.2, alpha = 0.7, size = 1) +
-  scale_fill_gradient(low = "blue", high = "red", name = "Summer Temp (°C)") +
+  scale_fill_gradient(low = "blue", high = "red", name = "Matched Temp (°C)") +
   labs(
     title = "Mean Zooplankton Body Size by Site",
-    x = "Site (ordered by summer temperature)",
+    x = "Site (ordered by matched temperature)",
     y = "Mean Body Length (mm)",
-    subtitle = "Error bars show ±1 SD; color indicates summer temperature"
+    subtitle = "Error bars show ±1 SD; color indicates average temp during sampling months"
   ) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
-ggsave("figures/body_size_by_site_temp_gradient.png", p4_by_site, width = 11, height = 7, dpi = 300)
-cat("✓ Saved: figures/body_size_by_site_temp_gradient.png\n")
+ggsave("figures/body_size_by_site_matched_temp_gradient.png", p4_by_site, width = 11, height = 7, dpi = 300)
+cat("✓ Saved: figures/body_size_by_site_matched_temp_gradient.png\n")
 
 # Plot 5: Taxon-specific patterns (slope comparison)
 if (nrow(taxon_summary_df) > 0) {
@@ -333,16 +369,20 @@ sig_taxa <- sum(taxon_summary_df$significant == "Yes", na.rm = TRUE)
 
 summary_stats <- data.frame(
   metric = c(
+    "Analysis type",
+    "Temperature matching",
     "Overall slope (mm per °C)",
     "Overall R-squared",
     "Overall p-value",
     "Pattern",
     "Taxon sample size",
-    "Taxa larger in cool sites",
-    "Taxa larger in warm sites",
+    "Taxa larger in cool conditions",
+    "Taxa larger in warm conditions",
     "Significant taxa (p<0.05)"
   ),
   value = c(
+    "Body Size vs Matched Temperature",
+    "Matched to sampling month/year",
     round(overall_lm$coefficients[2], 6),
     round(overall_summary$r.squared, 4),
     format(overall_summary$coefficients[2, 4], scientific = TRUE),
@@ -354,15 +394,24 @@ summary_stats <- data.frame(
   )
 )
 
-write_csv(summary_stats, "stats-tables/analysis_summary.csv")
-cat("✓ Saved: stats-tables/analysis_summary.csv\n\n")
+write_csv(summary_stats, "stats-tables/analysis_summary_matched.csv")
+cat("✓ Saved: stats-tables/analysis_summary_matched.csv\n\n")
 
 cat("================================\n")
-cat("ANALYSIS COMPLETE\n")
+cat("MATCHED TEMPERATURE ANALYSIS COMPLETE\n")
 cat("================================\n")
 cat("Statistical results saved to stats-tables/:\n")
-cat("  - overall_body_size_temp_regression.csv\n")
-cat("  - taxon_body_size_temp_regressions.csv\n")
-cat("  - body_size_summary_by_site.csv\n")
-cat("  - analysis_summary.csv\n\n")
-cat("Figures saved to figures/\n\n")
+cat("  - overall_body_size_temp_matched_regression.csv\n")
+cat("  - taxon_body_size_temp_matched_regressions.csv\n")
+cat("  - body_size_summary_by_site_matched.csv\n")
+cat("  - analysis_summary_matched.csv\n\n")
+cat("Figures saved to figures/:\n")
+cat("  - body_size_vs_matched_temp_overall.png\n")
+cat("  - body_size_vs_matched_temp_by_taxon.png\n")
+cat("  - body_size_warm_vs_cool_months.png\n")
+cat("  - body_size_by_site_matched_temp_gradient.png\n\n")
+cat("KEY CHANGE (May 2026):\n")
+cat("  Temperature is NOW matched to the actual month/year of sample collection\n")
+cat("  Previously: only used summer (June-August) temperatures\n")
+cat("  Now: temperature from the exact month when each sample was taken\n")
+cat("  This provides a more accurate test of the hypothesis\n\n")

@@ -1,0 +1,2 @@
+model,comparison_type,n_observations,intercept,slope,r_squared,adj_r_squared,p_value,correlation,pattern
+Mean Body Length ~ Matched Temperature (all taxa),Temperature matched to sampling month/year,480,0.34289254822966697,0.00524469764321502,0.0011521121884913157,-9.375277441687757e-4,0.4581334422489486,0.03394277814928106,Larger in warm conditions

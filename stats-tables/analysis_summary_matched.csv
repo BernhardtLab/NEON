@@ -1,0 +1,11 @@
+metric,value
+Analysis type,Body Size vs Matched Temperature
+Temperature matching,Matched to sampling month/year
+Overall slope (mm per °C),0.005245
+Overall R-squared,0.0012
+Overall p-value,4.581334e-01
+Pattern,Larger in warm conditions
+Taxon sample size,10
+Taxa larger in cool conditions,9
+Taxa larger in warm conditions,1
+Significant taxa (p<0.05),2

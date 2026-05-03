@@ -1,0 +1,11 @@
+metric,value
+Matching Strategy,Hierarchical (exact → month → season → site avg)
+Data Retention Rate,100.0% of records (5901 / 5901 observations)
+Total Site-Taxon Combinations,558
+Overall Slope (mm per °C),0.005336
+Overall R-squared,0.0017
+Overall p-value,3.370301e-01
+Pattern,Larger in warm conditions
+Taxa Larger in Cool Conditions,9
+Taxa Larger in Warm Conditions,1
+Significant Taxa (p<0.05),1

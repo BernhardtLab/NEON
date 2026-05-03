@@ -1,0 +1,2 @@
+model,matching_strategy,n_observations,intercept,slope,r_squared,adj_r_squared,p_value,correlation,pattern
+Mean Body Length ~ Hierarchical Matched Temperature (all taxa),Hierarchical (exact → same month → adjacent month → site average),558,0.3440731355323966,0.005336276949728974,0.001657841814791593,-1.377376064048974e-4,0.3370300936926178,0.04071660367456485,Larger in warm conditions
