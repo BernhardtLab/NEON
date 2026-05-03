@@ -2,6 +2,17 @@
 # Purpose: Create a summary dataset with mean body size per zooplankton taxon per site per date
 #          Using ADULTS ONLY (excludes nauplii/larvae to avoid life stage confounding)
 # Date: 2026-05-02
+#
+# INPUTS:
+#   - data-processed/zooplankton_2014_2026.csv
+#     (Cleaned raw NEON zooplankton data from script 08, all life stages, 2014-2026)
+#
+# OUTPUTS:
+#   - data-processed/zooplankton_body_size_summary_adults_2014_2026.csv
+#     (Sample-level summary: siteID, collectDate, taxonID with mean/max/min body length)
+#     Used by: scripts 06, 06b, 13, 18
+#   - data-processed/zooplankton_taxon_body_size_stats_adults_2014_2026.csv
+#     (Taxon-level statistics: 177 taxa with mean length, std dev, min/max length, density)
 
 # Load libraries
 library(tidyverse)
@@ -20,13 +31,13 @@ cat("  Original records:", nrow(zoo_raw_all), "\n")
 cat("  After filtering (nauplii == 'N'):", nrow(zoo_raw), "\n")
 cat("  Records removed:", nrow(zoo_raw_all) - nrow(zoo_raw), "\n\n")
 
+
 # Create summary by siteID, collectDate, and taxonID
-# Calculate mean body size as (min + max) / 2 for each taxon-sample combination
+# Use zooMeanLength as primary body size metric (direct NEON measurement)
 zoo_body_size_summary <- zoo_raw |>
-  mutate(mean_body_length = (zooMinimumLength + zooMaximumLength) / 2) |>
   group_by(siteID, namedLocation, collectDate, taxonID) |>
   summarise(
-    mean_body_length = mean(mean_body_length, na.rm = TRUE),
+    mean_body_length = mean(zooMeanLength, na.rm = TRUE),
     min_body_length = mean(zooMinimumLength, na.rm = TRUE),
     max_body_length = mean(zooMaximumLength, na.rm = TRUE),
     mean_body_width = mean(zooWidth, na.rm = TRUE),
@@ -38,6 +49,7 @@ zoo_body_size_summary <- zoo_raw |>
   ) |>
   mutate(collectDate = as.Date(collectDate)) |>
   arrange(siteID, collectDate, taxonID)
+
 
 # Print summary statistics
 cat("Summary records (taxa per sample):", nrow(zoo_body_size_summary), "\n")

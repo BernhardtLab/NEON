@@ -1,9 +1,25 @@
 # Merge All Data: Body Size, Temperature, and Food Supply
-# Purpose: Create final analysis-ready dataset combining:
+# Purpose: Create final analysis-ready dataset combining all three data sources
 #   - Zooplankton body size (monthly, adults only)
 #   - Lake temperature (monthly)
-#   - Food supply (nutrients and dissolved oxygen, monthly)
+#   - Food supply: nutrients, dissolved oxygen, and phytoplankton biomass (monthly)
 # Date: 2026-05-02
+#
+# INPUTS:
+#   - data-processed/body_size_temperature_analysis.csv
+#     (Monthly body size + temperature merged data from script 13)
+#   - data-processed/nutrients_monthly_summary.csv
+#     (Monthly nutrient aggregates from script 15)
+#   - data-processed/dissolved_oxygen_monthly_summary.csv
+#     (Monthly DO aggregates from script 15)
+#   - data-processed/phytoplankton_biomass_monthly_summary.csv
+#     (Monthly phytoplankton biomass from script 15b, optional)
+#
+# OUTPUTS:
+#   - data-processed/zooplankton_body_size_temp_food_supply_analysis.csv
+#     (Full analysis-ready dataset with all variables, all records)
+#   - data-processed/zooplankton_analysis_complete_cases.csv
+#     (Subset with only complete cases for regression analysis)
 
 library(tidyverse)
 library(readr)

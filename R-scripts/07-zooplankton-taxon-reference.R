@@ -1,7 +1,14 @@
 # Zooplankton Taxon Reference
 # Purpose: Extract and compile zooplankton taxon codes and scientific names from raw NEON data
-# Source: NEON zoo_taxonomyProcessed files from data-raw/NEON_zooplankton/
 # Date: 2026-05-02
+#
+# INPUTS:
+#   - data-raw/NEON_zooplankton/ (all zoo_taxonomyProcessed*.csv files)
+#     (Raw NEON taxonomy data files)
+#
+# OUTPUTS:
+#   - data-processed/zooplankton_taxon_reference.csv
+#     (Unique taxon reference: taxonID, scientificName, phylum, class, order, family, genus)
 
 # Load libraries
 library(tidyverse)

@@ -1,10 +1,28 @@
 # Merge Monthly Temperature with Zooplankton Body Size Data
 # Purpose: Combine adults-only body size data with monthly temperature for analysis
 # Date: 2026-05-02
+#
+# INPUTS:
+#   - data-raw/NEON_daily_summaries/NEON_daily_temp_stats_lake_tchain.csv
+#     (Raw daily temperature data from NEON)
+#   - data-processed/zooplankton_body_size_summary_adults_2014_2026.csv
+#     (Adults-only body size summary from script 05)
+#
+# OUTPUTS:
+#   - data-processed/temperature_monthly_summary.csv
+#     (Monthly temperature aggregates by site)
+#   - data-processed/body_size_monthly_summary.csv
+#     (Monthly body size aggregates by site)
+#   - data-processed/body_size_temperature_merged.csv
+#     (Full merged dataset with all columns)
+#   - data-processed/body_size_temperature_analysis.csv
+#     (Analysis-ready dataset with key variables only, used by script 16)
+#   - figures/temperature_*.png (5 temperature visualizations)
 
 library(tidyverse)
 library(readr)
 library(lubridate)
+library(cowplot)
 
 # ============================================================================
 # Part 1: Load Data

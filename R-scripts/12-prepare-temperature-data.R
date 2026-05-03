@@ -1,6 +1,15 @@
 # Prepare Temperature Data for Zooplankton Analysis
 # Purpose: Load lake temperature data and create summaries matched to zooplankton sampling dates
 # Date: 2026-05-02
+#
+# INPUTS:
+#   - data-raw/NEON_daily_summaries/NEON_daily_temp_stats_lake_tchain.csv
+#     (Raw daily temperature data from NEON)
+#   - data-processed/zooplankton_2014_2026.csv
+#     (Cleaned zooplankton data for reference dates)
+#
+# OUTPUTS:
+#   - Temperature data summaries and initial exploration
 
 library(tidyverse)
 library(readr)

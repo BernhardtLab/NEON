@@ -1,6 +1,16 @@
 # Prepare Phytoplankton Biomass Data for Zooplankton Analysis
-# Purpose: Load algal biomass (ash-free dry mass) as food supply indicator
+# Purpose: Load algal biomass (ash-free dry mass) as direct food supply indicator
 # Date: 2026-05-02
+#
+# INPUTS:
+#   - data-raw/MicroAlgae_Collection_NeonData.Robj
+#     (R object containing microalgae data, extracted as NeonData$alg_biomass)
+#
+# OUTPUTS:
+#   - data-processed/phytoplankton_biomass_monthly_summary.csv
+#     (Monthly phytoplankton biomass aggregates by site)
+#   - stats-tables/food_supply_phytoplankton_biomass_by_site.csv
+#     (Site-level phytoplankton biomass statistics)
 
 library(tidyverse)
 library(readr)

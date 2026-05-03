@@ -2,6 +2,20 @@
 # Purpose: Create visualizations of zooplankton MAXIMUM body size patterns across sites and time
 #          Using ADULTS ONLY (excludes nauplii/larvae to avoid life stage confounding)
 # Date: 2026-05-02
+#
+# INPUTS:
+#   - data-processed/zooplankton_body_size_summary_adults_2014_2026.csv
+#     (Sample-level body size summary from script 05)
+#
+# OUTPUTS:
+#   - figures/zooplankton_timeseries_by_site_max_adults_2014_2026.png
+#   - figures/zooplankton_body_size_distribution_max_adults_2014_2026.png
+#   - figures/zooplankton_temporal_patterns_max_adults_2014_2026.png
+#   - figures/zooplankton_density_vs_body_size_max_adults_2014_2026.png
+#   - figures/zooplankton_site_comparison_max_adults_2014_2026.png
+#   - figures/zooplankton_body_size_across_sites_max_adults_2014_2026.png
+#   - figures/zooplankton_mean_vs_max_by_taxon_adults_2014_2026.png
+#   (7 PNG visualization files showing maximum body size patterns and comparisons)
 
 # Load libraries
 library(tidyverse)

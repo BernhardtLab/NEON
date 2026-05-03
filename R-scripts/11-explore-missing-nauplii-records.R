@@ -1,6 +1,14 @@
 # Explore Missing/NA Nauplii Records
 # Purpose: Understand what the NA records are and why they affect body size averages
 # Date: 2026-05-02
+#
+# INPUTS:
+#   - data-processed/zooplankton_2014_2026.csv
+#     (Cleaned zooplankton data from script 08, all life stages)
+#
+# OUTPUTS:
+#   - Console output: NA statistics by taxon and site
+#   - Investigation of missing nauplii field values
 
 library(tidyverse)
 library(readr)

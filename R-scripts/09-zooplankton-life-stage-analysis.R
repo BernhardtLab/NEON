@@ -1,6 +1,14 @@
 # Zooplankton Life Stage Analysis
 # Purpose: Separate adults from nauplii, examine composition, and compare body size patterns
 # Date: 2026-05-02
+#
+# INPUTS:
+#   - data-processed/zooplankton_2014_2026.csv
+#     (Cleaned zooplankton data from script 08, all life stages)
+#
+# OUTPUTS:
+#   - Console output: life stage breakdown, taxa composition analysis
+#   - Multiple PNG visualization files showing nauplii vs adult patterns
 
 # Load libraries
 library(tidyverse)

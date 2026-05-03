@@ -1,9 +1,18 @@
 # Extract and Clean Zooplankton Data from Raw NEON Downloads
 # Purpose: Process fresh NEON zooplankton data downloads (2014-2026) following the same
-#          cleaning steps as exploreZooDataProducts.R
-# Source: data-raw/NEON_zooplankton/ (all zoo_fieldData, zoo_perSample, zoo_taxonomyProcessed CSVs)
-# Output: data-processed/zooplankton_2014_2026.csv
+#          cleaning steps as exploreZooDataProducts.R (deduplication, filtering, merging)
 # Date: 2026-05-02
+#
+# INPUTS:
+#   - data-raw/NEON_zooplankton/ (zoo_fieldData*.csv files)
+#   - data-raw/NEON_zooplankton/ (zoo_perSample*.csv files)
+#   - data-raw/NEON_zooplankton/ (zoo_taxonomyProcessed*.csv files)
+#     (Raw NEON zooplankton data: field observations, sample data, taxonomy)
+#
+# OUTPUTS:
+#   - data-processed/zooplankton_2014_2026.csv
+#     (Cleaned zooplankton data: all life stages, 2014-2026, with body size and count metrics)
+#     Used by: script 05 (filtered to adults only)
 
 # Load libraries
 library(tidyverse)
@@ -181,9 +190,16 @@ zoo <- zoo_with_taxonomy %>%
     sampleID,
     samplerType,
     towsTrapsVolume,
+    sampleNumber,
+    towsTrapsNumber,
+    samplerType,
+    zooDepth1,
+    zooDepth2,
+    zooDepth3,
     taxonID,
     nauplii,
     zooMinimumLength,
+    zooMeanLength,
     zooMaximumLength,
     zooWidth,
     adjCountPerBottle

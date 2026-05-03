@@ -2,6 +2,15 @@
 # Purpose: Side-by-side comparison showing how body size patterns differ
 #          when nauplii (larvae) are included vs. excluded
 # Date: 2026-05-02
+#
+# INPUTS:
+#   - data-processed/zooplankton_2014_2026.csv
+#     (Cleaned zooplankton data from script 08, all life stages)
+#   - data-processed/zooplankton_body_size_summary_adults_2014_2026.csv
+#     (Adults-only summary from script 05)
+#
+# OUTPUTS:
+#   - Multiple PNG comparison figures showing mixed vs adults-only body size patterns
 
 # Load libraries
 library(tidyverse)

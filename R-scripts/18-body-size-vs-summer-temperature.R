@@ -1,7 +1,24 @@
 # Zooplankton Body Size vs Summer Temperature by Site
 # Purpose: Test hypothesis - are zooplankton larger in cooler lakes?
-# Analysis: Body size across sites compared to site-specific summer temperatures
+# Analysis: Body size across sites compared to site-specific summer temperatures (June-August)
 # Date: 2026-05-02
+#
+# INPUTS:
+#   - data-processed/zooplankton_body_size_summary_adults_2014_2026.csv
+#     (Adults-only body size summary from script 05)
+#   - data-raw/NEON_daily_summaries/NEON_daily_temp_stats_lake_tchain.csv
+#     (Raw daily temperature data for summer months)
+#
+# OUTPUTS:
+#   - stats-tables/overall_body_size_temp_regression.csv
+#     (Overall correlation: body size vs summer temperature across all taxa)
+#   - stats-tables/taxon_body_size_temp_regressions.csv
+#     (Per-taxon regressions: individual responses to temperature)
+#   - stats-tables/body_size_summary_by_site.csv
+#     (Site-level summaries: mean body size and summer temperature)
+#   - stats-tables/analysis_summary.csv
+#     (Summary of results and pattern of findings)
+#   - figures/body_size_vs_summer_temp_*.png (5 visualization figures)
 
 library(tidyverse)
 library(readr)

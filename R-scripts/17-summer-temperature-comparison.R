@@ -1,6 +1,22 @@
 # Compare Summer Temperature Across Lake Sites
-# Purpose: Analyze temperature during growing season (summer) to identify warmest sites
+# Purpose: Analyze temperature during growing season (summer, June-August) to identify warmest sites
 # Date: 2026-05-02
+#
+# INPUTS:
+#   - data-raw/NEON_daily_summaries/NEON_daily_temp_stats_lake_tchain.csv
+#     (Raw daily temperature data from NEON)
+#
+# OUTPUTS:
+#   - stats-tables/summer_temperature_by_site.csv
+#     (Summary statistics for each site during summer)
+#   - stats-tables/summer_temperature_by_month.csv
+#     (Site-specific monthly breakdown for June, July, August)
+#   - stats-tables/summer_temperature_by_year.csv
+#     (Year-specific summer temperatures by site)
+#   - stats-tables/summer_temperature_anova.csv
+#     (ANOVA test results comparing sites)
+#   - stats-tables/summer_temperature_pairwise.csv
+#     (Pairwise comparisons between sites)
 
 library(tidyverse)
 library(readr)

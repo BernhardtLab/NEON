@@ -1,6 +1,23 @@
 # Prepare Food Supply Data for Zooplankton Analysis
-# Purpose: Load and prepare phytoplankton/food supply data for merging with zooplankton body size and temperature
+# Purpose: Load and prepare nutrients and dissolved oxygen data (food supply proxies)
+#          for merging with zooplankton body size and temperature
 # Date: 2026-05-02
+#
+# INPUTS:
+#   - data-raw/NEON_daily_summaries/NEON_nutrients.csv
+#     (Daily nutrient data: NO3, NH4, TDN, TN, OrthoP, TDP, TP)
+#   - data-raw/NEON_daily_summaries/NEON_daily_oxygen_stats.csv
+#     (Daily dissolved oxygen data: meanDO, maxDO, minDO)
+#
+# OUTPUTS:
+#   - data-processed/nutrients_monthly_summary.csv
+#     (Monthly nutrient aggregates by site: means and SDs)
+#   - data-processed/dissolved_oxygen_monthly_summary.csv
+#     (Monthly DO aggregates by site: means)
+#   - stats-tables/food_supply_nutrients_by_site.csv
+#     (Site-level nutrient statistics)
+#   - stats-tables/food_supply_dissolved_oxygen_by_site.csv
+#     (Site-level DO statistics)
 
 library(tidyverse)
 library(readr)

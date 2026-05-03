@@ -2,6 +2,19 @@
 # Purpose: Create visualizations of zooplankton body size patterns across sites and time
 #          Using ADULTS ONLY (excludes nauplii/larvae to avoid life stage confounding)
 # Date: 2026-05-02
+#
+# INPUTS:
+#   - data-processed/zooplankton_body_size_summary_adults_2014_2026.csv
+#     (Sample-level body size summary from script 05)
+#
+# OUTPUTS:
+#   - figures/zooplankton_timeseries_by_site_adults_2014_2026.png
+#   - figures/zooplankton_body_size_distribution_adults_2014_2026.png
+#   - figures/zooplankton_temporal_patterns_adults_2014_2026.png
+#   - figures/zooplankton_density_vs_body_size_adults_2014_2026.png
+#   - figures/zooplankton_site_comparison_adults_2014_2026.png
+#   - figures/zooplankton_body_size_across_sites_adults_2014_2026.png
+#   (6 PNG visualization files showing mean body size patterns)
 
 # Load libraries
 library(tidyverse)

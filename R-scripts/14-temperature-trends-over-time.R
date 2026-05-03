@@ -1,6 +1,18 @@
 # Test for Temperature Trends Over Time
 # Purpose: Determine if lake sites are warming or cooling over the entire time series
 # Date: 2026-05-02
+#
+# INPUTS:
+#   - data-raw/NEON_daily_summaries/NEON_daily_temp_stats_lake_tchain.csv
+#     (Raw daily temperature data from NEON)
+#
+# OUTPUTS:
+#   - stats-tables/temperature_trends_by_site.csv
+#     (Trend statistics for each site: slope, intercept, p-value, direction)
+#   - stats-tables/temperature_trend_categories.csv
+#     (Classification of sites as warming/cooling/stable)
+#   - stats-tables/temperature_trend_summary.csv
+#     (Summary of trend results across all sites)
 
 library(tidyverse)
 library(readr)
