@@ -6,8 +6,8 @@
 library(tidyverse)
 library(readr)
 
-# Load the raw zooplankton data
-zoo_raw <- read_csv("Clean Data/zooplankton.csv")
+# Load the raw zooplankton data (2014-2026)
+zoo_raw <- read_csv("data-processed/zooplankton_2014_2026.csv")
 
 # Create summary by siteID, collectDate, and taxonID
 # Calculate mean body size as (min + max) / 2 for each taxon-sample combination
@@ -63,8 +63,8 @@ write_csv(zoo_taxon_stats, "data-processed/zooplankton_taxon_body_size_stats.csv
 cat("\n✓ Full taxon statistics saved to: data-processed/zooplankton_taxon_body_size_stats.csv\n")
 
 # Save the summary dataset
-write_csv(zoo_body_size_summary, "data-processed/zooplankton_body_size_summary.csv")
-cat("\n✓ Summary dataset saved to: data-processed/zooplankton_body_size_summary.csv\n")
+write_csv(zoo_body_size_summary, "data-processed/zooplankton_body_size_summary_2014_2026.csv")
+cat("\n✓ Summary dataset saved to: data-processed/zooplankton_body_size_summary_2014_2026.csv\n")
 
 
 
