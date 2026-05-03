@@ -59,13 +59,13 @@ cat("\n")
 # Part 2: Summary Statistics Comparison
 # ============================================================================
 
-cat("=" * 80, "\n")
+cat(paste(rep("=", 80), collapse = ""), "\n")
 cat("SUMMARY STATISTICS: MIXED vs. ADULTS-ONLY\n")
-cat("=" * 80, "\n\n")
+cat(paste(rep("=", 80), collapse = ""), "\n\n")
 
 # Overall body size statistics
 cat("Overall Body Size (all taxa combined):\n")
-cat("-" * 80, "\n")
+cat(paste(rep("-", 80), collapse = ""), "\n")
 
 mixed_stats <- zoo_mixed_summary %>%
   summarise(
@@ -100,9 +100,9 @@ cat("  % difference in mean:", round((mixed_stats$mean_length - adults_stats$mea
 # Part 3: Per-Taxon Comparison (Top 10)
 # ============================================================================
 
-cat("\n\n" * 80, "\n")
+cat("\n\n", paste(rep("=", 80), collapse = ""), "\n", sep = "")
 cat("PER-TAXON COMPARISON: Top 10 Taxa\n")
-cat("=" * 80, "\n\n")
+cat(paste(rep("=", 80), collapse = ""), "\n\n")
 
 mixed_by_taxon <- zoo_mixed_summary %>%
   filter(taxonID %in% top_taxa) %>%
@@ -132,7 +132,7 @@ taxon_comparison <- mixed_by_taxon %>%
   arrange(desc(abs(length_pct_difference)))
 
 cat("Taxon | Mixed Samples | Mixed Mean | Adult Samples | Adult Mean | Diff (mm) | Diff (%) | Sample Diff\n")
-cat("-" * 110, "\n")
+cat(paste(rep("-", 110), collapse = ""), "\n")
 for (i in 1:nrow(taxon_comparison)) {
   row <- taxon_comparison[i, ]
   cat(sprintf("%-10s | %13d | %10.4f | %13d | %10.4f | %9.4f | %8.1f | %10d\n",
@@ -218,9 +218,9 @@ cat("✓ Saved: figures/comparison_distributions_mixed_vs_adults.png\n")
 # Part 5: Key Findings Summary
 # ============================================================================
 
-cat("\n\n" * 80, "\n")
+cat("\n\n", paste(rep("=", 80), collapse = ""), "\n", sep = "")
 cat("KEY FINDINGS\n")
-cat("=" * 80, "\n\n")
+cat(paste(rep("=", 80), collapse = ""), "\n\n")
 
 cat("1. SAMPLE SIZE IMPACT:\n")
 cat("   - Mixed data: ", nrow(zoo_mixed_summary), " samples\n", sep = "")
@@ -248,6 +248,7 @@ cat("   - Some taxa (like those heavily dominated by nauplii) show dramatic shif
 cat("   - Adults-only approach gives cleaner signal for temperature/food supply hypothesis\n")
 cat("   - Nauplii should be analyzed separately if interested in recruitment dynamics\n")
 
-cat("\n" * 80, "\n")
+cat("\n", paste(rep("=", 80), collapse = ""), "\n", sep = "")
 cat("Comparison analysis complete!\n")
-cat("=" * 80, "\n")
+cat(paste(rep("=", 80), collapse = ""), "\n")
+
