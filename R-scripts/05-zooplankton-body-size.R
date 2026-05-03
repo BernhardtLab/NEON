@@ -1,13 +1,24 @@
-# Zooplankton Body Size Data Wrangling
+# Zooplankton Body Size Data Wrangling - ADULTS ONLY
 # Purpose: Create a summary dataset with mean body size per zooplankton taxon per site per date
+#          Using ADULTS ONLY (excludes nauplii/larvae to avoid life stage confounding)
 # Date: 2026-05-02
 
 # Load libraries
 library(tidyverse)
 library(readr)
 
-# Load the raw zooplankton data (2014-2026)
-zoo_raw <- read_csv("data-processed/zooplankton_2014_2026.csv")
+# Load the RAW zooplankton data (2014-2026, all life stages)
+zoo_raw_all <- read_csv("data-processed/zooplankton_2014_2026.csv")
+
+# Filter to ADULTS ONLY (nauplii == "N")
+# This removes nauplii (larvae) to avoid confounding life stages in body size analysis
+zoo_raw <- zoo_raw_all %>%
+  filter(nauplii == "N")
+
+cat("Filtering to adults only:\n")
+cat("  Original records:", nrow(zoo_raw_all), "\n")
+cat("  After filtering (nauplii == 'N'):", nrow(zoo_raw), "\n")
+cat("  Records removed:", nrow(zoo_raw_all) - nrow(zoo_raw), "\n\n")
 
 # Create summary by siteID, collectDate, and taxonID
 # Calculate mean body size as (min + max) / 2 for each taxon-sample combination
@@ -29,7 +40,6 @@ zoo_body_size_summary <- zoo_raw %>%
   arrange(siteID, collectDate, taxonID)
 
 # Print summary statistics
-cat("Original zooplankton records:", nrow(zoo_raw), "\n")
 cat("Summary records (taxa per sample):", nrow(zoo_body_size_summary), "\n")
 cat("Unique taxa:", n_distinct(zoo_body_size_summary$taxonID), "\n")
 cat("Unique sites:", n_distinct(zoo_body_size_summary$siteID), "\n")
@@ -59,12 +69,12 @@ cat("Showing top 10 most abundant:\n")
 print(head(zoo_taxon_stats, 10))
 
 # Save the full taxon statistics
-write_csv(zoo_taxon_stats, "data-processed/zooplankton_taxon_body_size_stats.csv")
-cat("\n✓ Full taxon statistics saved to: data-processed/zooplankton_taxon_body_size_stats.csv\n")
+write_csv(zoo_taxon_stats, "data-processed/zooplankton_taxon_body_size_stats_adults_2014_2026.csv")
+cat("\n✓ Full taxon statistics saved to: data-processed/zooplankton_taxon_body_size_stats_adults_2014_2026.csv\n")
 
 # Save the summary dataset
-write_csv(zoo_body_size_summary, "data-processed/zooplankton_body_size_summary_2014_2026.csv")
-cat("\n✓ Summary dataset saved to: data-processed/zooplankton_body_size_summary_2014_2026.csv\n")
+write_csv(zoo_body_size_summary, "data-processed/zooplankton_body_size_summary_adults_2014_2026.csv")
+cat("\n✓ Summary dataset saved to: data-processed/zooplankton_body_size_summary_adults_2014_2026.csv\n")
 
 
 

@@ -1,5 +1,6 @@
-# Zooplankton Body Size Data Visualization
+# Zooplankton Body Size Data Visualization - ADULTS ONLY
 # Purpose: Create visualizations of zooplankton body size patterns across sites and time
+#          Using ADULTS ONLY (excludes nauplii/larvae to avoid life stage confounding)
 # Date: 2026-05-02
 
 # Load libraries
@@ -8,8 +9,8 @@ library(readr)
 library(ggplot2)
 library(cowplot)
 
-# Load the zooplankton body size summary data
-zoo_body_size_summary <- read_csv("data-processed/zooplankton_body_size_summary.csv")
+# Load the ADULTS-ONLY zooplankton body size summary data (2014-2026)
+zoo_body_size_summary <- read_csv("data-processed/zooplankton_body_size_summary_adults_2014_2026.csv")
 
 # Get the top 10 most abundant taxa for consistent visualization across plots
 top_taxa <- zoo_body_size_summary %>%
@@ -56,8 +57,8 @@ p1 <- ggplot(p1_data, aes(x = collectDate, y = mean_body_length, color = taxonID
   ) +
   theme(legend.text = element_text(size = 9))
 
-ggsave("figures/zooplankton_timeseries_by_site.png", p1, width = 14, height = 10, dpi = 300)
-cat("✓ Saved: figures/zooplankton_timeseries_by_site.png\n")
+ggsave("figures/zooplankton_timeseries_by_site_adults_2014_2026.png", p1, width = 14, height = 10, dpi = 300)
+cat("✓ Saved: figures/zooplankton_timeseries_by_site_adults_2014_2026.png\n")
 
 # ============================================================================
 # Plot 2: Body Size Distribution by Taxon
@@ -78,8 +79,8 @@ p2 <- ggplot(p2_data, aes(x = reorder(taxonID, mean_body_length, FUN = median),
     subtitle = "Top 10 taxa; points show individual samples"
   )
 
-ggsave("figures/zooplankton_body_size_distribution.png", p2, width = 10, height = 7, dpi = 300)
-cat("✓ Saved: figures/zooplankton_body_size_distribution.png\n")
+ggsave("figures/zooplankton_body_size_distribution_adults_2014_2026.png", p2, width = 10, height = 7, dpi = 300)
+cat("✓ Saved: figures/zooplankton_body_size_distribution_adults_2014_2026.png\n")
 
 # ============================================================================
 # Plot 3: Temporal Patterns (Body Size vs. Date)
@@ -99,8 +100,8 @@ p3 <- ggplot(p3_data, aes(x = collectDate, y = mean_body_length, color = taxonID
   ) +
   theme(legend.text = element_text(size = 9))
 
-ggsave("figures/zooplankton_temporal_patterns.png", p3, width = 12, height = 7, dpi = 300)
-cat("✓ Saved: figures/zooplankton_temporal_patterns.png\n")
+ggsave("figures/zooplankton_temporal_patterns_adults_2014_2026.png", p3, width = 12, height = 7, dpi = 300)
+cat("✓ Saved: figures/zooplankton_temporal_patterns_adults_2014_2026.png\n")
 
 # ============================================================================
 # Plot 4: Density vs. Body Size
@@ -120,48 +121,64 @@ p4 <- ggplot(p4_data, aes(x = mean_body_length, y = count_per_liter, color = tax
   ) +
   theme(legend.text = element_text(size = 9))
 
-ggsave("figures/zooplankton_density_vs_body_size.png", p4, width = 11, height = 7, dpi = 300)
-cat("✓ Saved: figures/zooplankton_density_vs_body_size.png\n")
+ggsave("figures/zooplankton_density_vs_body_size_adults_2014_2026.png", p4, width = 11, height = 7, dpi = 300)
+cat("✓ Saved: figures/zooplankton_density_vs_body_size_adults_2014_2026.png\n")
 
 # ============================================================================
-# Plot 5: Site Comparison
+# Plot 5: Site Comparison (Box Plot - Distribution of Body Sizes)
 # ============================================================================
 p5_data <- zoo_body_size_summary %>%
-  filter(taxonID %in% top_taxa) %>%
-  group_by(siteID, taxonID) %>%
-  summarise(
-    mean_body_length = mean(mean_body_length, na.rm = TRUE),
-    sd_body_length = sd(mean_body_length, na.rm = TRUE),
-    n_samples = n(),
-    .groups = "drop"
-  )
+  filter(taxonID %in% top_taxa)
 
 p5 <- ggplot(p5_data, aes(x = siteID, y = mean_body_length, fill = taxonID)) +
-  geom_col(position = "dodge", alpha = 0.8) +
+  geom_boxplot(alpha = 0.7, outlier.alpha = 0.3) +
   scale_fill_manual(values = taxa_colors, name = "Taxon") +
   labs(
-    title = "Zooplankton Body Size by Site",
+    title = "Zooplankton Body Size Distribution by Site",
     x = "Site ID",
     y = "Mean Body Length (mm)",
-    subtitle = "Average body size for top 10 taxa across sites"
+    subtitle = "Distribution of body sizes across samples for top 10 taxa"
   ) +
   theme(legend.text = element_text(size = 9),
         axis.text.x = element_text(angle = 45, hjust = 1))
 
-ggsave("figures/zooplankton_site_comparison.png", p5, width = 12, height = 7, dpi = 300)
-cat("✓ Saved: figures/zooplankton_site_comparison.png\n")
+ggsave("figures/zooplankton_site_comparison_adults_2014_2026.png", p5, width = 12, height = 7, dpi = 300)
+cat("✓ Saved: figures/zooplankton_site_comparison_adults_2014_2026.png\n")
+
+# ============================================================================
+# Plot 6: Body Size Variation Across Sites (by Taxon)
+# ============================================================================
+p6_data <- zoo_body_size_summary %>%
+  filter(taxonID %in% top_taxa)
+
+p6 <- ggplot(p6_data, aes(x = siteID, y = mean_body_length, fill = siteID)) +
+  geom_boxplot(alpha = 0.7, outlier.alpha = 0.3) +
+  facet_wrap(~ taxonID, scales = "free_y", ncol = 5) +
+  labs(
+    title = "Zooplankton Body Size Variation Across Sites",
+    x = "Site ID",
+    y = "Mean Body Length (mm)",
+    subtitle = "Distribution of body sizes for each taxon across sites (all years pooled)"
+  ) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 45, hjust = 1))
+
+ggsave("figures/zooplankton_body_size_across_sites_adults_2014_2026.png", p6, width = 16, height = 10, dpi = 300)
+cat("✓ Saved: figures/zooplankton_body_size_across_sites_adults_2014_2026.png\n")
 
 # ============================================================================
 # Summary
 # ============================================================================
-cat("\n" + "="*70 + "\n")
-cat("Visualization Summary\n")
-cat("="*70 + "\n")
+cat(paste(rep("=", 70), collapse = ""), "\n")
+cat("Visualization Summary - Mean Body Size (2014-2026 data, ADULTS ONLY)\n")
+cat(paste(rep("=", 70), collapse = ""), "\n")
 cat("All plots saved to figures/ folder:\n")
-cat("  1. zooplankton_timeseries_by_site.png\n")
-cat("  2. zooplankton_body_size_distribution.png\n")
-cat("  3. zooplankton_temporal_patterns.png\n")
-cat("  4. zooplankton_density_vs_body_size.png\n")
-cat("  5. zooplankton_site_comparison.png\n")
+cat("  1. zooplankton_timeseries_by_site_adults_2014_2026.png\n")
+cat("  2. zooplankton_body_size_distribution_adults_2014_2026.png\n")
+cat("  3. zooplankton_temporal_patterns_adults_2014_2026.png\n")
+cat("  4. zooplankton_density_vs_body_size_adults_2014_2026.png\n")
+cat("  5. zooplankton_site_comparison_adults_2014_2026.png\n")
+cat("  6. zooplankton_body_size_across_sites_adults_2014_2026.png\n")
+cat("\nNote: Nauplii (larvae) excluded from this analysis to avoid life stage confounding\n")
 cat("\nTop 10 taxa visualized:\n")
 print(top_taxa)
