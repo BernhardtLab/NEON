@@ -35,7 +35,7 @@ cat("Records with nauplii == 'Y' (nauplii):", sum(zoo_raw$nauplii == "Y", na.rm 
 cat("2. TAXA WITH MISSING NAUPLII VALUES\n")
 cat(paste(rep("-", 80), collapse = ""), "\n\n")
 
-na_by_taxon <- zoo_raw %>%
+na_by_taxon <- zoo_raw |>
   mutate(
     life_stage = case_when(
       is.na(nauplii) ~ "NA",
@@ -43,15 +43,15 @@ na_by_taxon <- zoo_raw %>%
       nauplii == "N" ~ "Adult",
       TRUE ~ "Unknown"
     )
-  ) %>%
-  group_by(taxonID, life_stage) %>%
-  summarise(count = n(), .groups = "drop") %>%
-  pivot_wider(names_from = life_stage, values_from = count, values_fill = 0) %>%
+  ) |>
+  group_by(taxonID, life_stage) |>
+  summarise(count = n(), .groups = "drop") |>
+  pivot_wider(names_from = life_stage, values_from = count, values_fill = 0) |>
   mutate(
     Total = Adult + NA + Nauplii,
     Pct_NA = round(NA / Total * 100, 1)
-  ) %>%
-  arrange(desc(NA)) %>%
+  ) |>
+  arrange(desc(NA)) |>
   filter(NA > 0)
 
 cat("Top 20 taxa with most NA records:\n")
@@ -66,9 +66,9 @@ cat("(Showing taxa where NA records exist)\n")
 cat(paste(rep("-", 80), collapse = ""), "\n\n")
 
 # Get taxa that have both adults and NA records
-taxa_with_both <- na_by_taxon %>%
-  filter(Adult > 0 & NA > 0) %>%
-  pull(taxonID) %>%
+taxa_with_both <- na_by_taxon |>
+  filter(Adult > 0 & NA > 0) |>
+  pull(taxonID) |>
   head(10)
 
 cat("Taxa with both adult and NA records (top 10 by NA count):\n\n")
@@ -76,8 +76,8 @@ cat("Taxa with both adult and NA records (top 10 by NA count):\n\n")
 for (taxon in taxa_with_both) {
   cat(taxon, "\n")
 
-  taxon_data <- zoo_raw %>%
-    filter(taxonID == taxon) %>%
+  taxon_data <- zoo_raw |>
+    filter(taxonID == taxon) |>
     mutate(
       mean_length = (zooMinimumLength + zooMaximumLength) / 2,
       life_stage = case_when(
@@ -88,8 +88,8 @@ for (taxon in taxa_with_both) {
       )
     )
 
-  summary <- taxon_data %>%
-    group_by(life_stage) %>%
+  summary <- taxon_data |>
+    group_by(life_stage) |>
     summarise(
       n = n(),
       mean_size = round(mean(mean_length, na.rm = TRUE), 4),
@@ -112,8 +112,8 @@ for (taxon in taxa_with_both) {
 cat("\n\n4. DETAILED EXPLORATION: MESEDA\n")
 cat(paste(rep("-", 80), collapse = ""), "\n\n")
 
-meseda_data <- zoo_raw %>%
-  filter(taxonID == "MESEDA") %>%
+meseda_data <- zoo_raw |>
+  filter(taxonID == "MESEDA") |>
   mutate(
     mean_length = (zooMinimumLength + zooMaximumLength) / 2,
     life_stage = case_when(
@@ -126,8 +126,8 @@ meseda_data <- zoo_raw %>%
 
 cat("MESEDA Total Records:", nrow(meseda_data), "\n\n")
 
-meseda_summary <- meseda_data %>%
-  group_by(life_stage) %>%
+meseda_summary <- meseda_data |>
+  group_by(life_stage) |>
   summarise(
     n = n(),
     mean_size = round(mean(mean_length, na.rm = TRUE), 4),
@@ -143,8 +143,8 @@ print(meseda_summary)
 
 # Check dates for NA records
 cat("\n\nDate range by life stage:\n")
-meseda_dates <- meseda_data %>%
-  group_by(life_stage) %>%
+meseda_dates <- meseda_data |>
+  group_by(life_stage) |>
   summarise(
     first_date = min(collectDate, na.rm = TRUE),
     last_date = max(collectDate, na.rm = TRUE),
@@ -160,18 +160,18 @@ print(meseda_dates)
 cat("\n\n5. TEMPORAL PATTERN OF NA RECORDS\n")
 cat(paste(rep("-", 80), collapse = ""), "\n\n")
 
-na_by_year <- zoo_raw %>%
+na_by_year <- zoo_raw |>
   mutate(
     year = year(collectDate),
     has_na = is.na(nauplii)
-  ) %>%
-  group_by(year) %>%
+  ) |>
+  group_by(year) |>
   summarise(
     total_records = n(),
     na_records = sum(has_na),
     pct_na = round(sum(has_na) / n() * 100, 1),
     .groups = "drop"
-  ) %>%
+  ) |>
   arrange(year)
 
 cat("NA Records by Year:\n")
@@ -191,18 +191,18 @@ latest_na_year <- max(year(zoo_raw$collectDate[is.na(zoo_raw$nauplii)]), na.rm =
 cat("   - NA records span from", earliest_na_year, "to", latest_na_year, "\n")
 
 # Calculate proportion of NAs by year
-na_prop <- zoo_raw %>%
-  mutate(year = year(collectDate)) %>%
-  group_by(year) %>%
-  summarise(pct_na = round(sum(is.na(nauplii)) / n() * 100, 1), .groups = "drop") %>%
+na_prop <- zoo_raw |>
+  mutate(year = year(collectDate)) |>
+  group_by(year) |>
+  summarise(pct_na = round(sum(is.na(nauplii)) / n() * 100, 1), .groups = "drop") |>
   arrange(year)
 
 cat("   - Early years have higher % of NA values\n")
 cat("   - This suggests older data lacks nauplii classification\n\n")
 
 cat("2. NA RECORDS ARE NOT RANDOM ACROSS TAXA:\n")
-taxa_mostly_na <- na_by_taxon %>%
-  filter(Pct_NA > 50) %>%
+taxa_mostly_na <- na_by_taxon |>
+  filter(Pct_NA > 50) |>
   arrange(desc(Pct_NA))
 
 if (nrow(taxa_mostly_na) > 0) {

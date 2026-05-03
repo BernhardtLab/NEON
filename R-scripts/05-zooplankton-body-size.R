@@ -12,7 +12,7 @@ zoo_raw_all <- read_csv("data-processed/zooplankton_2014_2026.csv")
 
 # Filter to ADULTS ONLY (nauplii == "N")
 # This removes nauplii (larvae) to avoid confounding life stages in body size analysis
-zoo_raw <- zoo_raw_all %>%
+zoo_raw <- zoo_raw_all |>
   filter(nauplii == "N")
 
 cat("Filtering to adults only:\n")
@@ -22,9 +22,9 @@ cat("  Records removed:", nrow(zoo_raw_all) - nrow(zoo_raw), "\n\n")
 
 # Create summary by siteID, collectDate, and taxonID
 # Calculate mean body size as (min + max) / 2 for each taxon-sample combination
-zoo_body_size_summary <- zoo_raw %>%
-  mutate(mean_body_length = (zooMinimumLength + zooMaximumLength) / 2) %>%
-  group_by(siteID, namedLocation, collectDate, taxonID) %>%
+zoo_body_size_summary <- zoo_raw |>
+  mutate(mean_body_length = (zooMinimumLength + zooMaximumLength) / 2) |>
+  group_by(siteID, namedLocation, collectDate, taxonID) |>
   summarise(
     mean_body_length = mean(mean_body_length, na.rm = TRUE),
     min_body_length = mean(zooMinimumLength, na.rm = TRUE),
@@ -35,8 +35,8 @@ zoo_body_size_summary <- zoo_raw %>%
     sampler_type = first(samplerType),
     aquatic_site_type = first(aquaticSiteType),
     .groups = "drop"
-  ) %>%
-  mutate(collectDate = as.Date(collectDate)) %>%
+  ) |>
+  mutate(collectDate = as.Date(collectDate)) |>
   arrange(siteID, collectDate, taxonID)
 
 # Print summary statistics
@@ -51,8 +51,8 @@ cat("  Mean body length:", round(sum(!is.na(zoo_body_size_summary$mean_body_leng
 cat("  Body width:", round(sum(!is.na(zoo_body_size_summary$mean_body_width))/nrow(zoo_body_size_summary)*100, 1), "%\n")
 
 # Calculate body size statistics by taxon (all 177 taxa)
-zoo_taxon_stats <- zoo_body_size_summary %>%
-  group_by(taxonID) %>%
+zoo_taxon_stats <- zoo_body_size_summary |>
+  group_by(taxonID) |>
   summarise(
     mean_length_mm = mean(mean_body_length, na.rm = TRUE),
     std_dev = sd(mean_body_length, na.rm = TRUE),
@@ -61,7 +61,7 @@ zoo_taxon_stats <- zoo_body_size_summary %>%
     n_samples = n(),
     avg_density_per_L = mean(count_per_liter, na.rm = TRUE),
     .groups = "drop"
-  ) %>%
+  ) |>
   arrange(desc(n_samples))
 
 cat("\nBody size statistics by taxon (all", n_distinct(zoo_taxon_stats$taxonID), "taxa):\n")
