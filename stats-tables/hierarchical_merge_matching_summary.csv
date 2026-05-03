@@ -1,0 +1,9 @@
+metric,value
+Total body size records,5901
+Temperature matched,5901
+Temperature match rate,100.0%
+DO matched,5731
+DO match rate,97.1%
+Nutrients matched,4284
+Records with temp + body size,5853
+Records with DO + body size,5683

@@ -13,7 +13,7 @@
 #   - data-processed/dissolved_oxygen_monthly_summary.csv
 #     (Monthly DO aggregates from script 15)
 #   - data-processed/phytoplankton_afdm_monthly_summary.csv
-#     (Monthly algal ash-free dry mass (AFDM) from script 15b - ALGAE ONLY, optional)
+#     (Monthly algal ash-free dry mass (AFDM) from script 15c - ALGAE ONLY, optional)
 #
 # OUTPUTS:
 #   - data-processed/zooplankton_body_size_temp_food_supply_analysis.csv
@@ -116,12 +116,12 @@ if (has_afdm) {
       by = c("siteID", "year", "month")
     )
 
-  cat("After adding algal ash-free dry mass (AFDM):\n")
+  cat("After adding algal ash-free dry mass (AFDM per volume):\n")
   cat("  Shape:", nrow(merged_all), "observations x", ncol(merged_all), "variables\n")
   na_afdm <- sum(is.na(merged_all$afdm_mean))
   cat("  Records with AFDM data:", nrow(merged_all) - na_afdm, "out of", nrow(merged_all), "\n")
   cat("  Coverage:", round((nrow(merged_all) - na_afdm) / nrow(merged_all) * 100, 1), "%\n")
-  cat("  (Note: AFDM = Algal ash-free dry mass - ALGAE ONLY)\n\n")
+  cat("  (afdm_mean = monthly mean ash-free dry mass per volume, in μg/L)\n\n")
 }
 
 # Add date column back

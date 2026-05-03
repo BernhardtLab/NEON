@@ -17,7 +17,7 @@
 #   - data-processed/nutrients_monthly_summary.csv
 #     (Monthly nutrient aggregates from script 15)
 #   - data-processed/phytoplankton_afdm_monthly_summary.csv
-#     (Monthly algal ash-free dry mass (AFDM) from script 15b - ALGAE ONLY, optional)
+#     (Monthly algal ash-free dry mass (AFDM) from script 15c - ALGAE ONLY, optional)
 #
 # OUTPUTS:
 #   - data-processed/zooplankton_body_size_temp_food_supply_hierarchical.csv
@@ -293,7 +293,7 @@ cat(" ", nutrients_matched, "records with nutrients\n")
 # ============================================================================
 
 if (has_afdm) {
-  cat("Merging algal ash-free dry mass (AFDM)...")
+  cat("Merging algal ash-free dry mass (AFDM per volume)...")
 
   body_size_with_env <- body_size_with_env |>
     left_join(
@@ -302,7 +302,8 @@ if (has_afdm) {
     )
 
   afdm_matched <- sum(!is.na(body_size_with_env$afdm_mean))
-  cat(" ", afdm_matched, "records with AFDM (Algal AFDM)\n")
+  cat(" ", afdm_matched, "records with AFDM\n")
+  cat("  (afdm_mean = monthly mean ash-free dry mass per volume, in μg/L)\n")
 }
 
 # ============================================================================
@@ -463,3 +464,4 @@ cat("     └─ Summary of matching success rates by site\n\n")
 
 cat("READY FOR ANALYSIS!\n")
 cat(paste(rep("=", 80), collapse = ""), "\n")
+
