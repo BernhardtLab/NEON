@@ -1,0 +1,4 @@
+uid,domainID,siteID,namedLocation,collectDate,sortDate,sampleID,sampleCode,mixedZooVialID,mixedZooVialCode,testProtocolVersion,subsampleType,qcEnumerationDifference,qcTaxonomicDifference,laboratoryName,sortedBy,benchRemarks,dataQF
+"c10ffbd2-2654-4b96-82a4-19c161a05a54","D03","BARC","BARC.AOS.littoral1","2015-11-05T17:00Z",,"BARC.20151105.TOW.2",,,,"ECOANALYSTS_Zooplankton_Identification_Revision2",,,,"EcoAnalysts Inc.","L154fgqSHVzC1PbMix8Y8A==","subsamplePercent = 0.83",
+"cac42dc1-4700-46f0-872e-7fa0d8918afa","D03","BARC","BARC.AOS.littoral2","2015-11-05T17:00Z",,"BARC.20151105.SCHINDLER.3",,,,"ECOANALYSTS_Zooplankton_Identification_Revision2",,,,"EcoAnalysts Inc.","L154fgqSHVzC1PbMix8Y8A==","subsamplePercent = 15",
+"01c4e3a7-61bd-4f12-8c76-412ef444e8b4","D03","BARC","BARC.AOS.buoy.c0","2015-11-05T17:00Z",,"BARC.20151105.TOW.1",,,,"ECOANALYSTS_Zooplankton_Identification_Revision2",,,,"EcoAnalysts Inc.","L154fgqSHVzC1PbMix8Y8A==","subsamplePercent = 0.13",

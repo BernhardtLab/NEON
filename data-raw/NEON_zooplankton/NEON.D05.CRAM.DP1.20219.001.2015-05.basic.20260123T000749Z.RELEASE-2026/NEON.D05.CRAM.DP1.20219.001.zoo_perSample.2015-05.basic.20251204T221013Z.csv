@@ -1,0 +1,5 @@
+uid,domainID,siteID,namedLocation,collectDate,sortDate,sampleID,sampleCode,mixedZooVialID,mixedZooVialCode,testProtocolVersion,subsampleType,qcEnumerationDifference,qcTaxonomicDifference,laboratoryName,sortedBy,benchRemarks,dataQF
+"bf863a32-5cff-4341-b4ce-beb6f8ff9278","D05","CRAM","CRAM.AOS.littoral2","2015-05-13T17:00Z",,"CRAM.20150513.SCHINDLERPATALAS.1",,,,"GEI_Zooplankton_Identification_Revision5","coarse",,,"GEI Consultants Inc.","i4FMMVXM0sI=",,
+"4671f798-7615-4045-845c-4a126bf6be0a","D05","CRAM","CRAM.AOS.littoral2","2015-05-13T17:00Z",,"CRAM.20150513.SCHINDLERPATALAS.1",,,,"GEI_Zooplankton_Identification_Revision5","fine",,,"GEI Consultants Inc.","i4FMMVXM0sI=",,
+"a57fe7d6-ccfb-49f6-9c89-42adbd680195","D05","CRAM","CRAM.AOS.littoral1","2015-05-13T17:00Z",,"CRAM.20150513.SCHINDLERPATALAS.2",,,,"GEI_Zooplankton_Identification_Revision5","coarse",,,"GEI Consultants Inc.","i4FMMVXM0sI=",,
+"3f64661b-fb4a-4db3-a4c9-d235b8182543","D05","CRAM","CRAM.AOS.littoral1","2015-05-13T17:00Z",,"CRAM.20150513.SCHINDLERPATALAS.2",,,,"GEI_Zooplankton_Identification_Revision5","fine",,,"GEI Consultants Inc.","i4FMMVXM0sI=",,

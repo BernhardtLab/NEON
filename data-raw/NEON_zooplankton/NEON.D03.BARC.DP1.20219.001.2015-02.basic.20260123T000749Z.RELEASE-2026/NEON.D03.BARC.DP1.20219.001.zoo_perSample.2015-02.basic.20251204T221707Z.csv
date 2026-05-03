@@ -1,0 +1,4 @@
+uid,domainID,siteID,namedLocation,collectDate,sortDate,sampleID,sampleCode,mixedZooVialID,mixedZooVialCode,testProtocolVersion,subsampleType,qcEnumerationDifference,qcTaxonomicDifference,laboratoryName,sortedBy,benchRemarks,dataQF
+"6599096c-1e3c-46cb-8367-7ab292436945","D03","BARC","BARC.AOS.littoral2","2015-02-18T17:00Z",,"BARC.20150218.SCHINDLER.3",,,,"ECOANALYSTS_Zooplankton_Identification_Revision2",,,,"EcoAnalysts Inc.","5LtHEfC81k8=",,
+"5549a231-cf21-4d93-8b42-8397b2be5f16","D03","BARC","BARC.AOS.littoral1","2015-02-18T17:00Z",,"BARC.20150218.TOW.2",,,,"ECOANALYSTS_Zooplankton_Identification_Revision2",,,,"EcoAnalysts Inc.","5LtHEfC81k8=",,
+"87604358-038d-4746-97d7-9a45939429e8","D03","BARC","BARC.AOS.buoy.c0","2015-02-18T17:00Z",,"BARC.20150218.TOW.1",,,,"ECOANALYSTS_Zooplankton_Identification_Revision2",,,,"EcoAnalysts Inc.","5LtHEfC81k8=",,

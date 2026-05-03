@@ -1,0 +1,7 @@
+uid,domainID,siteID,namedLocation,collectDate,sortDate,sampleID,sampleCode,mixedZooVialID,mixedZooVialCode,testProtocolVersion,subsampleType,qcEnumerationDifference,qcTaxonomicDifference,laboratoryName,sortedBy,benchRemarks,dataQF
+"5aac4b60-d738-4153-9a4c-c54bc4a9e864","D09","PRLA","PRLA.AOS.littoral2","2014-09-25T17:00Z",,"PRLA.20140925.SCHINDLER.1",,,,"GEI_Zooplankton_Identification_Revision5","fine",,,"GEI Consultants Inc.","i4FMMVXM0sI=",,
+"bf7a2f36-8603-4b08-8667-6f965dcb1985","D09","PRLA","PRLA.AOS.buoy.c0","2014-09-25T17:00Z",,"PRLA.20140925.TOW.3",,,,"GEI_Zooplankton_Identification_Revision5","coarse",,,"GEI Consultants Inc.","i4FMMVXM0sI=",,
+"9597d771-fb69-4b0a-b44b-6df7514057f9","D09","PRLA","PRLA.AOS.littoral1","2014-09-25T17:00Z",,"PRLA.20140925.SCHINDLER.2",,,,"GEI_Zooplankton_Identification_Revision5","fine",,,"GEI Consultants Inc.","i4FMMVXM0sI=",,
+"09dabf24-06b5-41dc-bd4a-3f127591fed8","D09","PRLA","PRLA.AOS.littoral1","2014-09-25T17:00Z",,"PRLA.20140925.SCHINDLER.2",,,,"GEI_Zooplankton_Identification_Revision5","coarse",,,"GEI Consultants Inc.","i4FMMVXM0sI=",,
+"74734faf-6a7a-4de2-9ea8-502257b8738a","D09","PRLA","PRLA.AOS.buoy.c0","2014-09-25T17:00Z",,"PRLA.20140925.TOW.3",,,,"GEI_Zooplankton_Identification_Revision5","fine",,,"GEI Consultants Inc.","i4FMMVXM0sI=",,
+"4beba7ed-8015-4f42-b230-601f0457de26","D09","PRLA","PRLA.AOS.littoral2","2014-09-25T17:00Z",,"PRLA.20140925.SCHINDLER.1",,,,"GEI_Zooplankton_Identification_Revision5","coarse",,,"GEI Consultants Inc.","i4FMMVXM0sI=",,

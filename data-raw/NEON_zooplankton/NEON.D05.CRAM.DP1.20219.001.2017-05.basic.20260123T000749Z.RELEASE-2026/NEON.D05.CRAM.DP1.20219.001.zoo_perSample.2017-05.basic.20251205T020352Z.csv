@@ -1,0 +1,4 @@
+uid,domainID,siteID,namedLocation,collectDate,sortDate,sampleID,sampleCode,mixedZooVialID,mixedZooVialCode,testProtocolVersion,subsampleType,qcEnumerationDifference,qcTaxonomicDifference,laboratoryName,sortedBy,benchRemarks,dataQF
+"537020e8-4b93-4bdd-ab26-a5de7c59ac13","D05","CRAM","CRAM.AOS.buoy.c0","2017-05-03T15:01Z",,"CRAM.20170503.TOWNET.3",,,,"ECOANALYSTS_Zooplankton_Identification_Revision2",,,,"EcoAnalysts Inc.","rY5AQckTBepJ+q+fqsoqVQ==",,
+"cfa318ea-6cf4-4761-a289-2e3b1b621096","D05","CRAM","CRAM.AOS.littoral1","2017-05-03T15:01Z",,"CRAM.20170503.SCHINDLER.2",,,,"ECOANALYSTS_Zooplankton_Identification_Revision2",,,,"EcoAnalysts Inc.","rY5AQckTBepJ+q+fqsoqVQ==",,
+"f353c659-a5f7-4259-a84a-009b4d756032","D05","CRAM","CRAM.AOS.littoral2","2017-05-03T15:01Z",,"CRAM.20170503.SCHINDLER.1",,,,"ECOANALYSTS_Zooplankton_Identification_Revision2",,,,"EcoAnalysts Inc.","rY5AQckTBepJ+q+fqsoqVQ==",,

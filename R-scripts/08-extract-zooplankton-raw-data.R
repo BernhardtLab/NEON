@@ -52,34 +52,34 @@ cat("Loaded", nrow(tax), "taxonomy records from", length(tax_files), "files\n")
 # ============================================================================
 cat("\nStep 1: Removing duplicates...\n")
 
-field <- field %>%
+field_deduped <- field %>%
   distinct(across(-uid), .keep_all = TRUE)
 
-samp <- samp %>%
+samp_deduped <- samp %>%
   distinct(across(-uid), .keep_all = TRUE)
 
-tax <- tax %>%
+tax_deduped <- tax %>%
   distinct(across(-uid), .keep_all = TRUE)
 
-cat("  Field records after deduplication:", nrow(field), "\n")
-cat("  Sample records after deduplication:", nrow(samp), "\n")
-cat("  Taxonomy records after deduplication:", nrow(tax), "\n")
+cat("  Field records after deduplication:", nrow(field_deduped), "\n")
+cat("  Sample records after deduplication:", nrow(samp_deduped), "\n")
+cat("  Taxonomy records after deduplication:", nrow(tax_deduped), "\n")
 
 # ============================================================================
 # Step 2: Filter field data - remove impractical sampling records
 # ============================================================================
 cat("\nStep 2: Filtering out samplingImpractical records...\n")
 
-field_before <- nrow(field)
-field <- field[is.na(field$samplingImpractical), ]
-cat("  Removed", field_before - nrow(field), "impractical sampling records\n")
+field_before <- nrow(field_deduped)
+field_filtered <- field_deduped[is.na(field_deduped$samplingImpractical), ]
+cat("  Removed", field_before - nrow(field_filtered), "impractical sampling records\n")
 
 # ============================================================================
 # Step 3: Join field and sample data
 # ============================================================================
 cat("\nStep 3: Joining field and sample data...\n")
 
-zoo_field_samp <- full_join(field, samp, join_by("sampleID" == "sampleID"))
+zoo_field_samp <- full_join(field_filtered, samp_deduped, join_by("sampleID" == "sampleID"))
 cat("  Joined dataset has", nrow(zoo_field_samp), "records\n")
 
 # ============================================================================
@@ -164,7 +164,7 @@ cat("  After duplicate handling:", nrow(zoo_field_samp_clean), "records\n")
 # ============================================================================
 cat("\nStep 5: Joining with taxonomy data...\n")
 
-zoo_with_taxonomy <- full_join(zoo_field_samp_clean, tax, join_by("sampleID" == "sampleID"))
+zoo_with_taxonomy <- full_join(zoo_field_samp_clean, tax_deduped, join_by("sampleID" == "sampleID"))
 cat("  After joining taxonomy:", nrow(zoo_with_taxonomy), "records\n")
 
 # ============================================================================
@@ -192,6 +192,18 @@ zoo <- zoo_with_taxonomy %>%
     aquaticSiteType = "lake",
     countPerL = adjCountPerBottle / towsTrapsVolume
   )
+
+# ============================================================================
+# Step 7: Remove exact duplicates (but preserve life stage information)
+# ============================================================================
+cat("\nStep 7: Removing exact duplicates...\n")
+
+zoo_before <- nrow(zoo)
+zoo <- zoo %>% distinct()
+zoo_after <- nrow(zoo)
+
+cat("  Removed", zoo_before - zoo_after, "exact duplicate rows\n")
+cat("  Note: Preserving intentional duplicates (same taxon, different nauplii/life stages)\n")
 
 # ============================================================================
 # Summary and Export

@@ -1,0 +1,4 @@
+uid,domainID,siteID,namedLocation,collectDate,sortDate,sampleID,sampleCode,mixedZooVialID,mixedZooVialCode,testProtocolVersion,subsampleType,qcEnumerationDifference,qcTaxonomicDifference,laboratoryName,sortedBy,benchRemarks,dataQF
+"32c705e3-321c-499b-9574-1d80713d20ab","D05","LIRO","LIRO.AOS.littoral2","2019-07-24T16:15Z",,"LIRO.20190724.SCHINDLER.2","A00000077357",,,"ECOANALYSTS_Zooplankton_Identification_Revision2",,,,"EcoAnalysts Inc.","L154fgqSHVzC1PbMix8Y8A==",,
+"19140aad-0846-40fd-b3b5-637f2ce3073d","D05","LIRO","LIRO.AOS.littoral1","2019-07-24T16:15Z",,"LIRO.20190724.SCHINDLER.3","A00000077358",,,"ECOANALYSTS_Zooplankton_Identification_Revision2",,,,"EcoAnalysts Inc.","L154fgqSHVzC1PbMix8Y8A==",,
+"010d536c-7f19-4ec3-9c7d-9f583912cceb","D05","LIRO","LIRO.AOS.buoy.c1","2019-07-24T16:15Z",,"LIRO.20190724.TOWNET.1","A00000077356",,,"ECOANALYSTS_Zooplankton_Identification_Revision2",,,,"EcoAnalysts Inc.","L154fgqSHVzC1PbMix8Y8A==",,

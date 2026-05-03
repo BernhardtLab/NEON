@@ -1,0 +1,4 @@
+uid,domainID,siteID,namedLocation,collectDate,sortDate,sampleID,sampleCode,mixedZooVialID,mixedZooVialCode,testProtocolVersion,subsampleType,qcEnumerationDifference,qcTaxonomicDifference,laboratoryName,sortedBy,benchRemarks,dataQF
+"75912808-14d3-4d38-9010-59b434430311","D09","PRLA","PRLA.AOS.littoral2","2018-09-11T13:37Z",,"PRLA.20180911.SCHINDLER.2",,,,"ECOANALYSTS_Zooplankton_Identification_Revision2",,0.2,3.7,"EcoAnalysts Inc.","1BO6muxQWqs=",,
+"6a28d16a-0796-4f21-8eed-08efa2f81f0a","D09","PRLA","PRLA.AOS.buoy.c0","2018-09-11T13:37Z",,"PRLA.20180911.SCHINDLER.3",,,,"ECOANALYSTS_Zooplankton_Identification_Revision2",,,,"EcoAnalysts Inc.","L154fgqSHVzC1PbMix8Y8A==",,
+"6a31f3a9-7182-4104-ac18-3cb157a8d3da","D09","PRLA","PRLA.AOS.littoral1","2018-09-11T13:37Z",,"PRLA.20180911.SCHINDLER.1",,,,"ECOANALYSTS_Zooplankton_Identification_Revision2",,,,"EcoAnalysts Inc.","L154fgqSHVzC1PbMix8Y8A==",,
