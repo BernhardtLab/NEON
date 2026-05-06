@@ -14,7 +14,14 @@
 #     (Chlorophyll data filtered to zooplankton sampling months)
 #   - stats-tables/chlorophyll_summary_by_site_month.csv
 #     (Monthly chlorophyll summaries by site)
-#   - figures/chlorophyll_*.png (5+ visualization figures)
+#   - figures/chlorophyll_*.png (7 visualization figures)
+#     * chlorophyll_by_site.png - Boxplot by site
+#     * chlorophyll_seasonal_pattern.png - Mean by month
+#     * chlorophyll_time_series_by_site.png - Temporal trends
+#     * chlorophyll_distribution.png - Histogram by site
+#     * chlorophyll_heatmap_site_month.png - Heatmap
+#     * chlorophyll_vs_temperature_by_site.png - Scatter by site with loess
+#     * chlorophyll_vs_temperature_all_sites.png - Combined scatter plot
 
 library(tidyverse)
 library(readr)
@@ -157,6 +164,29 @@ cat("  Range:", round(min(chl_processed$chlorophyllMicrogramsPerLiter, na.rm = T
     round(max(chl_processed$chlorophyllMicrogramsPerLiter, na.rm = TRUE), 2), "μg/L\n\n")
 
 # ============================================================================
+# Part 3.5: Merge with Monthly Temperature Data
+# ============================================================================
+
+cat("Loading monthly temperature data and merging with chlorophyll...\n\n")
+
+# Load monthly temperature summary
+temp_monthly <- read_csv("data-processed/temperature_monthly_summary.csv")
+
+cat("Monthly temperature data:\n")
+cat("  Records:", nrow(temp_monthly), "\n")
+cat("  Sites:", n_distinct(temp_monthly$siteID), "\n\n")
+
+# Merge chlorophyll with temperature at monthly level
+chl_temp_by_site_month <- chl_by_site_month |>
+  left_join(
+    temp_monthly |> select(siteID, year, month, temp_mean_monthly, temp_sd_monthly),
+    by = c("siteID", "year", "month")
+  )
+
+cat("Merged chlorophyll-temperature data:\n")
+cat("  Site-month combinations with both:", sum(!is.na(chl_temp_by_site_month$temp_mean_monthly) & !is.na(chl_temp_by_site_month$chl_mean)), "\n\n")
+
+# ============================================================================
 # Part 4: Save Processed Data
 # ============================================================================
 
@@ -288,7 +318,50 @@ p5_heatmap <- chl_by_site_month |>
   )
 
 ggsave("figures/chlorophyll_heatmap_site_month.png", p5_heatmap, width = 12, height = 8, dpi = 300)
-cat("✓ Saved: figures/chlorophyll_heatmap_site_month.png\n\n")
+cat("✓ Saved: figures/chlorophyll_heatmap_site_month.png\n")
+
+# Plot 6: Chlorophyll vs Temperature scatter plot by site
+p6_chl_temp_scatter <- chl_temp_by_site_month |>
+  filter(!is.na(temp_mean_monthly), !is.na(chl_mean)) |>
+  ggplot(aes(x = temp_mean_monthly, y = chl_mean, color = siteID, size = n_samples)) +
+  geom_point(alpha = 0.6) +
+  geom_smooth(aes(color = siteID), method = "loess", se = TRUE, alpha = 0.2) +
+  facet_wrap(~siteID, scales = "free", ncol = 3) +
+  labs(
+    title = "Chlorophyll vs Temperature by Site",
+    subtitle = "Monthly data during zooplankton sampling months",
+    x = "Temperature (°C)",
+    y = "Chlorophyll (μg/L)",
+    color = "Site",
+    size = "Number of\nSamples"
+  ) +
+  theme(
+    legend.position = "bottom",
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 8)
+  )
+
+ggsave("figures/chlorophyll_vs_temperature_by_site.png", p6_chl_temp_scatter, width = 14, height = 10, dpi = 300)
+cat("✓ Saved: figures/chlorophyll_vs_temperature_by_site.png\n")
+
+# Plot 7: Chlorophyll vs Temperature combined across all sites
+p7_chl_temp_all <- chl_temp_by_site_month |>
+  filter(!is.na(temp_mean_monthly), !is.na(chl_mean)) |>
+  ggplot(aes(x = temp_mean_monthly, y = chl_mean, color = siteID)) +
+  geom_point(alpha = 0.6, size = 3) +
+  labs(
+    title = "Chlorophyll vs Temperature Relationship",
+    subtitle = "All sites combined, monthly data during zooplankton sampling months",
+    x = "Temperature (°C)",
+    y = "Chlorophyll (μg/L)",
+    color = "Site",
+    shape = "Site"
+  ) +
+  theme(
+    legend.position = "right"
+  )
+
+ggsave("figures/chlorophyll_vs_temperature_all_sites.png", p7_chl_temp_all, width = 12, height = 7, dpi = 300)
+cat("✓ Saved: figures/chlorophyll_vs_temperature_all_sites.png\n\n")
 
 # ============================================================================
 # Part 6: Summary Report
@@ -326,6 +399,8 @@ cat("  - Chlorophyll represents photosynthetic organisms (phytoplankton)\n")
 cat("  - This is different from AFDM (ash-free dry mass of ALGAE ONLY)\n")
 cat("  - Chlorophyll is a proxy for phytoplankton productivity\n")
 cat("  - High chlorophyll = productive lake ecosystem\n")
+cat("  - Temperature relationship: warmer temperatures typically support higher primary productivity\n")
+cat("  - Site-specific temperature-chlorophyll relationships reflect local limnological conditions\n")
 cat("  - Can compare with zooplankton body size responses\n\n")
 
 cat(paste(rep("=", 80), collapse = ""), "\n")
