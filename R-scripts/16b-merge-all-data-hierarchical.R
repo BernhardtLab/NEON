@@ -45,6 +45,8 @@ cat("Loading all datasets...\n\n")
 # Zooplankton body size with date info
 zoo_body_size <- read_csv("data-processed/zooplankton_body_size_summary_adults_2014_2026.csv")
 
+grepl("count", names(zoo_body_size))
+
 zoo_body_size_dated <- zoo_body_size |>
   mutate(
     collectDate = as.Date(collectDate),
@@ -175,7 +177,7 @@ zoo_sites <- c("BARC", "CRAM", "LIRO", "PRLA", "PRPO", "SUGG", "TOOK")
 
 zoo_filtered <- zoo_body_size_dated |>
   filter(siteID %in% zoo_sites) |>
-  select(siteID, taxonID, collectDate, year, month, mean_body_length, max_body_length, count_per_liter, n_samples = count_per_liter)
+  select(siteID, taxonID, collectDate, year, month, mean_body_length, max_body_length, count_per_liter, n_samples = count_per_liter, count_per_bottle)
 
 # ============================================================================
 # TEMPERATURE MATCHING - LEVEL 1

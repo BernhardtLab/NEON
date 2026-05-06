@@ -68,6 +68,8 @@ cat("Loading zooplankton body size and temperature data...\n\n")
 
 zoo_temp_data <- read_csv("data-processed/zooplankton_body_size_temp_food_supply_hierarchical.csv")
 
+grepl("temp", names(zoo_temp_data))
+
 cat("Body size-temperature dataset:\n")
 cat("  Total records:", nrow(zoo_temp_data), "\n")
 cat("  Unique taxa:", n_distinct(zoo_temp_data$taxonID), "\n")
