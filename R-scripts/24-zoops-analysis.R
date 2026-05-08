@@ -16,14 +16,54 @@ celsius_to_invkT <- function(temp_c) {
 
 names(zoops)
 
+locations <- read_csv("data-processed/neon_lake_sites_coordinates.csv") |> 
+  rename(siteID = site_code)
+
 zoops <- read_csv("data-processed/zoo-chl-temp.csv") |> 
-  mutate(exclude = case_when(taxonID == "KERCOC" & mean_body_length > 0.5 ~ "exclude",
-                             taxonID == "KELLON" & mean_body_length > 0.25 ~ "exclude",
-                             taxonID == "POLSP20" & mean_body_length > 0.25 ~ "exclude",
-                             TRUE ~ "include")) |> 
-  filter(exclude == "include") |> 
+  # mutate(exclude = case_when(taxonID == "KERCOC" & mean_body_length > 0.5 ~ "exclude",
+  #                            taxonID == "KELLON" & mean_body_length > 0.25 ~ "exclude",
+  #                            taxonID == "POLSP20" & mean_body_length > 0.25 ~ "exclude",
+  #                            TRUE ~ "include")) |> 
+  # filter(exclude == "include") |> 
   filter(chl_source == "Discrete samples") |> 
-  filter(!is.na(chl_mean), !is.na(mean_body_length))
+  filter(!is.na(chl_mean), !is.na(mean_body_length)) |> 
+  left_join(locations) |> 
+  mutate(siteID = forcats::fct_reorder(siteID, latitude, .desc = TRUE))
+
+
+zoops |> 
+  # filter(taxonID == "CALSP1") |> 
+  ggplot(aes(x = mean_body_length)) + geom_density() +
+  facet_grid(siteID~ taxonID, scales = "free")
+ggsave("figures/zoop-body-size-dist-all.png", width = 20, height = 20)
+
+
+
+zoops |> 
+  filter(taxonID == "CALSP1") |> 
+  ggplot(aes(x = mean_body_length)) + geom_density() +
+  facet_grid(siteID~ taxonID, scales = "free")
+ggsave("figures/zoop-body-size-dist-calsp1.png", width = 10, height = 15)
+
+zoops |>
+  filter(taxonID == "CYCSP") |>
+  ggplot(aes(x = mean_body_length)) + geom_density() +
+  facet_grid(siteID ~ taxonID, scales = "free")
+ggsave("figures/zoop-body-size-dist-cycsp.png", width = 10, height = 15)
+
+
+# density plot for each taxon, saved to figures/
+taxa_list <- unique(zoops$taxonID)
+
+for (taxon in taxa_list) {
+  p <- zoops |>
+    filter(taxonID == taxon) |>
+    ggplot(aes(x = mean_body_length)) + geom_density() +
+    facet_grid(siteID ~ taxonID, scales = "free")
+
+  filename <- paste0("figures/zoop-body-size-dist-", tolower(taxon), ".png")
+  ggsave(filename, plot = p, width = 10, height = 15)
+}
 
 
 
