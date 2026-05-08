@@ -177,7 +177,7 @@ zoo_sites <- c("BARC", "CRAM", "LIRO", "PRLA", "PRPO", "SUGG", "TOOK")
 
 zoo_filtered <- zoo_body_size_dated |>
   filter(siteID %in% zoo_sites) |>
-  select(siteID, taxonID, collectDate, year, month, mean_body_length, max_body_length, count_per_liter, n_samples = count_per_liter, count_per_bottle)
+  select(siteID, taxonID, collectDate, year, month, mean_body_length, max_body_length, count_per_liter, count_per_bottle)
 
 # ============================================================================
 # TEMPERATURE MATCHING - LEVEL 1
