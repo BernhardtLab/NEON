@@ -34,7 +34,6 @@ calanoid_mass_ug <- function(prosome_mm) {
   W_mg * 1000  # convert mg to µg
 }
 
-df$dry_mass_ug <- calanoid_mass_ug(df$prosome_mm)
 
 
 cals <- zoops |> 
@@ -57,16 +56,13 @@ summary(cals_mod1)
 
 
 
-
-
-
 summary(cals_mod)
 visreg(cals_mod)
-visreg(cals_mod, "inv_temp", "log_chl", gg=TRUE, ylab="Log body mass", xlab = "Temperature (-1/kT)")
+visreg(cals_mod, "inv_temp", "log_chl", gg=TRUE, ylab="Log body mass (ug)", xlab = "Temperature (-1/kT)")
 ggsave("figures/partial-regression-cals.png", width = 10, height = 6)
 
-visreg(cals_mod, "log_chl", gg=TRUE, ylab="Mean body length (mm)", xlab = "Mean chlorophyll (ug/L)")
-ggsave("figures/partial-regression-cals-chla.png", width = 10, height = 6)
+visreg(cals_mod, "log_chl", gg=TRUE, ylab="Log body mass (ug)", xlab = "Mean chlorophyll (ug/L)")
+ggsave("figures/partial-regression-cals-chla.png", width = 6, height = 4)
 
 
 cals |> 
